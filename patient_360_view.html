@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient 360° View</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            background: white;
+            border-radius: 15px;
+            padding: 25px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .page-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8c 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .page-title h1 {
+            color: #1e3a5f;
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #1e3a5f;
+            border: 2px solid #e0e0e0;
+        }
+
+        .btn-secondary:hover {
+            border-color: #1e3a5f;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 600px 1fr;
+            gap: 25px;
+            align-items: start;
+        }
+
+        /* Central Patient Avatar Section */
+        .central-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .patient-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .patient-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            z-index: 0;
+        }
+
+        .avatar-container {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 20px;
+        }
+
+        .patient-avatar {
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(135deg, #6b9bd1 0%, #4a7ba7 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 56px;
+            font-weight: bold;
+            color: white;
+            margin: 0 auto;
+            border: 6px solid white;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .status-indicator {
+            position: absolute;
+            bottom: 10px;
+            right: 35%;
+            width: 24px;
+            height: 24px;
+            background: #4caf50;
+            border: 4px solid white;
+            border-radius: 50%;
+            animation: pulse-ring 2s infinite;
+        }
+
+        @keyframes pulse-ring {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+            50% { box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
+        }
+
+        .patient-name {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 8px;
+        }
+
+        .patient-id {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .patient-demographics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .demo-item {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .demo-label {
+            font-size: 11px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .demo-value {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .action-btn {
+            padding: 12px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .action-btn:hover {
+            border-color: #667eea;
+            background: #f8f9fe;
+            transform: translateY(-2px);
+        }
+
+        .action-icon {
+            font-size: 20px;
+        }
+
+        /* Widget Cards */
+        .widget-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            height: fit-content;
+        }
+
+        .widget-card:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+        }
+
+        .widget-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .widget-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .widget-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .widget-icon.blue {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+        }
+
+        .widget-icon.purple {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+        }
+
+        .widget-icon.orange {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+        }
+
+        .widget-icon.green {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+        }
+
+        .widget-icon.red {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+        }
+
+        .widget-title h3 {
+            font-size: 18px;
+            color: #1e3a5f;
+            font-weight: 600;
+        }
+
+        .widget-action {
+            color: #667eea;
+            font-size: 13px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .widget-action:hover {
+            text-decoration: underline;
+        }
+
+        /* Recent Labs Widget */
+        .lab-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border-left: 4px solid;
+            transition: all 0.2s;
+        }
+
+        .lab-item:hover {
+            background: #f0f0f0;
+            transform: translateX(3px);
+        }
+
+        .lab-item.normal {
+            border-color: #4caf50;
+        }
+
+        .lab-item.warning {
+            border-color: #ff9800;
+        }
+
+        .lab-item.critical {
+            border-color: #f44336;
+        }
+
+        .lab-info {
+            flex: 1;
+        }
+
+        .lab-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1e3a5f;
+            margin-bottom: 3px;
+        }
+
+        .lab-date {
+            font-size: 11px;
+            color: #999;
+        }
+
+        .lab-value {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .lab-value.normal {
+            color: #4caf50;
+        }
+
+        .lab-value.warning {
+            color: #ff9800;
+        }
+
+        .lab-value.critical {
+            color: #f44336;
+        }
+
+        .lab-range {
+            font-size: 11px;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        /* Vitals Trend Graph */
+        .graph-container {
+            position: relative;
+            height: 250px;
+            margin-bottom: 15px;
+        }
+
+        .graph-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .graph-line {
+            fill: none;
+            stroke: #667eea;
+            stroke-width: 3;
+            stroke-linecap: round;
+        }
+
+        .graph-area {
+            fill: url(#graphGradient);
+            opacity: 0.3;
+        }
+
+        .graph-grid line {
+            stroke: #e0e0e0;
+            stroke-width: 1;
+        }
+
+        .graph-labels text {
+            font-size: 11px;
+            fill: #666;
+        }
+
+        .graph-point {
+            fill: white;
+            stroke: #667eea;
+            stroke-width: 3;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .graph-point:hover {
+            r: 8;
+            stroke-width: 4;
+        }
+
+        .vitals-legend {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        /* Chronic Conditions */
+        .condition-item {
+            display: flex;
+            align-items: start;
+            gap: 12px;
+            padding: 15px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.2s;
+        }
+
+        .condition-item:hover {
+            border-color: #667eea;
+            transform: translateX(3px);
+        }
+
+        .condition-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .condition-details {
+            flex: 1;
+        }
+
+        .condition-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1e3a5f;
+            margin-bottom: 5px;
+        }
+
+        .condition-info {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .condition-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .condition-tag {
+            padding: 3px 8px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 12px;
+            font-size: 11px;
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .severity-badge {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .severity-high {
+            background: #ffebee;
+            color: #f44336;
+        }
+
+        .severity-medium {
+            background: #fff3e0;
+            color: #ff9800;
+        }
+
+        .severity-low {
+            background: #e8f5e9;
+            color: #4caf50;
+        }
+
+        /* Appointments Widget */
+        .appointment-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            border-left: 4px solid #667eea;
+        }
+
+        .appointment-date {
+            text-align: center;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            min-width: 60px;
+        }
+
+        .appointment-day {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e3a5f;
+        }
+
+        .appointment-month {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .appointment-details {
+            flex: 1;
+        }
+
+        .appointment-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1e3a5f;
+            margin-bottom: 5px;
+        }
+
+        .appointment-doctor {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .appointment-time {
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* Medications Widget */
+        .medication-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border-left: 4px solid #9c27b0;
+        }
+
+        .medication-info h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1e3a5f;
+            margin-bottom: 3px;
+        }
+
+        .medication-dosage {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .medication-status {
+            padding: 4px 10px;
+            background: #e8f5e9;
+            color: #4caf50;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 1400px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <div class="page-title">
+                <div class="logo">♡+</div>
+                <h1>Patient 360° View</h1>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-secondary">📊 Reports</button>
+                <button class="btn btn-secondary">📋 History</button>
+                <button class="btn btn-primary">+ New Entry</button>
+            </div>
+        </div>
+
+        <div class="main-grid">
+            <!-- Left Column -->
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <!-- Recent Labs Widget -->
+                <div class="widget-card">
+                    <div class="widget-header">
+                        <div class="widget-title">
+                            <div class="widget-icon blue">🧪</div>
+                            <h3>Recent Lab Results</h3>
+                        </div>
+                        <span class="widget-action">View All →</span>
+                    </div>
+                    <div class="lab-item normal">
+                        <div class="lab-info">
+                            <div class="lab-name">Hemoglobin A1C</div>
+                            <div class="lab-date">Dec 5, 2024</div>
+                        </div>
+                        <div>
+                            <div class="lab-value normal">6.2%</div>
+                            <div class="lab-range">Range: 4-6%</div>
+                        </div>
+                    </div>
+                    <div class="lab-item warning">
+                        <div class="lab-info">
+                            <div class="lab-name">LDL Cholesterol</div>
+                            <div class="lab-date">Dec 5, 2024</div>
+                        </div>
+                        <div>
+                            <div class="lab-value warning">145</div>
+                            <div class="lab-range">mg/dL (High)</div>
+                        </div>
+                    </div>
+                    <div class="lab-item normal">
+                        <div class="lab-info">
+                            <div class="lab-name">Creatinine</div>
+                            <div class="lab-date">Dec 5, 2024</div>
+                        </div>
+                        <div>
+                            <div class="lab-value normal">1.0</div>
+                            <div class="lab-range">mg/dL</div>
+                        </div>
+                    </div>
+                    <div class="lab-item critical">
+                        <div class="lab-info">
+                            <div class="lab-name">Glucose (Fasting)</div>
+                            <div class="lab-date">Dec 5, 2024</div>
+                        </div>
+                        <div>
+                            <div class="lab-value critical">168</div>
+                            <div class="lab-range">mg/dL (High)</div>
+                        </div>
+                    </div>
+                    <div class="lab-item normal">
+                        <div class="lab-info">
+                            <div class="lab-name">TSH</div>
+                            <div class="lab-date">Nov 28, 2024</div>
+                        </div>
+                        <div>
+                            <div class="lab-value normal">2.4</div>
+                            <div class="lab-range">mIU/L</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Appointments Widget -->
+                <div class="widget-card">
+                    <div class="widget-header">
+                        <div class="widget-title">
+                            <div class="widget-icon purple">📅</div>
+                            <h3>Upcoming Appointments</h3>
+                        </div>
+                        <span class="widget-action">Schedule →</span>
+                    </div>
+                    <div class="appointment-item">
+                        <div class="appointment-date">
+                            <div class="appointment-day">12</div>
+                            <div class="appointment-month">DEC</div>
+                        </div>
+                        <div class="appointment-details">
+                            <div class="appointment-title">Cardiology Follow-up</div>
+                            <div class="appointment-doctor">Dr. Kavita Sharma</div>
+                            <div class="appointment-time">⏰ 10:30 AM - 11:00 AM</div>
+                        </div>
+                    </div>
+                    <div class="appointment-item" style="border-color: #9c27b0;">
+                        <div class="appointment-date">
+                            <div class="appointment-day">18</div>
+                            <div class="appointment-month">DEC</div>
+                        </div>
+                        <div class="appointment-details">
+                            <div class="appointment-title">Endocrinology Consultation</div>
+                            <div class="appointment-doctor">Dr. Amit Patel</div>
+                            <div class="appointment-time">⏰ 2:00 PM - 2:30 PM</div>
+                        </div>
+                    </div>
+                    <div class="appointment-item" style="border-color: #4caf50;">
+                        <div class="appointment-date">
+                            <div class="appointment-day">22</div>
+                            <div class="appointment-month">DEC</div>
+                        </div>
+                        <div class="appointment-details">
+                            <div class="appointment-title">Annual Physical Exam</div>
+                            <div class="appointment-doctor">Dr. Priya Mehta</div>
+                            <div class="appointment-time">⏰ 9:00 AM - 10:00 AM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center Column - Patient Card -->
+            <div class="central-section">
+                <div class="patient-card">
+                    <div class="avatar-container">
+                        <div class="patient-avatar">RS</div>
+                        <div class="status-indicator"></div>
+                    </div>
+                    <h2 class="patient-name">Rajesh Sharma</h2>
+                    <p class="patient-id">MRN: 2024-0892 • Age: 58 years</p>
+                    
+                    <div class="patient-demographics">
+                        <div class="demo-item">
+                            <div class="demo-label">Date of Birth</div>
+                            <div class="demo-value">Mar 15, 1966</div>
+                        </div>
+                        <div class="demo-item">
+                            <div class="demo-label">Gender</div>
+                            <div class="demo-value">Male</div>
+                        </div>
+                        <div class="demo-item">
+                            <div class="demo-label">Blood Type</div>
+                            <div class="demo-value">O+</div>
+                        </div>
+                        <div class="demo-item">
+                            <div class="demo-label">Last Visit</div>
+                            <div class="demo-value">Dec 5, 2024</div>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button class="action-btn">
+                            <span class="action-icon">📝</span>
+                            <span>New Note</span>
+                        </button>
+                        <button class="action-btn">
+                            <span class="action-icon">💊</span>
+                            <span>Prescribe</span>
+                        </button>
+                        <button class="action-btn">
+                            <span class="action-icon">🧪</span>
+                            <span>Order Labs</span>
+                        </button>
+                        <button class="action-btn">
+                            <span class="action-icon">📞</span>
+                            <span>Contact</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Current Medications Widget -->
+                <div class="widget-card">
+                    <div class="widget-header">
+                        <div class="widget-title">
+                            <div class="widget-icon purple">💊</div>
+                            <h3>Current Medications</h3>
+                        </div>
+                        <span class="widget-action">Manage →</span>
+                    </div>
+                    <div class="medication-item">
+                        <div class="medication-info">
+                            <h4>Metformin</h4>
+                            <div class="medication-dosage">500mg • Twice daily with meals</div>
+                        </div>
+                        <span class="medication-status">Active</span>
+                    </div>
+                    <div class="medication-item" style="border-color: #2196f3;">
+                        <div class="medication-info">
+                            <h4>Lisinopril</h4>
+                            <div class="medication-dosage">10mg • Once daily</div>
+                        </div>
+                        <span class="medication-status">Active</span>
+                    </div>
+                    <div class="medication-item" style="border-color: #ff9800;">
+                        <div class="medication-info">
+                            <h4>Atorvastatin</h4>
+                            <div class="medication-dosage">20mg • Once daily at bedtime</div>
+                        </div>
+                        <span class="medication-status">Active</span>
+                    </div>
+                    <div class="medication-item" style="border-color: #4caf50;">
+                        <div class="medication-info">
+                            <h4>Aspirin</h4>
+                            <div class="medication-dosage">81mg • Once daily</div>
+                        </div>
+                        <span class="medication-status">Active</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <!-- Vitals Trend Widget -->
+                <div class="widget-card">
+                    <div class="widget-header">
+                        <div class="widget-title">
+                            <div class="widget-icon orange">📈</div>
+                            <h3>Vitals Trend</h3>
+                        </div>
+                        <span class="widget-action">Details →</span>
+                    </div>
+                    <div class="graph-container">
+                        <svg class="graph-svg" viewBox="0 0 500 250">
+                            <defs>
+                                <linearGradient id="graphGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.5" />
+                                    <stop offset="100%" style="stop-color:#667eea;stop-opacity:0" />
+                                </linearGradient>
+                            </defs>
+                            
+                            <!-- Grid -->
+                            <g class="graph-grid">
+                                <line x1="50" y1="40" x2="470" y2="40" />
+                                <line x1="50" y1="90" x2="470" y2="90" />
+                                <line x1="50" y1="140" x2="470" y2="140" />
+                                <line x1="50" y1="190" x2="470" y2="190" />
+                            </g>
+
+                            <!-- Area -->
+                            <path class="graph-area" d="M50,160 L110,140 L170,155 L230,130 L290,145 L350,135 L410,120 L470,125 L470,200 L50,200 Z" />
+                            
+                            <!-- Line -->
+                            <path class="graph-line" d="M50,160 L110,140 L170,155 L230,130 L290,145 L350,135 L410,120 L470,125" />
+
+                            <!-- Points -->
+                            <circle class="graph-point" cx="50" cy="160" r="5" />
+                            <circle class="graph-point" cx="110" cy="140" r="5" />
+                            <circle class="graph-point" cx="170" cy="155" r="5" />
+                            <circle class="graph-point" cx="230" cy="130" r="5" />
+                            <circle class="graph-point" cx="290" cy="145" r="5" />
+                            <circle class="graph-point" cx="350" cy="135" r="5" />
+                            <circle class="graph-point" cx="410" cy="120" r="5" />
+                            <circle class="graph-point" cx="470" cy="125" r="5" />
+
+                            <!-- Labels -->
+                            <g class="graph-labels">
+                                <text x="20" y="45">160</text>
+                                <text x="20" y="95">140</text>
+                                <text x="20" y="145">120</text>
+                                <text x="20" y="195">100</text>
+
+                                <text x="40" y="220">Nov 1</text>
+                                <text x="150" y="220">Nov 8</text>
+                                <text x="260" y="220">Nov 15</text>
+                                <text x="370" y="220">Nov 22</text>
+                                <text x="450" y="220">Dec 5</text>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="vitals-legend">
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background: #667eea;"></div>
+                            <span>Blood Pressure (Systolic)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chronic Conditions Widget -->
+                <div class="widget-card">
+                    <div class="widget-header">
+                        <div class="widget-title">
+                            <div class="widget-icon red">🏥</div>
+                            <h3>Chronic Conditions</h3>
+                        </div>
+                        <span class="widget-action">Update →</span>
+                    </div>
+                    <div class="condition-item">
+                        <div class="condition-icon" style="background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);">
+                            ❤️
+                        </div>
+                        <div class="condition-details">
+                            <div class="condition-name">Hypertension</div>
+                            <div class="condition-info">Diagnosed: Jan 2019 • ICD-10: I10</div>
+                            <div class="condition-tags">
+                                <span class="severity-badge severity-high">HIGH SEVERITY</span>
+                                <span class="condition-tag">Requires Monitoring</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="condition-item">
+                        <div class="condition-icon" style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);">
+                            🩸
+                        </div>
+                        <div class="condition-details">
+                            <div class="condition-name">Type 2 Diabetes Mellitus</div>
+                            <div class="condition-info">Diagnosed: Mar 2020 • ICD-10: E11</div>
+                            <div class="condition-tags">
+                                <span class="severity-badge severity-high">HIGH SEVERITY</span>
+                                <span class="condition-tag">Medication Managed</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="condition-item">
+                        <div class="condition-icon" style="background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);">
+                            💊
+                        </div>
+                        <div class="condition-details">
+                            <div class="condition-name">Hyperlipidemia</div>
+                            <div class="condition-info">Diagnosed: Jan 2019 • ICD-10: E78.5</div>
+                            <div class="condition-tags">
+                                <span class="severity-badge severity-medium">MODERATE</span>
+                                <span class="condition-tag">Controlled</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="condition-item">
+                        <div class="condition-icon" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);">
+                            🫁
+                        </div>
+                        <div class="condition-details">
+                            <div class="condition-name">Mild Asthma</div>
+                            <div class="condition-info">Diagnosed: Jun 2015 • ICD-10: J45.20</div>
+                            <div class="condition-tags">
+                                <span class="severity-badge severity-low">LOW SEVERITY</span>
+                                <span class="condition-tag">Well Controlled</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Allergies Widget -->
+                <div class="widget-card">
+                    <div class="widget-header">
+                        <div class="widget-title">
+                            <div class="widget-icon red">⚠️</div>
+                            <h3>Allergies & Alerts</h3>
+                        </div>
+                        <span class="widget-action">Add →</span>
+                    </div>
+                    <div class="condition-item" style="border: 2px solid #f44336;">
+                        <div class="condition-icon" style="background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);">
+                            🥜
+                        </div>
+                        <div class="condition-details">
+                            <div class="condition-name">Penicillin Allergy</div>
+                            <div class="condition-info">Reaction: Severe rash and hives</div>
+                            <div class="condition-tags">
+                                <span class="severity-badge severity-high">CRITICAL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="condition-item" style="border: 2px solid #ff9800;">
+                        <div class="condition-icon" style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);">
+                            🦐
+                        </div>
+                        <div class="condition-details">
+                            <div class="condition-name">Shellfish Allergy</div>
+                            <div class="condition-info">Reaction: Mild itching, stomach discomfort</div>
+                            <div class="condition-tags">
+                                <span class="severity-badge severity-medium">MODERATE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

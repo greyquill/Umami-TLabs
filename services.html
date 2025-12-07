@@ -178,10 +178,907 @@
                 <p class="lead">Maximize provider utilization and patient adherence through a heuristic scheduling
                     engine and omnichannel engagement framework.</p>
 
-                <div class="image-placeholder-box">
-                    <p><em>[Image Placeholder: A split-screen view. Left side: A doctor's dynamic calendar view with
-                            color-coded appointment types. Right side: A mobile interface showing a patient confirming a
-                            slot via WhatsApp.]</em></p>
+                <!-- Embedded Appointment Demo - Exact copy from sample_appointments.html -->
+                <style>
+                    .appt-demo-container {
+                        max-width: 100%;
+                        margin-top: 30px;
+                        margin-bottom: 0px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 40px;
+                    }
+
+                    .appt-patient-panel {
+                        transform: scale(0.85);
+                        transform-origin: top center;
+                    }
+
+                    .appt-panel {
+                        background: white;
+                        border-radius: 12px;
+                        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+                        overflow: hidden;
+                    }
+
+                    .appt-doctor-panel {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .appt-header {
+                        background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8c 100%);
+                        color: white;
+                        padding: 20px;
+                    }
+
+                    .appt-header-top {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 15px;
+                    }
+
+                    .appt-doctor-info {
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+                    }
+
+                    .appt-doctor-avatar {
+                        width: 50px;
+                        height: 50px;
+                        background: linear-gradient(135deg, #6b9bd1 0%, #4a7ba7 100%);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 22px;
+                        font-weight: bold;
+                    }
+
+                    .appt-doctor-details h2 {
+                        font-size: 20px;
+                        margin-bottom: 3px;
+                    }
+
+                    .appt-doctor-details p {
+                        font-size: 13px;
+                        opacity: 0.9;
+                    }
+
+                    .appt-header-actions {
+                        display: flex;
+                        gap: 10px;
+                    }
+
+                    .appt-btn {
+                        padding: 8px 16px;
+                        border: none;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        font-size: 13px;
+                        font-weight: 500;
+                        transition: all 0.2s;
+                    }
+
+                    .appt-btn-white {
+                        background: white;
+                        color: #1e3a5f;
+                    }
+
+                    .appt-btn-white:hover {
+                        background: #f0f0f0;
+                    }
+
+                    .appt-stats-row {
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        gap: 15px;
+                    }
+
+                    .appt-stat-card {
+                        background: rgba(255, 255, 255, 0.15);
+                        backdrop-filter: blur(10px);
+                        padding: 12px;
+                        border-radius: 8px;
+                        border: 1px solid rgba(255, 255, 255, 0.2);
+                    }
+
+                    .appt-stat-value {
+                        font-size: 24px;
+                        font-weight: 700;
+                        margin-bottom: 3px;
+                    }
+
+                    .appt-stat-label {
+                        font-size: 11px;
+                        opacity: 0.9;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                    }
+
+                    .appt-calendar-controls {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 15px 20px;
+                        border-bottom: 1px solid #e0e0e0;
+                        background: #fafafa;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                    }
+
+                    .appt-date-nav {
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+                    }
+
+                    .appt-nav-btn {
+                        width: 32px;
+                        height: 32px;
+                        border: 1px solid #d0d0d0;
+                        background: white;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 16px;
+                        transition: all 0.2s;
+                    }
+
+                    .appt-nav-btn:hover {
+                        background: #f0f0f0;
+                        border-color: #1e3a5f;
+                    }
+
+                    .appt-current-date {
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: #1e3a5f;
+                    }
+
+                    .appt-view-switcher {
+                        display: flex;
+                        gap: 5px;
+                        background: white;
+                        border: 1px solid #d0d0d0;
+                        border-radius: 6px;
+                        padding: 3px;
+                    }
+
+                    .appt-view-btn {
+                        padding: 6px 12px;
+                        border: none;
+                        background: transparent;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        font-size: 12px;
+                        color: #666;
+                        transition: all 0.2s;
+                    }
+
+                    .appt-view-btn.active {
+                        background: #1e3a5f;
+                        color: white;
+                    }
+
+                    .appt-filters {
+                        display: flex;
+                        gap: 8px;
+                    }
+
+                    .appt-filter-chip {
+                        padding: 6px 12px;
+                        background: white;
+                        border: 1px solid #d0d0d0;
+                        border-radius: 20px;
+                        font-size: 12px;
+                        cursor: pointer;
+                        transition: all 0.2s;
+                        color: #333;
+                    }
+
+                    .appt-filter-chip:hover {
+                        border-color: #1e3a5f;
+                        background: #f0f5fa;
+                    }
+
+                    .appt-calendar-grid {
+                        display: grid;
+                        grid-template-columns: 60px 1fr;
+                        padding: 20px;
+                        gap: 15px;
+                        overflow-y: auto;
+                        max-height: 600px;
+                    }
+
+                    .appt-time-column {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 40px;
+                        padding-top: 10px;
+                    }
+
+                    .appt-time-slot {
+                        font-size: 11px;
+                        color: #666;
+                        font-weight: 500;
+                    }
+
+                    .appt-appointments-column {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                    }
+
+                    .appt-appointment {
+                        border-left: 4px solid;
+                        border-radius: 8px;
+                        padding: 12px;
+                        cursor: pointer;
+                        transition: all 0.2s;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .appt-appointment:hover {
+                        transform: translateX(3px);
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+                    }
+
+                    .appt-appointment.consultation {
+                        background: #e3f2fd;
+                        border-color: #2196f3;
+                    }
+
+                    .appt-appointment.surgery {
+                        background: #fce4ec;
+                        border-color: #e91e63;
+                    }
+
+                    .appt-appointment.followup {
+                        background: #f3e5f5;
+                        border-color: #9c27b0;
+                    }
+
+                    .appt-appointment.emergency {
+                        background: #ffebee;
+                        border-color: #f44336;
+                    }
+
+                    .appt-appointment.checkup {
+                        background: #e8f5e9;
+                        border-color: #4caf50;
+                    }
+
+                    .appt-appointment-header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: start;
+                        margin-bottom: 6px;
+                    }
+
+                    .appt-appointment-time {
+                        font-size: 12px;
+                        font-weight: 600;
+                        color: #333;
+                    }
+
+                    .appt-appointment-badge {
+                        font-size: 10px;
+                        padding: 2px 8px;
+                        border-radius: 12px;
+                        background: rgba(0, 0, 0, 0.1);
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                    }
+
+                    .appt-appointment-patient {
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: #1e3a5f;
+                        margin-bottom: 4px;
+                    }
+
+                    .appt-appointment-type {
+                        font-size: 12px;
+                        color: #666;
+                        margin-bottom: 4px;
+                    }
+
+                    .appt-appointment-details {
+                        display: flex;
+                        gap: 10px;
+                        font-size: 11px;
+                        color: #888;
+                    }
+
+                    .appt-legend {
+                        display: flex;
+                        gap: 15px;
+                        padding: 15px 20px;
+                        border-top: 1px solid #e0e0e0;
+                        background: #fafafa;
+                        flex-wrap: wrap;
+                    }
+
+                    .appt-legend-item {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                        font-size: 12px;
+                        color: #333;
+                    }
+
+                    .appt-legend-color {
+                        width: 16px;
+                        height: 16px;
+                        border-radius: 3px;
+                    }
+
+                    /* Patient WhatsApp Side */
+                    .appt-patient-panel {
+                        display: flex;
+                        flex-direction: column;
+                        background: #e5ddd5;
+                    }
+
+                    .appt-phone-frame {
+                        background: #000;
+                        border-radius: 30px;
+                        padding: 12px;
+                        margin: 20px;
+                        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+                    }
+
+                    .appt-phone-screen {
+                        background: white;
+                        border-radius: 20px;
+                        overflow: hidden;
+                        height: 650px;
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .appt-whatsapp-header {
+                        background: #075e54;
+                        color: white;
+                        padding: 12px 15px;
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                    }
+
+                    .appt-back-arrow {
+                        font-size: 20px;
+                        cursor: pointer;
+                    }
+
+                    .appt-chat-avatar {
+                        width: 40px;
+                        height: 40px;
+                        background: linear-gradient(135deg, #6b9bd1 0%, #4a7ba7 100%);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 18px;
+                        font-weight: bold;
+                    }
+
+                    .appt-chat-info {
+                        flex: 1;
+                    }
+
+                    .appt-chat-name {
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+
+                    .appt-chat-status {
+                        font-size: 12px;
+                        opacity: 0.8;
+                    }
+
+                    .appt-chat-body {
+                        flex: 1;
+                        background: #e5ddd5;
+                        padding: 15px;
+                        overflow-y: auto;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                    }
+
+                    .appt-message {
+                        max-width: 75%;
+                        padding: 8px 12px;
+                        border-radius: 8px;
+                        font-size: 14px;
+                        line-height: 1.5;
+                        position: relative;
+                        color: #333;
+                    }
+
+                    .appt-message-bot {
+                        background: white;
+                        align-self: flex-start;
+                        border-radius: 0 8px 8px 8px;
+                        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+                        color: #333;
+                    }
+
+                    .appt-message-user {
+                        background: #dcf8c6;
+                        align-self: flex-end;
+                        border-radius: 8px 0 8px 8px;
+                        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+                        color: #333;
+                    }
+
+                    .appt-message-time {
+                        font-size: 11px;
+                        color: #667781;
+                        margin-top: 4px;
+                        text-align: right;
+                    }
+
+                    .appt-appointment-card {
+                        background: white;
+                        border: 2px solid #075e54;
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin: 5px 0;
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .appt-appointment-card-header {
+                        font-weight: 600;
+                        color: #075e54;
+                        margin-bottom: 10px;
+                        font-size: 15px;
+                    }
+
+                    .appt-appointment-info {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+                    }
+
+                    .appt-info-row {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        font-size: 13px;
+                        color: #333;
+                    }
+
+                    .appt-info-icon {
+                        width: 18px;
+                        text-align: center;
+                    }
+
+                    .appt-confirm-buttons {
+                        display: flex;
+                        gap: 8px;
+                        margin-top: 12px;
+                    }
+
+                    .appt-confirm-btn {
+                        flex: 1;
+                        padding: 10px;
+                        border: none;
+                        border-radius: 8px;
+                        font-size: 13px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        transition: all 0.2s;
+                    }
+
+                    .appt-btn-confirm {
+                        background: #075e54;
+                        color: white;
+                    }
+
+                    .appt-btn-confirm:hover {
+                        background: #064e47;
+                    }
+
+                    .appt-btn-reschedule {
+                        background: #f0f0f0;
+                        color: #333;
+                    }
+
+                    .appt-btn-reschedule:hover {
+                        background: #e0e0e0;
+                    }
+
+                    .appt-typing-indicator {
+                        background: white;
+                        align-self: flex-start;
+                        border-radius: 0 8px 8px 8px;
+                        padding: 12px 15px;
+                        display: flex;
+                        gap: 4px;
+                        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .appt-typing-dot {
+                        width: 8px;
+                        height: 8px;
+                        background: #667781;
+                        border-radius: 50%;
+                        animation: appt-typing 1.4s infinite;
+                    }
+
+                    .appt-typing-dot:nth-child(2) {
+                        animation-delay: 0.2s;
+                    }
+
+                    .appt-typing-dot:nth-child(3) {
+                        animation-delay: 0.4s;
+                    }
+
+                    @keyframes appt-typing {
+
+                        0%,
+                        60%,
+                        100% {
+                            transform: translateY(0);
+                        }
+
+                        30% {
+                            transform: translateY(-10px);
+                        }
+                    }
+
+                    .appt-chat-input {
+                        background: white;
+                        padding: 10px;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        border-top: 1px solid #e0e0e0;
+                    }
+
+                    .appt-input-field {
+                        flex: 1;
+                        padding: 10px 15px;
+                        border: 1px solid #d0d0d0;
+                        border-radius: 20px;
+                        font-size: 14px;
+                        outline: none;
+                    }
+
+                    .appt-send-btn {
+                        width: 40px;
+                        height: 40px;
+                        background: #075e54;
+                        color: white;
+                        border: none;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        font-size: 18px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    @media (max-width: 1200px) {
+                        .appt-demo-container {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+                </style>
+
+                <div class="appt-demo-container">
+                    <!-- Doctor Calendar Panel -->
+                    <div class="appt-panel appt-doctor-panel">
+                        <div class="appt-header">
+                            <div class="appt-header-top">
+                                <div class="appt-doctor-info">
+                                    <div class="appt-doctor-avatar">DK</div>
+                                    <div class="appt-doctor-details">
+                                        <h2>Dr. Kavita Sharma</h2>
+                                        <p>Cardiology • Blackbeak Hospitals</p>
+                                    </div>
+                                </div>
+                                <div class="appt-header-actions">
+                                    <button class="appt-btn appt-btn-white">⚙️ Settings</button>
+                                    <button class="appt-btn appt-btn-white">+ New Appointment</button>
+                                </div>
+                            </div>
+                            <div class="appt-stats-row">
+                                <div class="appt-stat-card">
+                                    <div class="appt-stat-value">24</div>
+                                    <div class="appt-stat-label">Today's Appointments</div>
+                                </div>
+                                <div class="appt-stat-card">
+                                    <div class="appt-stat-value">6</div>
+                                    <div class="appt-stat-label">Pending Confirmations</div>
+                                </div>
+                                <div class="appt-stat-card">
+                                    <div class="appt-stat-value">142</div>
+                                    <div class="appt-stat-label">This Week</div>
+                                </div>
+                                <div class="appt-stat-card">
+                                    <div class="appt-stat-value">98%</div>
+                                    <div class="appt-stat-label">Attendance Rate</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="appt-calendar-controls">
+                            <div class="appt-date-nav">
+                                <button class="appt-nav-btn">◄</button>
+                                <span class="appt-current-date">Monday, December 9, 2024</span>
+                                <button class="appt-nav-btn">►</button>
+                                <button class="appt-btn appt-btn-white" style="font-size: 12px;">📅 Today</button>
+                            </div>
+                            <div class="appt-view-switcher">
+                                <button class="appt-view-btn active">Day</button>
+                                <button class="appt-view-btn">Week</button>
+                                <button class="appt-view-btn">Month</button>
+                            </div>
+                            <div class="appt-filters">
+                                <div class="appt-filter-chip">🔍 All Types</div>
+                                <div class="appt-filter-chip">📍 Main Clinic</div>
+                                <div class="appt-filter-chip">⏰ Duration</div>
+                            </div>
+                        </div>
+
+                        <div class="appt-calendar-grid">
+                            <div class="appt-time-column">
+                                <div class="appt-time-slot">09:00 AM</div>
+                                <div class="appt-time-slot">10:00 AM</div>
+                                <div class="appt-time-slot">11:00 AM</div>
+                                <div class="appt-time-slot">12:00 PM</div>
+                                <div class="appt-time-slot">01:00 PM</div>
+                                <div class="appt-time-slot">02:00 PM</div>
+                                <div class="appt-time-slot">03:00 PM</div>
+                                <div class="appt-time-slot">04:00 PM</div>
+                                <div class="appt-time-slot">05:00 PM</div>
+                            </div>
+
+                            <div class="appt-appointments-column">
+                                <div class="appt-appointment consultation">
+                                    <div class="appt-appointment-header">
+                                        <span class="appt-appointment-time">09:00 AM - 09:30 AM</span>
+                                        <span class="appt-appointment-badge">Confirmed</span>
+                                    </div>
+                                    <div class="appt-appointment-patient">Rajesh Kumar</div>
+                                    <div class="appt-appointment-type">Initial Consultation</div>
+                                    <div class="appt-appointment-details">
+                                        <span>📞 +91 98765 43210</span>
+                                        <span>📋 New Patient</span>
+                                    </div>
+                                </div>
+
+                                <div class="appt-appointment checkup">
+                                    <div class="appt-appointment-header">
+                                        <span class="appt-appointment-time">09:45 AM - 10:15 AM</span>
+                                        <span class="appt-appointment-badge">Confirmed</span>
+                                    </div>
+                                    <div class="appt-appointment-patient">Priya Mehta</div>
+                                    <div class="appt-appointment-type">Routine Checkup</div>
+                                    <div class="appt-appointment-details">
+                                        <span>📞 +91 98123 45678</span>
+                                        <span>🔄 Follow-up</span>
+                                    </div>
+                                </div>
+
+                                <div class="appt-appointment consultation"
+                                    style="border: 3px solid #ff9800; background: #fff3e0;">
+                                    <div class="appt-appointment-header">
+                                        <span class="appt-appointment-time">10:30 AM - 11:00 AM</span>
+                                        <span class="appt-appointment-badge"
+                                            style="background: #ff9800; color: white;">Pending</span>
+                                    </div>
+                                    <div class="appt-appointment-patient">Amit Patel 🔔</div>
+                                    <div class="appt-appointment-type">Cardiac Consultation</div>
+                                    <div class="appt-appointment-details">
+                                        <span>📱 WhatsApp Booking</span>
+                                        <span>⏳ Awaiting Confirmation</span>
+                                    </div>
+                                </div>
+
+                                <div class="appt-appointment surgery">
+                                    <div class="appt-appointment-header">
+                                        <span class="appt-appointment-time">11:30 AM - 12:30 PM</span>
+                                        <span class="appt-appointment-badge">Confirmed</span>
+                                    </div>
+                                    <div class="appt-appointment-patient">Sunita Reddy</div>
+                                    <div class="appt-appointment-type">Pre-Surgery Consultation</div>
+                                    <div class="appt-appointment-details">
+                                        <span>🏥 OT Prep Required</span>
+                                        <span>📄 Reports Available</span>
+                                    </div>
+                                </div>
+
+                                <div class="appt-appointment followup">
+                                    <div class="appt-appointment-header">
+                                        <span class="appt-appointment-time">02:00 PM - 02:30 PM</span>
+                                        <span class="appt-appointment-badge">Confirmed</span>
+                                    </div>
+                                    <div class="appt-appointment-patient">Mohammad Ali</div>
+                                    <div class="appt-appointment-type">Post-Surgery Follow-up</div>
+                                    <div class="appt-appointment-details">
+                                        <span>🔄 Week 2 Check</span>
+                                        <span>✅ Recovery Good</span>
+                                    </div>
+                                </div>
+
+                                <div class="appt-appointment emergency">
+                                    <div class="appt-appointment-header">
+                                        <span class="appt-appointment-time">03:00 PM - 03:45 PM</span>
+                                        <span class="appt-appointment-badge"
+                                            style="background: #f44336; color: white;">Urgent</span>
+                                    </div>
+                                    <div class="appt-appointment-patient">Emergency Slot</div>
+                                    <div class="appt-appointment-type">Reserved for Walk-ins</div>
+                                    <div class="appt-appointment-details">
+                                        <span>🚨 Available</span>
+                                    </div>
+                                </div>
+
+                                <div class="appt-appointment consultation">
+                                    <div class="appt-appointment-header">
+                                        <span class="appt-appointment-time">04:00 PM - 04:30 PM</span>
+                                        <span class="appt-appointment-badge">Confirmed</span>
+                                    </div>
+                                    <div class="appt-appointment-patient">Deepak Singh</div>
+                                    <div class="appt-appointment-type">ECG Review</div>
+                                    <div class="appt-appointment-details">
+                                        <span>📊 Test Results Ready</span>
+                                        <span>🔄 Monthly Review</span>
+                                    </div>
+                                </div>
+
+                                <div class="appt-appointment checkup">
+                                    <div class="appt-appointment-header">
+                                        <span class="appt-appointment-time">04:45 PM - 05:15 PM</span>
+                                        <span class="appt-appointment-badge">Confirmed</span>
+                                    </div>
+                                    <div class="appt-appointment-patient">Lakshmi Iyer</div>
+                                    <div class="appt-appointment-type">Blood Pressure Monitoring</div>
+                                    <div class="appt-appointment-details">
+                                        <span>📈 Trend Analysis</span>
+                                        <span>💊 Medication Review</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="appt-legend">
+                            <div class="appt-legend-item">
+                                <div class="appt-legend-color" style="background: #2196f3;"></div>
+                                <span>Consultation</span>
+                            </div>
+                            <div class="appt-legend-item">
+                                <div class="appt-legend-color" style="background: #4caf50;"></div>
+                                <span>Checkup</span>
+                            </div>
+                            <div class="appt-legend-item">
+                                <div class="appt-legend-color" style="background: #e91e63;"></div>
+                                <span>Surgery</span>
+                            </div>
+                            <div class="appt-legend-item">
+                                <div class="appt-legend-color" style="background: #9c27b0;"></div>
+                                <span>Follow-up</span>
+                            </div>
+                            <div class="appt-legend-item">
+                                <div class="appt-legend-color" style="background: #f44336;"></div>
+                                <span>Emergency</span>
+                            </div>
+                            <div class="appt-legend-item">
+                                <div class="appt-legend-color" style="background: #ff9800;"></div>
+                                <span>Pending Confirmation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Descriptive Section Between Panels -->
+                    <div style="text-align: center; padding: 20px 0;">
+                        <h3 style="color: #1e3a5f; margin-bottom: 15px; font-size: 24px;">Seamless Patient Experience
+                        </h3>
+                        <p style="color: #64748b; max-width: 800px; margin: 0 auto; font-size: 16px; line-height: 1.6;">
+                            While doctors manage their schedules through our intuitive calendar interface, patients can
+                            book appointments
+                            instantly via WhatsApp. The system automatically syncs bookings in real-time, sending
+                            confirmation notifications
+                            to both parties and reducing no-shows by 70%.
+                        </p>
+                    </div>
+
+                    <!-- Patient WhatsApp Panel -->
+                    <div class="appt-panel appt-patient-panel">
+                        <div class="appt-phone-frame">
+                            <div class="appt-phone-screen">
+                                <div class="appt-whatsapp-header">
+                                    <span class="appt-back-arrow">←</span>
+                                    <div class="appt-chat-avatar">BH</div>
+                                    <div class="appt-chat-info">
+                                        <div class="appt-chat-name">Blackbeak Hospitals</div>
+                                        <div class="appt-chat-status">Online</div>
+                                    </div>
+                                    <span style="font-size: 20px;">⋮</span>
+                                </div>
+
+                                <div class="appt-chat-body">
+                                    <div class="appt-message appt-message-bot">
+                                        Hello Amit! 👋 I'm your healthcare assistant. How can I help you today?
+                                        <div class="appt-message-time">10:15 AM</div>
+                                    </div>
+
+                                    <div class="appt-message appt-message-user">
+                                        Hi, I need to book an appointment with Dr. Kavita Sharma
+                                        <div class="appt-message-time">10:16 AM</div>
+                                    </div>
+
+                                    <div class="appt-message appt-message-bot">
+                                        Great! Dr. Kavita Sharma is our cardiology specialist. Let me check her
+                                        availability for
+                                        you. 🔍
+                                        <div class="appt-message-time">10:16 AM</div>
+                                    </div>
+
+                                    <div class="appt-message appt-message-bot">
+                                        <div class="appt-appointment-card">
+                                            <div class="appt-appointment-card-header">📅 Available Slot Found</div>
+                                            <div class="appt-appointment-info">
+                                                <div class="appt-info-row">
+                                                    <span class="appt-info-icon">👨‍⚕️</span>
+                                                    <span>Dr. Kavita Sharma</span>
+                                                </div>
+                                                <div class="appt-info-row">
+                                                    <span class="appt-info-icon">📅</span>
+                                                    <span>Monday, December 9, 2024</span>
+                                                </div>
+                                                <div class="appt-info-row">
+                                                    <span class="appt-info-icon">⏰</span>
+                                                    <span>10:30 AM - 11:00 AM</span>
+                                                </div>
+                                                <div class="appt-info-row">
+                                                    <span class="appt-info-icon">🏥</span>
+                                                    <span>Blackbeak Main Clinic, Room 204</span>
+                                                </div>
+                                                <div class="appt-info-row">
+                                                    <span class="appt-info-icon">💰</span>
+                                                    <span>Consultation Fee: ₹800</span>
+                                                </div>
+                                            </div>
+                                            <div class="appt-confirm-buttons">
+                                                <button class="appt-confirm-btn appt-btn-confirm">✓ Confirm
+                                                    Booking</button>
+                                                <button class="appt-confirm-btn appt-btn-reschedule">🔄 Other
+                                                    Slots</button>
+                                            </div>
+                                        </div>
+                                        <div class="appt-message-time">10:17 AM</div>
+                                    </div>
+
+                                    <div class="appt-message appt-message-user">
+                                        Perfect! Confirming this slot
+                                        <div class="appt-message-time">10:18 AM</div>
+                                    </div>
+
+                                    <div class="appt-typing-indicator">
+                                        <div class="appt-typing-dot"></div>
+                                        <div class="appt-typing-dot"></div>
+                                        <div class="appt-typing-dot"></div>
+                                    </div>
+                                </div>
+
+                                <div class="appt-chat-input">
+                                    <input type="text" class="appt-input-field" placeholder="Type a message">
+                                    <button class="appt-send-btn">➤</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <h3>Technical Overview</h3>
@@ -230,9 +1127,763 @@
                 <p class="lead">Augment clinical expertise with an always-on neural network designed to alleviate
                     documentation disputes and enhance diagnostic precision.</p>
 
-                <div class="image-placeholder-box">
-                    <p><em>[Image Placeholder: An abstract visualization of a "Voice-to-Text" waveform transforming into
-                            a structured SOAP note on a tablet screen, with key medical terms highlighted.]</em></p>
+                <!-- Embedded Voice-to-SOAP Demo -->
+                <style>
+                    .soap-demo-container {
+                        width: 90%;
+                        margin: 20px auto 0 auto;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 40px;
+                    }
+
+                    /* Media query removed to enforce vertical stack layout */
+
+                    /* Voice Waveform Section */
+                    .soap-waveform-section {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 30px;
+                        /* Ensure it takes full width in its grid column */
+                        width: 100%;
+                    }
+
+                    .soap-voice-control {
+                        background: rgba(255, 255, 255, 0.95);
+                        backdrop-filter: blur(10px);
+                        border-radius: 20px;
+                        padding: 30px;
+                        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+                        /* Reduced shadow intensity */
+                        border: 1px solid #e0e0e0;
+                        /* Added border for definition on white bg */
+                    }
+
+                    .soap-control-header {
+                        text-align: center;
+                        margin-bottom: 25px;
+                    }
+
+                    .soap-control-header h2 {
+                        color: #1e3a5f;
+                        font-size: 24px;
+                        font-weight: 600;
+                        margin-bottom: 8px;
+                    }
+
+                    .soap-status-badge {
+                        display: inline-block;
+                        padding: 6px 16px;
+                        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+                        color: white;
+                        border-radius: 20px;
+                        font-size: 13px;
+                        font-weight: 600;
+                        animation: soap-pulse 2s infinite;
+                    }
+
+                    @keyframes soap-pulse {
+
+                        0%,
+                        100% {
+                            opacity: 1;
+                        }
+
+                        50% {
+                            opacity: 0.7;
+                        }
+                    }
+
+                    .soap-mic-button {
+                        width: 120px;
+                        height: 120px;
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                        border: none;
+                        border-radius: 50%;
+                        margin: 20px auto;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+                        transition: all 0.3s;
+                        position: relative;
+                    }
+
+                    .soap-mic-button:hover {
+                        transform: scale(1.05);
+                        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+                    }
+
+                    .soap-mic-button::before {
+                        content: '🎤';
+                        font-size: 50px;
+                    }
+
+                    .soap-mic-ripple {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        /* Border removed as requested */
+                        /* border: 3px solid #667eea; */
+                        background: rgba(102, 126, 234, 0.2);
+                        /* Added slight background instead for effect */
+                        border-radius: 50%;
+                        animation: soap-ripple 1.5s infinite;
+                    }
+
+                    @keyframes soap-ripple {
+                        0% {
+                            transform: scale(1);
+                            opacity: 1;
+                        }
+
+                        100% {
+                            transform: scale(1.5);
+                            opacity: 0;
+                        }
+                    }
+
+                    .soap-waveform-canvas {
+                        background: rgba(102, 126, 234, 0.1);
+                        border-radius: 15px;
+                        padding: 30px 20px;
+                        height: 200px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 4px;
+                        position: relative;
+                        overflow: hidden;
+                    }
+
+                    .soap-wave-bar {
+                        width: 6px;
+                        background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+                        border-radius: 3px;
+                        animation: soap-wave 1s ease-in-out infinite;
+                    }
+
+                    .soap-wave-bar:nth-child(1) {
+                        animation-delay: 0s;
+                    }
+
+                    .soap-wave-bar:nth-child(2) {
+                        animation-delay: 0.1s;
+                    }
+
+                    .soap-wave-bar:nth-child(3) {
+                        animation-delay: 0.2s;
+                    }
+
+                    .soap-wave-bar:nth-child(4) {
+                        animation-delay: 0.3s;
+                    }
+
+                    .soap-wave-bar:nth-child(5) {
+                        animation-delay: 0.4s;
+                    }
+
+                    .soap-wave-bar:nth-child(6) {
+                        animation-delay: 0.5s;
+                    }
+
+                    .soap-wave-bar:nth-child(7) {
+                        animation-delay: 0.6s;
+                    }
+
+                    .soap-wave-bar:nth-child(8) {
+                        animation-delay: 0.7s;
+                    }
+
+                    .soap-wave-bar:nth-child(9) {
+                        animation-delay: 0.8s;
+                    }
+
+                    .soap-wave-bar:nth-child(10) {
+                        animation-delay: 0.9s;
+                    }
+
+                    .soap-wave-bar:nth-child(11) {
+                        animation-delay: 1s;
+                    }
+
+                    .soap-wave-bar:nth-child(12) {
+                        animation-delay: 1.1s;
+                    }
+
+                    .soap-wave-bar:nth-child(13) {
+                        animation-delay: 1.2s;
+                    }
+
+                    .soap-wave-bar:nth-child(14) {
+                        animation-delay: 1.3s;
+                    }
+
+                    .soap-wave-bar:nth-child(15) {
+                        animation-delay: 1.4s;
+                    }
+
+                    @keyframes soap-wave {
+
+                        0%,
+                        100% {
+                            height: 30px;
+                        }
+
+                        50% {
+                            height: 120px;
+                        }
+                    }
+
+                    .soap-transcription-text {
+                        background: white;
+                        border-radius: 15px;
+                        padding: 20px;
+                        min-height: 150px;
+                        font-size: 15px;
+                        line-height: 1.7;
+                        color: #333;
+                        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+                        /* Reduced shadow */
+                        border: 1px solid #eee;
+                    }
+
+                    .soap-transcription-text .soap-typing {
+                        display: inline-block;
+                        animation: soap-typing 0.8s steps(40) infinite;
+                    }
+
+                    .soap-transform-arrow {
+                        text-align: center;
+                        font-size: 60px;
+                        color: #667eea;
+                        /* Changed from white to visible color */
+                        animation: soap-float 2s ease-in-out infinite;
+                        /* Rotate for mobile by default */
+                        transform: rotate(90deg);
+                        margin: 20px 0;
+                    }
+
+                    @media (min-width: 900px) {
+                        .soap-transform-arrow {
+                            transform: rotate(0deg);
+                            margin: 0;
+                            margin-top: 250px;
+                            /* Align roughly with center */
+                        }
+                    }
+
+                    @keyframes soap-float {
+
+                        0%,
+                        100% {
+                            transform: translateX(0) rotate(0deg);
+                        }
+
+                        50% {
+                            transform: translateX(20px) rotate(0deg);
+                        }
+                    }
+
+                    /* Adjust float animation for mobile rotation */
+                    @media (max-width: 899px) {
+                        @keyframes soap-float {
+
+                            0%,
+                            100% {
+                                transform: translateY(0) rotate(90deg);
+                            }
+
+                            50% {
+                                transform: translateY(10px) rotate(90deg);
+                            }
+                        }
+                    }
+
+
+                    /* Tablet Screen Section */
+                    .soap-tablet-section {
+                        perspective: 1000px;
+                        width: 100%;
+                    }
+
+                    .soap-tablet-frame {
+                        background: #1a1a1a;
+                        border-radius: 30px;
+                        padding: 20px;
+                        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+                        /* Reduced shadow */
+                        /* Transform removed by request */
+                    }
+
+                    /* Hover effect removed */
+
+                    @media (max-width: 1200px) {
+                        .soap-tablet-frame {
+                            transform: none;
+                        }
+                    }
+
+                    .soap-tablet-screen {
+                        background: white;
+                        border-radius: 15px;
+                        overflow: hidden;
+                        height: 800px;
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .soap-tablet-header {
+                        background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8c 100%);
+                        color: white;
+                        padding: 20px 25px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+
+                    .soap-header-left {
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+                    }
+
+                    .soap-patient-avatar {
+                        width: 45px;
+                        height: 45px;
+                        background: linear-gradient(135deg, #6b9bd1 0%, #4a7ba7 100%);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+
+                    .soap-patient-info h3 {
+                        font-size: 18px;
+                        margin-bottom: 3px;
+                        color: white;
+                        /* Ensure visible */
+                    }
+
+                    .soap-patient-info p {
+                        font-size: 13px;
+                        opacity: 0.9;
+                        color: rgba(255, 255, 255, 0.9);
+                    }
+
+                    .soap-header-actions {
+                        display: flex;
+                        gap: 10px;
+                    }
+
+                    .soap-icon-btn {
+                        width: 36px;
+                        height: 36px;
+                        background: rgba(255, 255, 255, 0.2);
+                        border: none;
+                        border-radius: 8px;
+                        color: white;
+                        cursor: pointer;
+                        font-size: 16px;
+                        transition: all 0.2s;
+                    }
+
+                    .soap-icon-btn:hover {
+                        background: rgba(255, 255, 255, 0.3);
+                    }
+
+                    .soap-content-area {
+                        flex: 1;
+                        overflow-y: auto;
+                        padding: 25px;
+                        text-align: left;
+                        /* Reset alignment */
+                    }
+
+                    .soap-note-section {
+                        margin-bottom: 25px;
+                        animation: soap-slideIn 0.5s ease-out;
+                    }
+
+                    @keyframes soap-slideIn {
+                        from {
+                            opacity: 0;
+                            transform: translateY(20px);
+                        }
+
+                        to {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+
+                    .soap-note-section:nth-child(1) {
+                        animation-delay: 0.2s;
+                    }
+
+                    .soap-note-section:nth-child(2) {
+                        animation-delay: 0.4s;
+                    }
+
+                    .soap-note-section:nth-child(3) {
+                        animation-delay: 0.6s;
+                    }
+
+                    .soap-note-section:nth-child(4) {
+                        animation-delay: 0.8s;
+                    }
+
+                    .soap-section-header {
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        margin-bottom: 15px;
+                        padding-bottom: 10px;
+                        border-bottom: 2px solid #e0e0e0;
+                    }
+
+                    .soap-section-icon {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 10px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 20px;
+                    }
+
+                    .soap-section-icon.subjective {
+                        background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+                    }
+
+                    .soap-section-icon.objective {
+                        background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+                    }
+
+                    .soap-section-icon.assessment {
+                        background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+                    }
+
+                    .soap-section-icon.plan {
+                        background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+                    }
+
+                    .soap-section-title {
+                        flex: 1;
+                    }
+
+                    .soap-section-title h3 {
+                        color: #1e3a5f;
+                        font-size: 18px;
+                        font-weight: 600;
+                        margin-bottom: 3px;
+                    }
+
+                    .soap-section-title p {
+                        color: #666;
+                        font-size: 12px;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                    }
+
+                    .soap-section-content {
+                        padding-left: 52px;
+                        font-size: 15px;
+                        line-height: 1.8;
+                        color: #333;
+                    }
+
+                    .soap-section-content p {
+                        margin-bottom: 12px;
+                    }
+
+                    .soap-highlighted-term {
+                        background: linear-gradient(120deg, #ffd54f 0%, #ffeb3b 100%);
+                        padding: 2px 6px;
+                        border-radius: 4px;
+                        font-weight: 600;
+                        color: #1e3a5f;
+                        cursor: pointer;
+                        transition: all 0.2s;
+                        position: relative;
+                    }
+
+                    .soap-highlighted-term:hover {
+                        background: linear-gradient(120deg, #ffc107 0%, #ffb300 100%);
+                        transform: translateY(-1px);
+                    }
+
+                    .soap-vital-signs {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 12px;
+                        margin-top: 10px;
+                    }
+
+                    .soap-vital-card {
+                        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+                        border: 1px solid #e0e0e0;
+                        border-radius: 10px;
+                        padding: 12px;
+                    }
+
+                    .soap-vital-label {
+                        font-size: 11px;
+                        color: #666;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                        margin-bottom: 5px;
+                    }
+
+                    .soap-vital-value {
+                        font-size: 20px;
+                        font-weight: 700;
+                        color: #1e3a5f;
+                    }
+
+                    .soap-medication-list {
+                        list-style: none;
+                        margin-top: 10px;
+                    }
+
+                    .soap-medication-list li {
+                        padding: 10px;
+                        background: #f8f9fa;
+                        border-left: 4px solid #4caf50;
+                        border-radius: 6px;
+                        margin-bottom: 8px;
+                        font-size: 14px;
+                    }
+
+                    .soap-medication-list li strong {
+                        color: #1e3a5f;
+                    }
+
+                    .soap-ai-badge {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 6px;
+                        padding: 4px 10px;
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                        color: white;
+                        border-radius: 12px;
+                        font-size: 11px;
+                        font-weight: 600;
+                    }
+                </style>
+
+                <div class="soap-demo-container">
+                    <!-- Voice Waveform Section -->
+                    <div class="soap-waveform-section">
+                        <div class="soap-voice-control">
+                            <div class="soap-control-header">
+                                <h2>Voice Recording Active</h2>
+                                <span class="soap-status-badge">● RECORDING</span>
+                            </div>
+
+                            <div class="soap-mic-button">
+                                <div class="soap-mic-ripple"></div>
+                            </div>
+
+                            <div class="soap-waveform-canvas">
+                                <div class="soap-wave-bar"></div>
+                                <div class="soap-wave-bar"></div>
+                                <div class="soap-wave-bar"></div>
+                                <div class="soap-wave-bar"></div>
+                                <div class="soap-wave-bar"></div>
+                                <div class="soap-wave-bar"></div>
+                                <div class="soap-wave-bar"></div>
+                                <div class="soap-wave-bar"></div>
+                                <div class="soap-wave-bar"></div>
+                                <div class="soap-wave-bar"></div>
+                                <div class="soap-wave-bar"></div>
+                                <div class="soap-wave-bar"></div>
+                                <div class="soap-wave-bar"></div>
+                                <div class="soap-wave-bar"></div>
+                                <div class="soap-wave-bar"></div>
+                            </div>
+
+                            <div class="soap-transcription-text">
+                                <p><strong>Live Transcription:</strong></p>
+                                <p>Patient presents with chest pain radiating to the left arm. Blood pressure elevated
+                                    at 145 over 95. Heart rate 88 beats per minute. ECG shows ST elevation<span
+                                        class="soap-typing">...</span></p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Descriptive Transformation Visual -->
+                    <div style="text-align: center; margin: 20px 0;">
+                        <div class="soap-transform-arrow"
+                            style="transform: rotate(90deg); margin: 0 auto 20px auto; color: #667eea; font-size: 40px;">
+                            ↓</div>
+                        <h3 style="color: #1e3a5f; margin-bottom: 10px; font-size: 20px;">Instant Clinical Structuring
+                        </h3>
+                        <p style="color: #64748b; font-size: 15px; max-width: 600px; margin: 0 auto;">
+                            The raw audio is processed by our medical LLM which identifies key clinical entities
+                            (Symptoms, Vitals, Diagnoses) and structures them into a standard SOAP format instantly.
+                        </p>
+                    </div>
+
+                    <!-- Tablet SOAP Note Section -->
+                    <div class="soap-tablet-section">
+                        <div class="soap-tablet-frame">
+                            <div class="soap-tablet-screen">
+                                <div class="soap-tablet-header">
+                                    <div class="soap-header-left">
+                                        <div class="soap-patient-avatar">RS</div>
+                                        <div class="soap-patient-info">
+                                            <h3>Rajesh Sharma</h3>
+                                            <p>Male, 58 years • MRN: 2024-0892</p>
+                                        </div>
+                                    </div>
+                                    <div class="soap-header-actions">
+                                        <button class="soap-icon-btn">💾</button>
+                                        <button class="soap-icon-btn">📤</button>
+                                        <button class="soap-icon-btn">⋮</button>
+                                    </div>
+                                </div>
+
+                                <div class="soap-content-area">
+                                    <!-- Subjective Section -->
+                                    <div class="soap-note-section">
+                                        <div class="soap-section-header">
+                                            <div class="soap-section-icon subjective">💬</div>
+                                            <div class="soap-section-title">
+                                                <h3>Subjective</h3>
+                                                <p>Patient History</p>
+                                            </div>
+                                            <span class="soap-ai-badge">✨ AI Generated</span>
+                                        </div>
+                                        <div class="soap-section-content">
+                                            <p>Patient presents with <span class="soap-highlighted-term">chest
+                                                    pain</span> that began approximately 2 hours ago. Describes the pain
+                                                as a squeezing sensation <span class="soap-highlighted-term">radiating
+                                                    to the left arm</span> and jaw. Reports associated <span
+                                                    class="soap-highlighted-term">shortness of breath</span> and
+                                                diaphoresis. No relief with rest. Patient has a history of <span
+                                                    class="soap-highlighted-term">hypertension</span> and <span
+                                                    class="soap-highlighted-term">type 2 diabetes mellitus</span>.</p>
+                                            <p>Denies nausea, vomiting, or loss of consciousness. Family history
+                                                significant for <span class="soap-highlighted-term">coronary artery
+                                                    disease</span> (father had MI at age 62).</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Objective Section -->
+                                    <div class="soap-note-section">
+                                        <div class="soap-section-header">
+                                            <div class="soap-section-icon objective">📊</div>
+                                            <div class="soap-section-title">
+                                                <h3>Objective</h3>
+                                                <p>Clinical Findings</p>
+                                            </div>
+                                            <span class="soap-ai-badge">✨ AI Generated</span>
+                                        </div>
+                                        <div class="soap-section-content">
+                                            <p><strong>Vital Signs:</strong></p>
+                                            <div class="soap-vital-signs">
+                                                <div class="soap-vital-card">
+                                                    <div class="soap-vital-label">Blood Pressure</div>
+                                                    <div class="soap-vital-value" style="color: #f44336;">145/95</div>
+                                                </div>
+                                                <div class="soap-vital-card">
+                                                    <div class="soap-vital-label">Heart Rate</div>
+                                                    <div class="soap-vital-value">88 bpm</div>
+                                                </div>
+                                                <div class="soap-vital-card">
+                                                    <div class="soap-vital-label">O₂ Saturation</div>
+                                                    <div class="soap-vital-value">96%</div>
+                                                </div>
+                                                <div class="soap-vital-card">
+                                                    <div class="soap-vital-label">Temperature</div>
+                                                    <div class="soap-vital-value">98.6°F</div>
+                                                </div>
+                                            </div>
+                                            <p style="margin-top: 15px;"><strong>Physical Examination:</strong></p>
+                                            <p>Patient appears anxious and diaphoretic. Cardiovascular: Regular rhythm,
+                                                S1 and S2 normal, no murmurs. <span class="soap-highlighted-term">ECG
+                                                    shows ST elevation</span> in leads II, III, and aVF consistent with
+                                                <span class="soap-highlighted-term">inferior STEMI</span>. Lungs clear
+                                                to auscultation bilaterally.
+                                            </p>
+                                            <p><strong>Laboratory:</strong> <span class="soap-highlighted-term">Troponin
+                                                    I elevated</span> at 2.4 ng/mL (normal <0.04). Blood glucose 168
+                                                    mg/dL.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Assessment Section -->
+                                    <div class="soap-note-section">
+                                        <div class="soap-section-header">
+                                            <div class="soap-section-icon assessment">🎯</div>
+                                            <div class="soap-section-title">
+                                                <h3>Assessment</h3>
+                                                <p>Diagnosis</p>
+                                            </div>
+                                            <span class="soap-ai-badge">✨ AI Generated</span>
+                                        </div>
+                                        <div class="soap-section-content">
+                                            <p><strong>Primary Diagnosis:</strong></p>
+                                            <p><span class="soap-highlighted-term">Acute ST-Elevation Myocardial
+                                                    Infarction (STEMI)</span> - inferior wall</p>
+                                            <p><strong>Secondary Diagnoses:</strong></p>
+                                            <p>• <span class="soap-highlighted-term">Hypertension</span>,
+                                                uncontrolled<br>
+                                                • <span class="soap-highlighted-term">Type 2 Diabetes Mellitus</span>,
+                                                inadequate glycemic control<br>
+                                                • <span class="soap-highlighted-term">Hyperlipidemia</span> (based on
+                                                history)</p>
+                                            <p><strong>Risk Assessment:</strong> High risk for complications given
+                                                diabetes, hypertension, and age. Immediate intervention required.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Plan Section -->
+                                    <div class="soap-note-section">
+                                        <div class="soap-section-header">
+                                            <div class="soap-section-icon plan">📋</div>
+                                            <div class="soap-section-title">
+                                                <h3>Plan</h3>
+                                                <p>Treatment Protocol</p>
+                                            </div>
+                                            <span class="soap-ai-badge">✨ AI Generated</span>
+                                        </div>
+                                        <div class="soap-section-content">
+                                            <p><strong>Immediate Management:</strong></p>
+                                            <p>• <span class="soap-highlighted-term">Emergency cardiac
+                                                    catheterization</span> with possible PCI<br>
+                                                • Transfer to <span class="soap-highlighted-term">CCU</span> for
+                                                continuous monitoring<br>
+                                                • Cardiology consult - Dr. Kavita Sharma paged</p>
+
+                                            <p><strong>Medications Administered:</strong></p>
+                                            <ul class="soap-medication-list">
+                                                <li><strong>Aspirin</strong> 325mg PO (chewed)</li>
+                                                <li><strong>Clopidogrel</strong> 600mg loading dose</li>
+                                                <li><strong>Heparin</strong> IV bolus 5000 units, then drip</li>
+                                                <li><strong>Nitroglycerin</strong> 0.4mg sublingual PRN chest pain</li>
+                                                <li><strong>Morphine</strong> 2-4mg IV for pain management</li>
+                                            </ul>
+
+                                            <p><strong>Follow-up:</strong></p>
+                                            <p>• Serial <span class="soap-highlighted-term">troponin levels</span>
+                                                q4h<br>
+                                                • Continuous <span class="soap-highlighted-term">cardiac
+                                                    monitoring</span><br>
+                                                • <span class="soap-highlighted-term">Echocardiogram</span>
+                                                post-procedure<br>
+                                                • Discuss cardiac rehabilitation and lifestyle modifications</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <h3>Technical Overview</h3>

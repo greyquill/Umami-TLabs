@@ -2,6 +2,16 @@
 
 A responsive, high-fidelity landing page for **Umami TLabs**, a healthcare management solution. This project is built with vanilla HTML, CSS, and JavaScript, designed for speed, compatibility, and ease of deployment.
 
+### 📅 Calendly Integration
+The "Book a Demo" buttons use a standard Calendly popup widget.
+To update the scheduling link:
+1.  Open `index.html`.
+2.  Search for `Calendly.initPopupWidget`.
+3.  Replace the `url` property with your actual Calendly link (e.g., `https://calendly.com/your-username`).
+    *   Locations: Navigation Bar (Line ~49) and Footer CTA (Line ~229).
+
+### 📧 Form Handling
+
 ## 🚀 Deployment
 
 This site is designed to be hosted via **GitHub Pages**.

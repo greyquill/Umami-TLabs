@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Doctors | Umami TLabs</title>
+    <meta name="description" content="A simple guide to modernizing your medical practice.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@1,600&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="doctors-page">
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="Umami TLabs Logo" class="logo-img">
+            </a>
+            <div class="nav-links">
+                <!-- Dropdown Trigger -->
+                <div class="dropdown-wrapper">
+                    <a href="services.html" class="dropdown-trigger">Services <i
+                            class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="services.html?feature=billing">Billing & Accounts</a>
+                        <a href="services.html?feature=appointments">Smart Appointments</a>
+                        <a href="services.html?feature=ai">AI Assistance</a>
+                        <a href="services.html?feature=records">Medical Records</a>
+                        <a href="services.html?feature=custom">Custom Apps</a>
+                        <a href="services.html?feature=staff">Staff Management</a>
+                    </div>
+                </div>
+
+                <a href="#use-cases" class="active">For Doctors</a>
+                <a href="index.html#faq">FAQ</a>
+                <a href="index.html#contact" class="btn btn-primary">Book a Demo</a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="doc-header">
+        <div class="container">
+            <h1>Focus on Patients, <br> <span class="gradient-text">Not Paperwork</span></h1>
+            <p class="lead">Transitioning to digital doesn't have to be overwhelming. We guide you every step of the
+                way.</p>
+        </div>
+    </header>
+
+    <!-- Before / After Section -->
+    <section class="doc-comparison">
+        <div class="container">
+            <h2 class="section-title">Why Change?</h2>
+
+            <div class="comparison-toggle-wrapper">
+                <div class="toggle-switch">
+                    <span class="toggle-option active" id="btn-chaos">Typical Day</span>
+                    <span class="toggle-option" id="btn-calm">With Umami</span>
+                </div>
+            </div>
+
+            <div class="comparison-content active" id="view-chaos">
+                <div class="comp-card chaos">
+                    <div class="comp-icon"><i class="fa-solid fa-file-circle-xmark"></i></div>
+                    <h3>Manual Chaos</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-xmark"></i> Stacks of paper files.</li>
+                        <li><i class="fa-solid fa-xmark"></i> Late nights billing insurance.</li>
+                        <li><i class="fa-solid fa-xmark"></i> 20% Missed appointments.</li>
+                        <li><i class="fa-solid fa-xmark"></i> Fragmented patient history.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="comparison-content" id="view-calm">
+                <div class="comp-card calm">
+                    <div class="comp-icon"><i class="fa-solid fa-spa"></i></div>
+                    <h3>Digital Calm</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Instant record access on iPad.</li>
+                        <li><i class="fa-solid fa-check"></i> Automated claim submission.</li>
+                        <li><i class="fa-solid fa-check"></i> Auto-reminders reduce no-shows.</li>
+                        <li><i class="fa-solid fa-check"></i> AI assistant drafts your notes.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Interactive Roadmap -->
+    <section class="doc-journey">
+        <div class="container">
+            <h2 class="section-title">Your Journey to Digital</h2>
+            <p class="journey-subtitle">A stress-free transition timeline designed for busy doctors.</p>
+
+            <div class="journey-roadmap">
+                <!-- Step 1 -->
+                <div class="journey-step">
+                    <div class="step-marker">1</div>
+                    <div class="step-content">
+                        <h3>Meet Your Guide</h3>
+                        <p>We start with a coffee chat. No sales pressure. We just want to understand your current
+                            workflow and pain points.</p>
+                        <span class="step-time">Day 1</span>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="journey-step">
+                    <div class="step-marker">2</div>
+                    <div class="step-content">
+                        <h3>Safe Data Transfer</h3>
+                        <p>We bring our scanners. We digitize your active patient files so you don't lose any history.
+                            It's secure and HIPAA compliant.</p>
+                        <span class="step-time">Week 1</span>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="journey-step">
+                    <div class="step-marker">3</div>
+                    <div class="step-content">
+                        <h3>Staff Training</h3>
+                        <p>We spend a day with your reception and nursing staff. The system is designed to be learned in
+                            15 minutes.</p>
+                        <span class="step-time">Week 2</span>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="journey-step">
+                    <div class="step-marker">4</div>
+                    <div class="step-content">
+                        <h3>Go Live</h3>
+                        <p>Open your doors to a modern practice. We stay on-site for the first day to ensure everything
+                            runs smoothly.</p>
+                        <span class="step-time">Week 3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soft CTA -->
+    <section class="doc-cta">
+        <div class="container">
+            <h2>Ready to explore?</h2>
+            <p>No commitment required. Download our full catalog or book a 15-min chat.</p>
+            <div class="cta-group">
+                <a href="#" class="btn btn-secondary">Download Brochure</a>
+                <a href="index.html#contact" class="btn btn-primary">Let's Chat</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="copyright">
+                &copy; 2024 Umami TLabs. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Simple inline script for the toggle since it's specific to this page
+        // or we can move it to script.js if prefered to keep HTML clean.
+        // Let's add logic to script.js to keep it clean.
+    </script>
+</body>
+
+</html>

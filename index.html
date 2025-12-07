@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umami TLabs | One-Stop Healthcare Management</title>
+    <meta name="description"
+        content="Streamline your practice with AI-powered billing, appointments, and records. Trusted by Doctors, Hospitals, and Clinics.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@1,600&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Note: Placeholder for FontAwesome, might need a CDN or local version if this fails -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="assets/img/logo.png" alt="Umami TLabs Logo" class="logo-img">
+            </a>
+            <div class="nav-links">
+
+                <!-- Dropdown Trigger -->
+                <div class="dropdown-wrapper">
+                    <a href="services.html" class="dropdown-trigger">Services <i
+                            class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="services.html?feature=billing">Billing & Accounts</a>
+                        <a href="services.html?feature=appointments">Smart Appointments</a>
+                        <a href="services.html?feature=ai">AI Assistance</a>
+                        <a href="services.html?feature=records">Medical Records</a>
+                        <a href="services.html?feature=custom">Custom Apps</a>
+                        <a href="services.html?feature=staff">Staff Management</a>
+                    </div>
+                </div>
+
+                <a href="doctors.html">For Doctors</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact" class="btn btn-primary">Book a Demo</a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-badge">Healthcare Management Evolved</div>
+            <h1 class="hero-title">Your One Stop for <br> <span class="gradient-text">Healthcare Excellence</span></h1>
+            <p class="hero-subtitle">
+                Doctors • Hospitals • Clinics
+                <br>
+                Streamline your practice with AI-powered billing, appointments, and records.
+            </p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary btn-lg">Get Started</a>
+                <a href="services.html" class="btn btn-secondary btn-lg">View Services</a>
+            </div>
+
+            <!-- Video Section -->
+            <div class="hero-visual video-container">
+                <video width="100%" height="100%" controls controlsList="nodownload nofullscreen" class="hero-video"
+                    id="hero-video">
+                    <source src="assets/vids/welcome_intro.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="custom-play-btn" id="custom-play-btn">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg-glow"></div>
+    </header>
+
+    <!-- Social Proof / Ticker -->
+    <section class="ticker">
+        <div class="container">
+            <p>BUILT FOR MODERN HEALTHCARE PROVIDERS</p>
+            <div class="logo-ticker">
+                <span><i class="fa-solid fa-stethoscope"></i> General Practice</span>
+                <span><i class="fa-solid fa-tooth"></i> Dental Clinics</span>
+                <span><i class="fa-solid fa-user-doctor"></i> Specialists</span>
+                <span><i class="fa-solid fa-hospital"></i> Hospitals</span>
+                <span><i class="fa-solid fa-flask"></i> Diagnostic Labs</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Everything you need to run your practice</h2>
+                <p>One platform, endless possibilities.</p>
+            </div>
+
+            <div class="feature-grid">
+                <!-- Changed to divs with data-feature for Side Panel interaction -->
+                <div class="feature-card" data-feature="billing">
+                    <div class="icon-box"><i class="fa-solid fa-file-invoice"></i></div>
+                    <h3>Billing & Accounts</h3>
+                    <p>Automated revenue management and seamless invoicing.</p>
+                </div>
+                <div class="feature-card" data-feature="appointments">
+                    <div class="icon-box"><i class="fa-solid fa-calendar-check"></i></div>
+                    <h3>Smart Appointments</h3>
+                    <p>Effortless scheduling with automated reminders.</p>
+                </div>
+                <div class="feature-card highlight-card" data-feature="ai">
+                    <div class="icon-box"><i class="fa-solid fa-robot"></i></div>
+                    <h3>AI Assistance</h3>
+                    <p>Intelligent diagnostics support and workflow automation.</p>
+                </div>
+                <div class="feature-card" data-feature="records">
+                    <div class="icon-box"><i class="fa-solid fa-file-medical"></i></div>
+                    <h3>Medical Records</h3>
+                    <p>Secure, accessible patient history at your fingertips.</p>
+                </div>
+                <div class="feature-card" data-feature="custom">
+                    <div class="icon-box"><i class="fa-solid fa-mobile-screen"></i></div>
+                    <h3>Custom Apps</h3>
+                    <p>Branded websites and mobile apps for your clinic.</p>
+                </div>
+                <div class="feature-card" data-feature="staff">
+                    <div class="icon-box"><i class="fa-solid fa-users"></i></div>
+                    <h3>Staff Management</h3>
+                    <p>HR, rostering, and payroll in one place.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIDE PANEL COMPONENT -->
+    <div class="panel-overlay"></div>
+    <div class="side-panel">
+        <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+        <div class="panel-content">
+            <!-- Dynamic Content Injected Here -->
+        </div>
+    </div>
+
+    <!-- Use Cases -->
+    <section id="use-cases" class="use-cases">
+        <div class="container">
+            <div class="use-case-wrapper">
+                <div class="use-case-content">
+                    <h2>Your practice, made easy.</h2>
+                    <p>So you can focus on what matters most.</p>
+                    <ul class="check-list">
+                        <li><i class="fa-solid fa-check"></i> <strong>For Doctors:</strong> AI assistants that save
+                            hours of paperwork.</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>For Clinics:</strong> Reduce admin load and
+                            no-shows.</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>For Hospitals:</strong> Manage multiple
+                            departments at scale.</li>
+                    </ul>
+                </div>
+                <div class="use-case-visual">
+                    <img src="assets/img/dashboard.png" alt="Umami TLabs Healthcare Dashboard" class="use-case-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>Is it compatible with my existing systems?</h4>
+                    <p>Yes, we offer integrations with most major healthcare standards.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Is patient data secure?</h4>
+                    <p>Absolutely. We follow strict data privacy protocols (HIPAA/GDPR compliant standards).</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do you offer a demo?</h4>
+                    <p>Yes! Contact us to schedule a personalized walkthrough.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <div class="footer-cta">
+                <h2>Ready to transform your healthcare management?</h2>
+                <a href="mailto:amarnath@greyquill.io" class="btn btn-primary btn-lg">Contact Us For A Demo</a>
+                <div class="contact-details">
+                    <p><i class="fa-brands fa-whatsapp"></i> +91-9611373526</p>
+                    <p><i class="fa-solid fa-envelope"></i> amarnath@greyquill.io</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-heart-pulse"></i> Umami TLabs
+                </div>
+                <div class="qr-code-placeholder">
+                    <!-- QR Code would go here -->
+                    <i class="fa-solid fa-qrcode"></i>
+                    <span>Scan for Info</span>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Umami TLabs. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

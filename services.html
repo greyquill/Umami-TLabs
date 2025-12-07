@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Umami TLabs</title>
+    <meta name="description" content="Explore our comprehensive healthcare management solutions.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@1,600&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        /* Inline page-specific layout adjustments if needed, though most will go to styles.css */
+    </style>
+</head>
+
+<body class="services-page">
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="Umami TLabs Logo" class="logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="index.html#features" class="dropdown-trigger">Services <i
+                        class="fa-solid fa-chevron-down"></i></a>
+                <!-- Dropdown populated by CSS/JS or static HTML in index.html, handled globally via script/css -->
+                <div class="dropdown-menu">
+                    <a href="services.html?feature=billing">Billing & Accounts</a>
+                    <a href="services.html?feature=appointments">Smart Appointments</a>
+                    <a href="services.html?feature=ai">AI Assistance</a>
+                    <a href="services.html?feature=records">Medical Records</a>
+                    <a href="services.html?feature=custom">Custom Apps</a>
+                    <a href="services.html?feature=staff">Staff Management</a>
+                </div>
+
+                <a href="doctors.html">For Doctors</a>
+                <a href="index.html#faq">FAQ</a>
+                <a href="index.html#contact" class="btn btn-primary">Book a Demo</a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Our Solutions</h1>
+            <p>Comprehensive tools to modernize your practice.</p>
+        </div>
+    </header>
+
+    <!-- 3-Column Layout -->
+    <div class="container services-layout">
+
+        <!-- Left Sidebar: Navigation -->
+        <aside class="service-sidebar">
+            <ul class="service-nav">
+                <li><a href="#" data-target="billing" class="active">Billing & Accounts</a></li>
+                <li><a href="#" data-target="appointments">Smart Appointments</a></li>
+                <li><a href="#" data-target="ai">AI Assistance</a></li>
+                <li><a href="#" data-target="records">Medical Records</a></li>
+                <li><a href="#" data-target="custom">Custom Apps</a></li>
+                <li><a href="#" data-target="staff">Staff Management</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="service-content" id="main-content">
+            <!-- Content Injected via JS or distinct sections shown/hidden -->
+
+            <!-- Billing Section -->
+            <section id="billing" class="service-section active">
+                <h2>Billing & Accounts</h2>
+                <p class="lead">Automate your entire revenue cycle. From invoice generation to payment tracking, our
+                    system ensures you never miss a payment and reduces administrative overhead by up to 40%.</p>
+
+                <h3>Key Capabilities</h3>
+                <ul>
+                    <li>Automated Invoice Generation</li>
+                    <li>Insurance Claim Management</li>
+                    <li>Payment Gateway Integration (Stripe, Razorpay)</li>
+                    <li>Overdue Payment Reminders</li>
+                </ul>
+
+                <h3>Implementation Timeline</h3>
+                <div class="timeline-imitation">
+                    <div class="t-item"><strong>Week 1:</strong> Integration with bank accounts.</div>
+                    <div class="t-item"><strong>Week 2:</strong> Data Migration (past invoices).</div>
+                    <div class="t-item"><strong>Week 3:</strong> Automation Setup & Rules.</div>
+                    <div class="t-item"><strong>Week 4:</strong> Go Live with full automation.</div>
+                </div>
+
+                <div class="case-studies-placeholder">
+                    <h4>Success Stories</h4>
+                    <div class="case-card">
+                        <h5>City Clinic Reduced Overheads by 30%</h5>
+                        <p>By automating their billing, City Clinic saved 20 hours of admin work per week.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Appointments Section -->
+            <section id="appointments" class="service-section">
+                <h2>Smart Appointments</h2>
+                <p class="lead">Eliminate no-shows with AI-driven scheduling.</p>
+                <h3>Key Capabilities</h3>
+                <ul>
+                    <li>24/7 Online Booking Portal</li>
+                    <li>WhatsApp & SMS Reminders</li>
+                    <li>Calendar Sync (Google/Outlook)</li>
+                </ul>
+                <div class="case-studies-placeholder">
+                    <h4>Success Stories</h4>
+                    <p>Coming soon...</p>
+                </div>
+            </section>
+
+            <!-- AI Section -->
+            <section id="ai" class="service-section">
+                <h2>AI Assistance</h2>
+                <p class="lead">Your 24/7 intelligent medical assistant.</p>
+                <h3>Key Capabilities</h3>
+                <ul>
+                    <li>Automated Note Transcription</li>
+                    <li>Diagnostic Suggestions</li>
+                    <li>Drug Interaction Alerts</li>
+                </ul>
+            </section>
+
+            <!-- Records Section -->
+            <section id="records" class="service-section">
+                <h2>Medical Records (EMR)</h2>
+                <p class="lead">Centralized, HIPAA-compliant patient history.</p>
+                <h3>Key Capabilities</h3>
+                <ul>
+                    <li>Cloud-based Storage</li>
+                    <li>Role-based Access Control</li>
+                    <li>Instant Lab Report Access</li>
+                </ul>
+            </section>
+
+            <!-- Custom Section -->
+            <section id="custom" class="service-section">
+                <h2>Custom Apps & Websites</h2>
+                <p class="lead">White-labeled digital presence for your brand.</p>
+                <h3>Key Capabilities</h3>
+                <ul>
+                    <li>Custom Domain & Branding</li>
+                    <li>Patient Mobile App (iOS/Android)</li>
+                    <li>Telemedicine Integration</li>
+                </ul>
+            </section>
+
+            <!-- Staff Section -->
+            <section id="staff" class="service-section">
+                <h2>Staff Management</h2>
+                <p class="lead">Streamline HR operations in one dashboard.</p>
+                <h3>Key Capabilities</h3>
+                <ul>
+                    <li>Rostering & Shift Planning</li>
+                    <li>Payroll Automation</li>
+                    <li>Leave Management</li>
+                </ul>
+            </section>
+
+        </main>
+
+        <!-- Right Sidebar: TOC -->
+        <aside class="toc-sidebar">
+            <div class="toc-container">
+                <h4>On this page</h4>
+                <ul class="toc-list">
+                    <li><a href="#billing">Overview</a></li>
+                    <li><a href="#billing">Key Capabilities</a></li>
+                    <li><a href="#billing">Timeline</a></li>
+                    <li><a href="#billing">Case Studies</a></li>
+                </ul>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="copyright">
+                &copy; 2024 Umami TLabs. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

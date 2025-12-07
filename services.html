@@ -24,8 +24,72 @@
 
 <body class="services-page">
 
-    <!-- Header Placeholder -->
-    <div id="header-placeholder"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="Umami TLabs Logo" class="logo-img">
+            </a>
+            <div class="nav-links">
+
+                <!-- Dropdown Trigger -->
+                <div class="dropdown-wrapper">
+                    <a href="services.html" class="dropdown-trigger">Services <i
+                            class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="services.html?feature=billing">Billing & Accounts</a>
+                        <a href="services.html?feature=appointments">Smart Appointments</a>
+                        <a href="services.html?feature=ai">AI Assistance</a>
+                        <a href="services.html?feature=records">Medical Records</a>
+                        <a href="services.html?feature=custom">Custom Apps</a>
+                        <a href="services.html?feature=staff">Staff Management</a>
+                    </div>
+                </div>
+
+                <a href="doctors.html">For Doctors</a>
+
+                <!-- Calendly Trigger -->
+                <a href="#"
+                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/greyquill/umami-tlabs'});return false;"
+                    class="btn btn-primary">Book a Demo</a>
+
+                <!-- Member Login Link -->
+                <a href="#" class="nav-login-link"
+                    onclick="document.getElementById('login-modal').classList.add('active'); return false;">
+                    <span class="login-sub">Already a member?</span>
+                    <span class="login-main">Go to your dashboard</span>
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- LOGIN MODAL -->
+    <div class="modal-overlay" id="login-modal">
+        <div class="modal-content login-content">
+            <button class="modal-close" onclick="document.getElementById('login-modal').classList.remove('active')"><i
+                    class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fa-solid fa-right-to-bracket"></i></div>
+                <h2>Member Sign In</h2>
+                <p>Access your secure provider portal.</p>
+            </div>
+            <form class="modal-form" onsubmit="event.preventDefault(); window.location.href='sample-dashboard.html';">
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                <div style="text-align: center; margin-top: 15px; font-size: 0.9rem;">
+                    <a href="#" style="color: #64748b; text-decoration: none;">Forgot Password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <!-- Page Header -->
     <header class="page-header">
@@ -239,9 +303,9 @@
                 <p class="lead">Optimize clinical operations with a unified Human Capital Management suite tailored for
                     shift-based medical environments.</p>
 
-                <div class="image-placeholder-box">
-                    <p><em>[Image Placeholder: A calendar grid view showing staff shifts filled with color-coded blocks.
-                            A "Conflicts Detected" warning chip is visible in the top right corner.]</em></p>
+                <div class="image-box">
+                    <img src="assets/img/content/Scheduling_Staff_management.png" alt="Staff Scheduling Interface"
+                        style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
                 </div>
 
                 <h3>Technical Overview</h3>
@@ -286,7 +350,6 @@
         </div>
     </footer>
 
-    <script src="assets/js/header-component.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>

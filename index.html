@@ -28,8 +28,72 @@
 
 <body class="home-page">
 
-    <!-- Header Placeholder -->
-    <div id="header-placeholder"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="Umami TLabs Logo" class="logo-img">
+            </a>
+            <div class="nav-links">
+
+                <!-- Dropdown Trigger -->
+                <div class="dropdown-wrapper">
+                    <a href="services.html" class="dropdown-trigger">Services <i
+                            class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="services.html?feature=billing">Billing & Accounts</a>
+                        <a href="services.html?feature=appointments">Smart Appointments</a>
+                        <a href="services.html?feature=ai">AI Assistance</a>
+                        <a href="services.html?feature=records">Medical Records</a>
+                        <a href="services.html?feature=custom">Custom Apps</a>
+                        <a href="services.html?feature=staff">Staff Management</a>
+                    </div>
+                </div>
+
+                <a href="doctors.html">For Doctors</a>
+
+                <!-- Calendly Trigger -->
+                <a href="#"
+                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/greyquill/umami-tlabs'});return false;"
+                    class="btn btn-primary">Book a Demo</a>
+
+                <!-- Member Login Link -->
+                <a href="#" class="nav-login-link"
+                    onclick="document.getElementById('login-modal').classList.add('active'); return false;">
+                    <span class="login-sub">Already a member?</span>
+                    <span class="login-main">Go to your dashboard</span>
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- LOGIN MODAL -->
+    <div class="modal-overlay" id="login-modal">
+        <div class="modal-content login-content">
+            <button class="modal-close" onclick="document.getElementById('login-modal').classList.remove('active')"><i
+                    class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fa-solid fa-right-to-bracket"></i></div>
+                <h2>Member Sign In</h2>
+                <p>Access your secure provider portal.</p>
+            </div>
+            <form class="modal-form" onsubmit="event.preventDefault(); window.location.href='sample-dashboard.html';">
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                <div style="text-align: center; margin-top: 15px; font-size: 0.9rem;">
+                    <a href="#" style="color: #64748b; text-decoration: none;">Forgot Password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <!-- Hero Section -->
 
@@ -89,32 +153,38 @@
 
             <div class="feature-grid">
                 <!-- Changed to divs with data-feature for Side Panel interaction -->
-                <div class="feature-card" data-feature="billing">
+                <div class="feature-card" data-feature="billing" onclick="openSidePanel('billing')"
+                    style="cursor: pointer;">
                     <div class="icon-box"><i class="fa-solid fa-file-invoice"></i></div>
                     <h3>Billing & Accounts</h3>
                     <p>Automated revenue management and seamless invoicing.</p>
                 </div>
-                <div class="feature-card" data-feature="appointments">
+                <div class="feature-card" data-feature="appointments" onclick="openSidePanel('appointments')"
+                    style="cursor: pointer;">
                     <div class="icon-box"><i class="fa-solid fa-calendar-check"></i></div>
                     <h3>Smart Appointments</h3>
                     <p>Effortless scheduling with automated reminders.</p>
                 </div>
-                <div class="feature-card highlight-card" data-feature="ai">
+                <div class="feature-card highlight-card" data-feature="ai" onclick="openSidePanel('ai')"
+                    style="cursor: pointer;">
                     <div class="icon-box"><i class="fa-solid fa-robot"></i></div>
                     <h3>AI Assistance</h3>
                     <p>Intelligent diagnostics support and workflow automation.</p>
                 </div>
-                <div class="feature-card" data-feature="records">
+                <div class="feature-card" data-feature="records" onclick="openSidePanel('records')"
+                    style="cursor: pointer;">
                     <div class="icon-box"><i class="fa-solid fa-file-medical"></i></div>
                     <h3>Medical Records</h3>
                     <p>Secure, accessible patient history at your fingertips.</p>
                 </div>
-                <div class="feature-card" data-feature="custom">
+                <div class="feature-card" data-feature="custom" onclick="openSidePanel('custom')"
+                    style="cursor: pointer;">
                     <div class="icon-box"><i class="fa-solid fa-mobile-screen"></i></div>
                     <h3>Custom Apps</h3>
                     <p>Branded websites and mobile apps for your clinic.</p>
                 </div>
-                <div class="feature-card" data-feature="staff">
+                <div class="feature-card" data-feature="staff" onclick="openSidePanel('staff')"
+                    style="cursor: pointer;">
                     <div class="icon-box"><i class="fa-solid fa-users"></i></div>
                     <h3>Staff Management</h3>
                     <p>HR, rostering, and payroll in one place.</p>
@@ -235,7 +305,6 @@
         </div>
     </footer>
 
-    <script src="assets/js/header-component.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>

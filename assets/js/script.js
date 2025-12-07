@@ -1,37 +1,19 @@
 const initHeaderLogic = () => {
-    // Mobile Menu Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (menuToggle) {
-        // Remove old listener if any (simple way: clone node, or just ignore for now as we run once)
-        // Better: just add new listener.
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-
-            // Toggle icon betwen bars and times
-            const icon = menuToggle.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-    }
-
     // Smooth Scroll for Internal Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
 
             // Close mobile menu if open
-            if (navLinks.classList.contains('active')) {
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.menu-toggle');
+            if (navLinks && navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
-                const icon = menuToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+                if (menuToggle) {
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             }
 
             document.querySelector(this.getAttribute('href')).scrollIntoView({
@@ -107,7 +89,7 @@ const initHeaderLogic = () => {
                 const target = link.getAttribute('data-target');
                 if (target) {
                     // Update URL history without reload
-                    const newUrl = `${window.location.pathname}?feature = ${target} `;
+                    const newUrl = `${window.location.pathname}?feature=${target}`;
                     window.history.pushState({ path: newUrl }, '', newUrl);
                     switchService(target);
                 }
@@ -115,12 +97,78 @@ const initHeaderLogic = () => {
         });
     }
 
-    // --- Side Panel Logic (Homepage) ---
-    const featureCards = document.querySelectorAll('.feature-card[data-feature]');
+    // --- Local Video Custom Interaction ---
+    const videoContainer = document.querySelector('.video-container');
+    const heroVideo = document.getElementById('hero-video');
+    const playBtn = document.getElementById('custom-play-btn');
+
+    if (heroVideo && videoContainer) {
+        // Prevent double-binding if initHeaderLogic runs multiple times
+        if (videoContainer.getAttribute('data-init') === 'true') return;
+        videoContainer.setAttribute('data-init', 'true');
+
+        function togglePlay() {
+            if (heroVideo.paused || heroVideo.ended) {
+                heroVideo.play();
+            } else {
+                heroVideo.pause();
+            }
+        }
+
+        videoContainer.addEventListener('click', (e) => {
+            if (e.target === heroVideo || e.target === playBtn || e.target === videoContainer) {
+                togglePlay();
+            }
+        });
+
+        // Sync Button State
+        heroVideo.addEventListener('play', () => {
+            videoContainer.classList.add('playing');
+        });
+
+        heroVideo.addEventListener('pause', () => {
+            videoContainer.classList.remove('playing');
+        });
+
+        heroVideo.addEventListener('ended', () => {
+            videoContainer.classList.remove('playing');
+        });
+    }
+
+    // --- Dropdown Mobile/Click Support ---
+    const dropdownTrigger = document.querySelector('.dropdown-trigger');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    const dropdownWrapper = document.querySelector('.dropdown-wrapper');
+
+    if (dropdownTrigger && dropdownMenu) {
+        // On mobile, preventing default link and toggling menu
+        dropdownTrigger.addEventListener('click', (e) => {
+            if (window.innerWidth < 900) {
+                e.preventDefault();
+                dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' : 'block';
+                dropdownMenu.style.opacity = '1';
+                dropdownMenu.style.visibility = 'visible';
+                dropdownMenu.style.position = 'static'; // Stack in mobile flow
+                dropdownMenu.style.transform = 'none';
+            }
+        });
+
+        // Close on outside click
+        document.addEventListener('click', (e) => {
+            if (!dropdownWrapper.contains(e.target)) {
+                if (window.innerWidth < 900) {
+                    dropdownMenu.style.display = 'none';
+                }
+            }
+        });
+    }
+};
+
+// Global function for side panel - called directly from HTML onclick
+function openSidePanel(key) {
     const sidePanel = document.querySelector('.side-panel');
     const panelOverlay = document.querySelector('.panel-overlay');
     const panelContent = document.querySelector('.panel-content');
-    const closeBtn = document.querySelector('.close-btn');
 
     const featureData = {
         billing: {
@@ -180,27 +228,25 @@ const initHeaderLogic = () => {
         }
     };
 
-    if (sidePanel && panelOverlay) {
-        function openPanel(key) {
-            const data = featureData[key];
-            if (!data) return;
+    const data = featureData[key];
+    if (!data || !sidePanel || !panelOverlay || !panelContent) return;
 
-            // Build Timeline HTML
-            let timelineHtml = '<div class="timeline">';
-            data.timeline.forEach(item => {
-                timelineHtml += `
-    < div class="timeline-item" >
+    // Build Timeline HTML
+    let timelineHtml = '<div class="timeline">';
+    data.timeline.forEach(item => {
+        timelineHtml += `
+                    <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-time">${item.time}</div>
                         <div class="timeline-title">${item.title}</div>
                         <div class="timeline-desc">${item.desc}</div>
-                    </div >
+                    </div>
     `;
-            });
-            timelineHtml += '</div>';
+    });
+    timelineHtml += '</div>';
 
-            panelContent.innerHTML = `
-    < h2 > ${data.title}</h2 >
+    panelContent.innerHTML = `
+                <h2>${data.title}</h2>
                 <p>${data.desc}</p>
                 <div class="timeline-section">
                     <h3>Impact Timeline</h3>
@@ -208,132 +254,80 @@ const initHeaderLogic = () => {
                 </div>
                 <div class="panel-cta" style="display: flex; gap: 15px; justify-content: center;">
                     <a href="services.html?feature=${key}" class="btn btn-secondary">More Details</a>
-                    <button class="btn btn-primary trigger-modal" data-service="${data.title}">Switch to this Service</button>
+                    <button class="btn btn-primary trigger-modal" data-service="${data.title}" onclick="openContactModal('${data.title}')">Switch to this Service</button>
                 </div>
 `;
 
-            sidePanel.classList.add('active');
-            panelOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
+    sidePanel.classList.add('active');
+    panelOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
 
-            // Re-attach modal listeners for the new button
-            attachModalListeners();
-        }
+function closeSidePanel() {
+    const sidePanel = document.querySelector('.side-panel');
+    const panelOverlay = document.querySelector('.panel-overlay');
+    if (sidePanel) sidePanel.classList.remove('active');
+    if (panelOverlay) panelOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
 
-        function closePanel() {
-            sidePanel.classList.remove('active');
-            panelOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        featureCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const feature = card.getAttribute('data-feature');
-                openPanel(feature);
-            });
-        });
-
-        closeBtn.addEventListener('click', closePanel);
-        panelOverlay.addEventListener('click', closePanel);
-    }
-
-    // --- Modal Logic ---
+function openContactModal(serviceName) {
     const modal = document.getElementById('interest-modal');
-    const modalClose = document.querySelector('.modal-close');
     const modalServiceName = document.getElementById('modal-service-name');
-
-    function openModal(serviceName) {
-        if (modal) {
-            if (modalServiceName) modalServiceName.textContent = serviceName;
-            modal.classList.add('active');
-        }
-    }
-
-    function closeModal() {
-        if (modal) modal.classList.remove('active');
-    }
-
-    function attachModalListeners() {
-        // We attach this dynamically because the button is created via innerHTML
-        const triggerBtns = document.querySelectorAll('.trigger-modal');
-        triggerBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                openModal(btn.getAttribute('data-service'));
-            });
-        });
-    }
-
-    if (modalClose) {
-        modalClose.addEventListener('click', closeModal);
-    }
-
-    // Close modal on outside click
     if (modal) {
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeModal();
-        });
+        if (modalServiceName) modalServiceName.textContent = serviceName;
+        modal.classList.add('active');
     }
+}
 
-    // --- Local Video Custom Interaction ---
-    const videoContainer = document.querySelector('.video-container');
-    const heroVideo = document.getElementById('hero-video');
-    const playBtn = document.getElementById('custom-play-btn');
+function closeContactModal() {
+    const modal = document.getElementById('interest-modal');
+    if (modal) modal.classList.remove('active');
+}
 
-    if (heroVideo && videoContainer) {
+// Initialize close buttons and overlays
+window.addEventListener('load', () => {
+    const closeBtn = document.querySelector('.close-btn');
+    const panelOverlay = document.querySelector('.panel-overlay');
+    const modalClose = document.querySelector('.modal-close');
+    const modal = document.getElementById('interest-modal');
 
-        function togglePlay() {
-            if (heroVideo.paused || heroVideo.ended) {
-                heroVideo.play();
+    if (closeBtn) closeBtn.addEventListener('click', closeSidePanel);
+    if (panelOverlay) panelOverlay.addEventListener('click', closeSidePanel);
+    if (modalClose) modalClose.addEventListener('click', closeContactModal);
+    if (modal) modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeContactModal();
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
             } else {
-                heroVideo.pause();
-            }
-        }
-
-        videoContainer.addEventListener('click', (e) => {
-            if (e.target === heroVideo || e.target === playBtn || e.target === videoContainer) {
-                togglePlay();
-            }
-        });
-
-        // Sync Button State
-        heroVideo.addEventListener('play', () => {
-            videoContainer.classList.add('playing');
-        });
-
-        heroVideo.addEventListener('pause', () => {
-            videoContainer.classList.remove('playing');
-        });
-
-        heroVideo.addEventListener('ended', () => {
-            videoContainer.classList.remove('playing');
-        });
-    }
-
-    // --- Dropdown Mobile/Click Support ---
-    const dropdownTrigger = document.querySelector('.dropdown-trigger');
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-    const dropdownWrapper = document.querySelector('.dropdown-wrapper');
-
-    if (dropdownTrigger && dropdownMenu) {
-        // On mobile, preventing default link and toggling menu
-        dropdownTrigger.addEventListener('click', (e) => {
-            if (window.innerWidth < 900) {
-                e.preventDefault();
-                dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' : 'block';
-                dropdownMenu.style.opacity = '1';
-                dropdownMenu.style.visibility = 'visible';
-                dropdownMenu.style.position = 'static'; // Stack in mobile flow
-                dropdownMenu.style.transform = 'none';
-            }
-        });
-
-        // Close on outside click
-        document.addEventListener('click', (e) => {
-            if (!dropdownWrapper.contains(e.target)) {
-                if (window.innerWidth < 900) {
-                    dropdownMenu.style.display = 'none';
-                }
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             }
         });
     }
+
+    // Attach click listeners to feature cards to open side panel
+    const featureCards = document.querySelectorAll('.feature-card[data-feature]');
+    featureCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const feature = card.getAttribute('data-feature');
+            openSidePanel(feature);
+        });
+    });
+
+    initHeaderLogic();
+    console.log('Side panel functions initialized');
 });
+
+// Debug: Log when script loads
+console.log('Script.js loaded, readyState:', document.readyState);

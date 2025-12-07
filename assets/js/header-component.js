@@ -11,7 +11,7 @@ const headerHtml = `
 
                 <!-- Dropdown Trigger -->
                 <div class="dropdown-wrapper">
-                    <a href="index.html#features" class="dropdown-trigger">Services <i class="fa-solid fa-chevron-down"></i></a>
+                    <a href="services.html" class="dropdown-trigger">Services <i class="fa-solid fa-chevron-down"></i></a>
                     <div class="dropdown-menu">
                         <a href="services.html?feature=billing">Billing & Accounts</a>
                         <a href="services.html?feature=appointments">Smart Appointments</a>

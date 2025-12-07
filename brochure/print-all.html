@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umami TLabs - Complete Brochure</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            overflow: hidden;
+        }
+
+        .print-instructions {
+            background: #f0f9ff;
+            border: 2px solid #2196f3;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .print-instructions h2 {
+            color: #1e3a5f;
+            margin-bottom: 15px;
+        }
+
+        .print-instructions button {
+            background: #2196f3;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .print-instructions button:hover {
+            background: #1976d2;
+        }
+
+        @media print {
+            .print-instructions {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        const files = [
+            '00-cover.html',
+            '01-introduction.html',
+            '02-billing-revenue_1.html',
+            '02-billing-revenue_2.html',
+            '02-billing-revenue_3.html',
+            '03-appointments_1.html',
+            '03-appointments_2.html',
+            '04-ai-assistance_1.html',
+            '04-ai-assistance_2.html',
+            '04-ai-assistance_3.html',
+            '05-emr-ehr_1.html',
+            '05-emr-ehr_2.html',
+            '05-emr-ehr_3.html',
+            '06-custom-apps_1.html',
+            '06-custom-apps_2.html',
+            '07-staff-contact_1.html',
+            '07-staff-contact_2.html'
+        ];
+
+        async function loadAllPages() {
+            const container = document.getElementById('pages-container');
+            const instructions = document.getElementById('instructions');
+            container.innerHTML = '<p style="text-align:center; padding:20px;">Loading pages...</p>';
+
+            let allStyles = '';
+            let allContent = '';
+
+            for (let i = 0; i < files.length; i++) {
+                try {
+                    const response = await fetch(files[i]);
+                    const html = await response.text();
+
+                    // Extract styles
+                    const styleMatch = html.match(/<style[^>]*>([\s\S]*?)<\/style>/gi);
+                    if (styleMatch) {
+                        styleMatch.forEach(style => {
+                            allStyles += style.replace(/<\/?style[^>]*>/g, '') + '\n';
+                        });
+                    }
+
+                    // Extract body content
+                    const bodyMatch = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+                    if (bodyMatch) {
+                        allContent += bodyMatch[1];
+                    }
+                } catch (error) {
+                    console.error(`Error loading ${files[i]}:`, error);
+                }
+            }
+
+            // Add combined styles to head
+            const styleElement = document.createElement('style');
+            styleElement.textContent = allStyles;
+            document.head.appendChild(styleElement);
+
+            // Add all content
+            container.innerHTML = allContent;
+
+            // Update instructions
+            instructions.innerHTML = `
+                <h2>✅ All ${files.length} pages loaded!</h2>
+                <p>Press <strong>Ctrl+P</strong> (or Cmd+P on Mac) to print</p>
+                <p><strong>Print Settings:</strong> Destination: Save as PDF | Paper: A4 | Margins: None | Background: Enabled</p>
+                <button onclick="window.print()">🖨️ Print Now</button>
+            `;
+        }
+
+        // Auto-load on page load
+        window.addEventListener('DOMContentLoaded', loadAllPages);
+    </script>
+</head>
+<body>
+    <div id="instructions" class="print-instructions">
+        <h2>📄 Loading Brochure...</h2>
+        <p>Please wait while all pages are loaded...</p>
+    </div>
+    <div id="pages-container"></div>
+</body>
+</html>

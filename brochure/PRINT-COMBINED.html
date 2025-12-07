@@ -1,0 +1,3504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umami TLabs - Complete Brochure</title>
+    <style>
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            overflow: hidden;
+        }
+
+        /* Cover Page */
+        .cover-page {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8c 50%, #38bdf8 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            text-align: center;
+        }
+
+        .cover-logo {
+            width: 300px;
+            height: auto;
+            margin-bottom: 40px;
+            filter: drop-shadow(0 10px 40px rgba(0,0,0,0.3));
+        }
+
+        .cover-title {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .cover-subtitle {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 60px;
+            opacity: 0.95;
+        }
+
+        .cover-tagline {
+            font-size: 20px;
+            font-weight: 400;
+            max-width: 600px;
+            line-height: 1.8;
+            margin-bottom: 80px;
+            opacity: 0.9;
+        }
+
+        .cover-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .cover-feature {
+            text-align: center;
+        }
+
+        .cover-feature-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .cover-feature-text {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .cover-footer {
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+
+            body {
+                background: white;
+            }
+        }
+    
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .page-header {
+            border-bottom: 4px solid #38bdf8;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .page-header h1 {
+            font-size: 38px;
+            color: #1e3a5f;
+            margin-bottom: 8px;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            color: #64748b;
+        }
+
+        .intro-content h2 {
+            font-size: 24px;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+            margin-top: 20px;
+        }
+
+        .intro-content p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #334155;
+            margin-bottom: 15px;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .intro-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+            padding: 14px;
+            border-radius: 12px;
+            border-left: 5px solid #38bdf8;
+        }
+
+        .intro-card h3 {
+            font-size: 15px;
+            color: #1e3a5f;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .intro-card-icon {
+            font-size: 20px;
+        }
+
+        .intro-card p {
+            font-size: 12px;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .highlight-box h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: white;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+
+            body {
+                background: white;
+            }
+        }
+    
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .page-header {
+            border-bottom: 4px solid #4caf50;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 38px;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            color: #64748b;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .section p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 15px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border-top: 4px solid #4caf50;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #4caf50;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .features-list li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.7;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .section p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #4caf50;
+            margin: 25px 0;
+        }
+
+        .highlight-box h3 {
+            font-size: 20px;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+        }
+
+        .highlight-box p {
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.7;
+        }
+
+        .timeline {
+            margin: 25px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .timeline-marker {
+            min-width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .timeline-content h4 {
+            font-size: 16px;
+            color: #1e3a5f;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .features-list li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.7;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .section p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #4caf50;
+            margin: 25px 0;
+        }
+
+        .highlight-box h3 {
+            font-size: 20px;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+        }
+
+        .highlight-box p {
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.7;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e8f5e9 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #4caf50;
+        }
+
+        .feature-card h4 {
+            font-size: 16px;
+            color: #1e3a5f;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-icon {
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .page-header {
+            border-bottom: 4px solid #667eea;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 38px;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            color: #64748b;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .section p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #334155;
+            margin-bottom: 12px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+            padding: 18px;
+            border-radius: 10px;
+            text-align: center;
+            border-top: 4px solid #667eea;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+            padding: 16px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .benefit-card h4 {
+            font-size: 15px;
+            color: #1e3a5f;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .benefit-icon {
+            font-size: 18px;
+        }
+
+        .benefit-card p {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .section p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 15px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .features-list li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.7;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #667eea;
+            margin: 25px 0;
+        }
+
+        .highlight-box h3 {
+            font-size: 20px;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+        }
+
+        .highlight-box p {
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.7;
+        }
+
+        .timeline {
+            margin: 25px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .timeline-marker {
+            min-width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .timeline-content h4 {
+            font-size: 16px;
+            color: #1e3a5f;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .page-header {
+            border-bottom: 4px solid #ff9800;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 38px;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            color: #64748b;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .section p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #334155;
+            margin-bottom: 12px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #fff7ed 100%);
+            padding: 18px;
+            border-radius: 10px;
+            text-align: center;
+            border-top: 4px solid #ff9800;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #ff9800;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #fff7ed 100%);
+            padding: 16px;
+            border-radius: 10px;
+            border-left: 4px solid #ff9800;
+        }
+
+        .feature-card h4 {
+            font-size: 15px;
+            color: #1e3a5f;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-icon {
+            font-size: 18px;
+        }
+
+        .feature-card p {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .section p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 15px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .features-list li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.7;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #ff9800;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #ff9800;
+            margin: 25px 0;
+        }
+
+        .highlight-box h3 {
+            font-size: 20px;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+        }
+
+        .highlight-box p {
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.7;
+        }
+
+        .timeline {
+            margin: 25px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .timeline-marker {
+            min-width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .timeline-content h4 {
+            font-size: 16px;
+            color: #1e3a5f;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .timeline {
+            margin: 25px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .timeline-marker {
+            min-width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .timeline-content h4 {
+            font-size: 16px;
+            color: #1e3a5f;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .page-header {
+            border-bottom: 4px solid #2196f3;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .page-header h1 {
+            font-size: 38px;
+            color: #1e3a5f;
+            margin-bottom: 8px;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            color: #64748b;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .section p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #334155;
+            margin-bottom: 10px;
+        }
+
+        .patient-360-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+
+        .patient-360-box h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .patient-360-box p {
+            font-size: 13px;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 8px;
+        }
+
+        .patient-360-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .p360-feature {
+            background: rgba(255,255,255,0.1);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .p360-feature-icon {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .p360-feature-text {
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 12px 0;
+        }
+
+        .features-list li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+            font-size: 14px;
+            color: #334155;
+            line-height: 1.5;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2196f3;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .features-list li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2196f3;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e3f2fd 100%);
+            padding: 16px;
+            border-radius: 10px;
+            border-left: 4px solid #2196f3;
+        }
+
+        .feature-card h4 {
+            font-size: 15px;
+            color: #1e3a5f;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-icon {
+            font-size: 18px;
+        }
+
+        .feature-card p {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .security-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #fef3c7 100%);
+            padding: 16px;
+            border-radius: 10px;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .security-card h4 {
+            font-size: 15px;
+            color: #1e3a5f;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .security-icon {
+            font-size: 18px;
+        }
+
+        .security-card p {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .section p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #334155;
+            margin-bottom: 12px;
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .security-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #fef3c7 100%);
+            padding: 16px;
+            border-radius: 10px;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .security-card h4 {
+            font-size: 15px;
+            color: #1e3a5f;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .security-icon {
+            font-size: 18px;
+        }
+
+        .security-card p {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #2196f3;
+            margin: 20px 0;
+        }
+
+        .highlight-box h3 {
+            font-size: 18px;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box p {
+            font-size: 14px;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .page-header {
+            border-bottom: 4px solid #9c27b0;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .page-header h1 {
+            font-size: 38px;
+            color: #1e3a5f;
+            margin-bottom: 8px;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            color: #64748b;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .section p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #334155;
+            margin-bottom: 10px;
+        }
+
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 18px 0;
+        }
+
+        .platform-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f3e5f5 100%);
+            padding: 14px;
+            border-radius: 10px;
+            text-align: center;
+            border-top: 4px solid #9c27b0;
+        }
+
+        .platform-icon {
+            font-size: 38px;
+            margin-bottom: 6px;
+        }
+
+        .platform-card h4 {
+            font-size: 14px;
+            color: #1e3a5f;
+            margin-bottom: 5px;
+        }
+
+        .platform-card p {
+            font-size: 11px;
+            color: #64748b;
+            line-height: 1.4;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f3e5f5 100%);
+            padding: 12px;
+            border-radius: 10px;
+            border-left: 4px solid #9c27b0;
+        }
+
+        .feature-card h4 {
+            font-size: 14px;
+            color: #1e3a5f;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-icon {
+            font-size: 16px;
+        }
+
+        .feature-card p {
+            font-size: 12px;
+            color: #64748b;
+            line-height: 1.4;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .features-list li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #9c27b0;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #9c27b0;
+            margin: 25px 0;
+        }
+
+        .highlight-box h3 {
+            font-size: 20px;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+        }
+
+        .highlight-box p {
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.7;
+        }
+
+        .timeline {
+            margin: 25px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .timeline-marker {
+            min-width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #9c27b0 0%, #ba68c8 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .timeline-content h4 {
+            font-size: 16px;
+            color: #1e3a5f;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .page-header {
+            border-bottom: 4px solid #10b981;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .page-header h1 {
+            font-size: 38px;
+            color: #1e3a5f;
+            margin-bottom: 8px;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            color: #64748b;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .section p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #334155;
+            margin-bottom: 10px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 12px 0;
+        }
+
+        .features-list li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+            font-size: 14px;
+            color: #334155;
+            line-height: 1.5;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #d1fae5 100%);
+            padding: 14px;
+            border-radius: 10px;
+            border-left: 4px solid #10b981;
+        }
+
+        .feature-card h4 {
+            font-size: 14px;
+            color: #1e3a5f;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-icon {
+            font-size: 16px;
+        }
+
+        .feature-card p {
+            font-size: 12px;
+            color: #64748b;
+            line-height: 1.4;
+        }
+
+        .trust-badges {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .trust-badge {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+            padding: 14px;
+            border-radius: 10px;
+            text-align: center;
+            border-top: 3px solid #38bdf8;
+        }
+
+        .trust-badge-icon {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+
+        .trust-badge-text {
+            font-size: 11px;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 0 0 25px 0;
+        }
+
+        .contact-section h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            text-align: center;
+            color: white;
+        }
+
+        .contact-section > p {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            padding: 18px;
+            border-radius: 12px;
+            border-left: 4px solid #38bdf8;
+        }
+
+        .contact-card h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-icon {
+            font-size: 20px;
+        }
+
+        .contact-detail {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: rgba(255,255,255,0.95);
+        }
+
+        .contact-detail strong {
+            display: block;
+            font-size: 11px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 3px;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding: 25px;
+            background: #f8fafc;
+            border-radius: 10px;
+            margin-top: 0;
+        }
+
+        .footer-note p {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    
+
+        
+        /* Force backgrounds to print */
+        * {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            color-adjust: exact !important;
+        }
+        
+        /* Ensure cover page gradient shows */
+        .cover-page {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8c 50%, #38bdf8 100%) !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        
+        /* Add top margin to all pages except cover */
+        .page:not(.cover-page) {
+            padding-top: 80px !important;
+        }
+        
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .cover-page {
+                background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8c 50%, #38bdf8 100%) !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cover Page -->
+    <div class="page cover-page">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgcAAADICAYAAAB8gEJzAAAAAXNSR0IArs4c6QAAIABJREFUeF7snQecFtXVxv9T37J9l2XpCCgWVOwFe4nGil2xF9TEGBPTLLEmaixJ1M8Wexexx65J7EHFBoKCnSYLu7B99y3Tvpz77iCowO67RcCZ75dPhXnvzD1zZ85zz3nOc7T4yEMDoiOyQGSB3reApqF5GdzSdXH6bQe+A2i9fx/RFSMLRBaILPAtC2gROIjWRGSBH8gCETj4gQwfXTayQGSBlVkgAgcrs1D095EFesoCETjoKctG40YWiCzQRQtE4KCLBox+HlkgbwtE4CBv00U/jCwQWaBnLRCBg561bzR6ZIHlWyACB9HqiCwQWWAVtUAEDlbRBxPd1o/AAhE4+BE85GiKkQVWTwtE4KCTz01bGZk8gDW1/ENN/Uc8/04ulZWfHoGDldsoOiOyQGSBH8QCEThYidmXgIEAfMD3gpzz/x4QoGkBunzwNdQ/Q0carMZoIZy/zMH3A/xwLu3z/zZYys19zZl/j76VETjoUfNGg0cWiCyQvwUicLAC2wVBgCtgIADDNIjZOsmEQdKWfwfbzv048AKyLmQcjda0RzobkE67eK6HroNp6Mphrm4YwfNk/iiwE4sZFCQsNX/L9IlbMq8cSPJ8yLqBmn8q49OW9shkfDzPz81fzwGm1W3++b9WHfxlBA46aKjotMgCkQV62wIROGi3eLgDDnfHGhrJhEnfPjEG9ElQWW4yqI/JiEFxBlSYFMVdErY4PF/tqDOeSXMmwdwal7m1HvNr09TUpZg1v5WaRWlSKVcFEnRdUw5TgYpVyFsq571UdMA0dcpLLAZUxakqjzOwj8nIQTaD+1okbYeY5WFqrnL6rq+Tcgxa0iYL61xmL8gwp8aherHD/JoMixpcMhkvF1EIgcIqNPfefumWXC8CBz+Y6aMLRxaILLBiC0TgoD2N7qp4uUYyaTF8YIyt17NZe5DNsAFxRvQzKYl7JC0f2/AxDQ1NOTmdAA3flP+vgW+jBTq+BwIFGhydj74OmFmtMXN2lslTFjF7TiOtrVmVdjDNXAL/hwQJ4twF3DhugG0bVJQn2GSDYrYYlWBEf591+kNlgUaBkSVGCgOdIDDw0fHwCTQdDR3f1Qh8Hz9wcTyHFj+gLm3y2Wz4rDrGh1+6TPtMgFIKx/VUNGF1jKZ06wclAgfdas5osMgCkQW6zwI/enDgK8+s06fMZtORNjuMLmTUUI21+0NxAgzNwzYCDFzlzIR3gGYQGAYBpoq565qvnL0eGBiBhqXAAwSGRmAVkNIKqG2zmbVQY+pnzbz434VMm9HAgppWcavoYSih+57rSkcSWCLsCUmbJBM266xVwo6blbDj6AKG9/fpV+aoCIHnyj2KrG+A6wb4rg+ezNUCzwQBQ/h4ZPFw8XUfNEnFOASejuvE8bw4tfUes2pg0icur32Y4asFWVJpV4GEH+0RgYMf7aOPJh5ZYFW3wI8SHIg7ElDgBRqVZTY7bJxgj81ibLpWlr6FGUwLHN1Ek9295MzVDl+iA6DpOppmoGHkQIKmERie+Ej1Z/I/Q9ORsLz6v0BHM2x8zcKw46Q8m8WtFpM/ruf5N2p46a065lW3qmiEYISejiKE6QMBBYm4xVab9GOPMX3ZcROLtSvSlJhpdM/Dc8ANfFw9S6ClcQMHLzAJXNDcAMMzVZQERdAMcDUXz/DwNA8v8LB9n0CIGEJc9AMVZ5B/b3YSfFGf5NWZOq9OdZj+STPZrKfm/6PLNETgYFX/Pkb3F1ngR2uBHyU48HxxjCZbbljMgdvobLd2K/2KPUkQgOYQ6Dq+YStwICEAwxCHr2GYYJsmlmFiCECQkLqu4xkavq7haZoCHL6vK8dpKKAgTlSGCRSA8DwL3Yij6ykaWj1emRpw/4tNvPL2QlpaMgpU9OTh+ZIWMVlnWCmH7dmffceUMaw/6F4TZpBGE3ahpxF4Mg9f3XfWS6FLNETsE2hoPuiCYgQpBGIzDSFvekGgUgpZxwHPJXBdAs3D11R8RKUTdF2ModHmJflycQkvTnZ4fnKKOdUpBB4om/9Yjggc/FiedDTPyAKrnQV+VOBA3I4XwKCqBPtvn2TfrQLWqmjFoA1LAgESCVAZ9Jzz04wYnm6jmTa+btPY6lPfFNCaEicvriwXHTB0E8s2iSUMSooN+pTbFCUtDCT0LuH1NJqE3AV4GDaOb2H7HrYuEQeDL+ts7nuplQefWciXsxrULvr7SiW7srrE50r1QVFRjP127s9J+1aw4XCPpOmiyVzEsbuSPpBMQYDnOgr44BuYMo9Ap7HNYWF9hvqWLG0ph6ybAwcytmkEFNgGxQmdsgKNuJUl8LN4AhIUr8KX+IKKLCiuhmcQ+DYZL8akL2Lc83KWD6a34DlCXPyRRBEicNCVJR39NrJAZIEetMCPBhwoJn4Am48q4OS9C9lyrRRFVjOmmRH/B4YFvqlMHdcNNN+g3i1i6twYU2fB7IXCvE+zcLFLU4tDJhsoIp84PlM31I4/mTSoLLMYOiBB/75JRgytYOfRBmv3SWGTVuH5jG/gBQnsQEP3sgSyW7ctmr1i/jvD5tr7Z/PKm/NUikGY/d2VZsg6PuuMKOMXRw5l3611BpZkyGopvLRDUZDEUakB4UqIDXQ0S6fZgc/m6Uz5yOPz2c3MqU0ztybN4kaHtjYXR/gHOR4nlqVRmLQoLzYYVG4ypK/N+iN0Rq/dSnmilZju4Wd8fC/H3dBcA9eLgeHRqht81VDCU695/PO1ZhqbhbD4Iyh9jMBBD37aoqEjC0QW6IoFfhTgQBysbevstGmCE3aHUQMy2IZUGmTRrTSGEaD5NrZRxOJMgpnVJu994vHup1k+m5dlYZ2nShFl95sT+Mk5xDAAHjrwHLkx95cShi8ujjFicIKNhyf4yRbFbLRejMH9NGK+j+tIPYOHobeXOAYmrlHCtDkx/v7gfJ57bS6trRkFELpySERA7mfbLQbwq6OHseuoDHG9mazv4JPFCiz0rIluaniWTUO2mK/mB7z7SRNvfFDHp7PamFedorHFUZGHXOg/p32w9J3logM5ACZ/Y1sGFaUGwwYZbLm+wZYjddYfAH1iLXiZNEYgIMkgE3g5cBYYNLYYvDitgNueS1NdIymW7gNHXbFhj/02Agc9Ztpo4MgCkQW6ZoE1HhyIc7Rtk4N3gON3STOwzFdRAV1SBUKCM13iUlrgFDLlqxiPv+vxnw8zLKhN46gQd07s5/ty4SEo+N40uRIH8nMiQrpOUYHF+muXsP+ufRg7poChfT1038EIsmiyb1eDWZhmKV81FnDnc3Xc89gXqqLBkPvsJFsvTCPE4hZ77zyAM8f1ZeMhGqYjZZRSWZDGcA3QbdK6Rpsb5+1P4NlJTbz27mJmzWvMaTNoYBhStfEtNKDyD0sCB9+RVVYcBE/AgoZlGvSrjDFmI5t9ttLZfLhHXGvGyzbiY+H7BoHnqBSNGyR4bnox1/wzy4KalLJ9Z+fetVeiF38dgYNeNHZ0qcgCkQU6Y4E1FhzkKhLAtHTG7mhx8u5N9C1K4ZMgGYjMsa7C+ZphMGtRGY9O0nnmrWbmLkwrbxSK9Sgf2EnHvPQD+EZcScBCgB0z2XzDCsb9tJJDtovTJ57BCVw03UeoBrjgxwqoaUvy0CtZrr5rJgsWNHUKIITVGMlkjGMPHMppY0sZUZ7C90WZoFDt+A1PuBa22rm/M8fl7hfSvPjfWuYvaFZeX1Qdl5ZO7syiWnJuO54IxZVkwAF94+y+TSEHjsmwbmUDesbAzbqYRpuqkPBcTUVQHv+wgJueTLOozlHgpCvPIK97740fReCgN6wcXSOyQGSBPCywxoIDZQtNY9ctEpyxXxMDipsI9Di6GSPupTE1nYxeyttfJrntmSzvfpJSkQJFBuyhQxVEBiI17FNWEuPAXftz+iED2HAtHc9No/sZDMPF86V+Mkl1uoiLb5/P/Y9+1invGBIvD957LS47uT8DS9NkXAdLSjJ9i8DRsE2NmiaDxyc1ccPDs/lkVpuoIWFZuWqJ7nbGoVUdL8AwdUavG2fc7ha7reNS7NcTBC1kAk2pLWqORpYkj3xQzM3PODS1uhi9UObZQ499+cNG4KDXTR5dMLJAZIGOWWCNBAfiiBwfthsV5/djU4zo14AmZQqaTWDqWFpAq5vgn++XcPvzLl8vaMupHrZLCHfMdPmfFaoSSgZ/840qOfu4dfjpVkXg1aNrreCLCiE4Vox7X9U467IppFPZDhEUlZyx69O3qoCrz1qXQzezaXOypOIi1hSQcETUqYD35mhce/8cnnp1gSIXSn4/BC/5z2zlv1TRCJmbBxVlFsfsFuPILRsojzfTomkq2mO7Prqv0+KY3PBSEfe/qmQcVz746nZGBA5WtycW3W9kgR+NBdY4cKCcowcjhiS44CCfrQYtJKulsbV4DhwYUJ+yuG9SAQ++7FHXKDvqnDP+IQ5h/A8dUsoZx63P4bsUUhVvI+M0EWg+GS23c77k2g9xsk6HNACEGyERkEGDirn2rJHst56BJ2NZTk7FkTL+NcXnT7fPZMq0GsJOkr09d5VB8QLicYODtzc5fsdW+hW6qmpCM9KQzhDTdea2lnP5U8W8/EEKCXz8QI+pZ8wTgYOesWs0amSByAJdtsAaBQ7CHXlB0uS0/XWO3KIF3WnBiPtogYXmayzOFnDvW0Xc+68Mra0+pigAd7PHEW6BjBlGIoTUaEhZ4vc8rnCnX1KW5KSDRnDaPqUMLG1STnJadTHn3TSHl9+Y22nmvpAgf3ncOpx1SB9KYlkla5wJ4jz5ls5lt8xgxhc1xKzlgyK5f5nHN0TMQM2hO4+QNCm8kAO2i3HyTlmqCltwjAyGl8UUwSU9zuSv+3L+AzBvQUqlRrr7eXXnnDo1VgQOOmWu6OTIApEFes8CaxY4kN1ooLPHVhbn7VdLRTyDi4lp5UR+XD/OxMml3PCMR3Oz2/1EN2HvaxoD+xWy9lrFFBTEWLy4lc9mNbKoLrVc56o4An6ux8E2G5Ww48aFOJ7Gq9NaeG96PelMx6IG4bIJne7AAUUctu8g9ti6DEM3eOWdeu5+Yi5z5zdiLQesyBgS2i8ssBgxqICBlQk83efTWS3M+TqF74mIUfeBhJA4KlyHo3e1OWGHNorsNGgpgsBV6YWMVsjNr/fjrudaCHy3vVy0916SHrtSBA56zLTRwJEFIgt0zQJrDDgISXh9K2zOP8Jnl7Wq8UR4R4+rBkGarfPm7Eouu99l9vx0t+xA29Pn6gmIIJIiQG5VwS8PrWLU0BiG6ZMNHF6b7nPNvQv5+LO6XA+B5UQqVL8HD+KxXEOndDrH1Jd0QD6H6BLE4qbqtCj9Deoa0mQz7nK1E3JRjIB+lXFOPqicPTY2KLUMPCvL5zUBD7zo8OykBtJpIQjm7mmJ1kM+N9j+mxyYgZIig1/sm+CQTVsw9RochRwSWJ7PnHQV596v8cGnbYpMuUZEDyJw0IVVE/00skBkgZ60wBoDDsRIQvA7ZIc4v/7pYpJGA9IMwddsMJJ83lDI3x/VeWtqOlc7n6dVQ2cYOvJA14jZOomYycihBVx2ShU7ruPi+y6O6SspYtMu557/wNlXz6S5WUSXluPc2kv/FNAQncIuKiSGaRYBCXIYhr7SNsliw5MO6stZh2okvbQiR3q04us6c+rKuOqhNv79ThOOI3LLEmXICUMJWFgaLHXWvDJG1g0YXGVz8ZE62wyuJeVlcYlhe0KiNHng3XKuetxTKovfEVbo7AVXhfN7GRwsD2Lm+y50hwlXxXvqjnlFY0QWWN0tsEaAgxwJMaBvucWlR2psP2IRaT+FoVkExKjXKrj95SQTnmloFxvK/7EJaT7QoLjIZsSQItYenGT9oTHWHWgwrDJgZD+dAsPF1XzStoXpW8SFWNcW49iLv+L1yQtJJsxcpKGXjo7s7kMb9ilPcOMfBrDziHp8LyAlwkxBC2YgbZkLmbUI3vsiYE59nLk1AbMXpJj1dYbauoxKOXSFl6BIij7ss32C3+zZRrndQEY3MZ2AwsBhTmsx5zxSwHufZHuEK9JLj+Oby/QyOMAXRuf3uGPVDKv31uMydl4V76nXF0J0wcgCq54F1hhwIN2Bd9vK4oKD05QajQSaQyzQcbUkL80ZwFUPZZlf3dZpYt/Sj0wcuoCCbUfF2HnLMrYZVcD6fV0KDF+6N0szQzTNQvelG6FGxrKx/SSW75Iy4MjLqnnyX9Ukk/oqV5kn4MBxA4YOKGTC+QMY1beGVt8joyVzuhC+T8aTJlQpAgyyfgFZAmobskz/LOC/0+DVaRnmL8ooieV8DhXp8AKShRZnHWqw1wYCUHxMRyfhp9Ftj7s/KOOKR+1cN8jV/ehlcNC/OE3c8r+TkpnfGCfrqp7jvX70K0qTsFete+p1I0QXjCywClpgtQcHKl/tBxQW2PzqEJMDRteCk0HTHOIYLPL68penCnhhUotSIMzHbQmZUdj/6wwv5Kg9Ctl3E5eqYmm4pGFqLrpl06YlcUyLQtMhhqeaErmWTdy3MbyARgo48uI5vPj6ApLJ/CIHK/12t5+QTz4+jBwIP+Hmc0aw88haHC9FOrCxMi5aoJHRDHynCV2qMXybrN+KaQXYGDS12bwzK86Dr/u8NqWNbFqIi51f8TmQAjttavOHA7NUxZoxRMDJd4hZLh/U9eF39xUy++sM9gqqLTp/5R/gF70MDh4//h12Hr6YlqzZXsIqehMae96yDTOri9EtT8ld99oRwKPHvcuu6yyiJbPsPf301m2YMf8HuKdem3x0ocgCq7YF1ghwkHVgo5FxrjjGYWCiRuX58V0MM85rs/px6YMB1QvSqnNgXo5T19lyoxJ+flCMMeu0kZA8vG+zOJtgxkKd2saA+Q0+EuveZxuLTQc4aG6GjGFiuqBbRfxnRpxfXjqDOfOalQphZ+8j19SovQui6vrUDnO+8zEPpZ/z+8j7aJx8+HDOOcIm7i3AcwPsQDooBsxrsXltSor6Zp+SkgR9il3W6utQWZglqafQ/ICv6oq5+xWLJ15roaU114GxM4AsBCnlJRZnHmryk5G1WF4rplQpBBpNViUXP17OC5NaiVm5ktHV9ugFcLA0D+S58W+x21KOWMBy1tPY4YbtmDG/pNfAwZJ7CuDZ8W+z+8ja74CDnW7cjo++7r17Wm3XUHTjkQV6yAKrPzgg94E7bGebC/ZdDF4LriLHebRQxq2v9eHeZ9qUOmBnj1CoZ9MNy/j9uGLGjKjB0jwWNRTz0sc2/5riMO2rDIsWp0mnpLJA54CfDuLn+5UxsspDj7tkXJMZ1Ukuu20Ok96u7lSPhPB+5c4LkjH69yvCEl2G9oi6pvlo7UTAXOvkXKfD+QsbaWpo7XTJYeiYqyqT/PywwfxkI42klcHQdObVujz2RgsPv9xEY6uneBPSnnqdgQZjNtLZdZTDgII2pOHz/NYSrn/e5vFX63Edp9PkwVz0QGOv7Sz+MLaOEq0FzZf21hqe2YeJH/TnxsdbyKRzwk6df7KdXQk9dH4vg4NnT3qLXddZvMQRh+BgpxvH/GDg4OmTBBx8N3Kw801j+DgCBz208KJhIwus3AKrPTiQKYqDvPhIjyM2aaAtm8HTpWUyTF9cwV8eKWTap1Kh0LmoQagV0Kcizu+PruSgbXwKqOfLWpu7X47xxGuNqnOjauEsDlry5UGAZRmMHFbKlhuXs9ZgkznzM0x6v5FPPq9HU8pIK38o3z5DnN/uu4zgjHFDKI21qrJEXbWKlJ25i3RDkE6TbqCRMhLcMGE+jz35Bab0I+jk5ULNhdLiGOuOKFVljZL3/2puM5/Pbiad8dqrKALFm5Dxy0psdtkszkm726xXJeWjGlOqi7hqYhPvTmvI9UXoxH2ILbNOwIjBFuePa2F0vxZ8J9Wepijl08a+nH2nw+zqXL+I1TZ6EIEDInDQiRcjOjWyQC9aYLUGB2F9fJ8yg+tObGKLgSlaxXkZItBv8czMvvz5noBUKldu1xkHpZ6BpvHTHaq48NgkA4obqW+xuP6fHvc8X08q5Sxp0rS0c1JiS16AaRmqs6FIGQuRsSsNnaS88MiDRnLZ+DKqki0EgY6UUGqa9IP2FflR90wCzyVrWfzx1mauuys/cBCuPWk3Lc5fVy0RJVrhq6jHMjwCAUZSYeAGGJbOPtuV8auxcYaWt5H1TR58M841E2toapKGUp134hKJ+e1hcOBmrWjZBhE9QAtipIIi/jixgFemutg9oHDZa+9fBA4icNBriy260JpgAUML5Cu4hPTdkxyh1R4cCN9gy/V1Lj28nkElAdmsi224tJHkhtcrufeZbKfZ86EYUGVlAWedMIz9Nm/EtpqY+HqSq+5uoK4+tUJnF8omhxLK4X/nuzgFHIzbfxhXjC+mMtGCF1gQmASyI9eEv2AoaWjNyxAYBufe3cL/3f8lphZ0HhC132QIAkLgEzZM+l4JaKWqGBBPmJx2cCmn7JLCJs3MulLOuSPN+x+3YnUSHITExEN2LeDnu7dQpi9GVyhFyKEaN77al5ufA0vPf475Po9u+10EDiJw0G2LKRpoTbaA+v76GkHGAMsDT3380eJuj0VOV3twkHHgsF0NfrdPHbZUY7k+McNjkVvKORMLeeP9dKd3l2FZ3xYbl/Hn8aWMHlDDvHqfP9xu88pbTbm8f6fDEPkvXQEHR+8/jCtPLqE80YbnG2iBnsOPuomn5W4oBw7i/PGuJq65/1NMes9xhjbbdP1CLj7WYPSARurbdP72pM3E/zgqNdGZI+Q/bDCikAuPgJHFX+d4B36AZWR5+pMB/PE+K9dlK5+yiM7cTE+dG4GDCBz01NqKxl1jLKA2l65OUdzhxK1ns+XgRlqyBg9PHcB/ZvZFE7G9Hpjt6g0OpCcBOqcfZHHSjovIZhysQCeuaXzeWsZv7zSZ8WWGmN35kLbare9VwpkHpBlYnOWtzws540aXOfNaez3PLfdy1P5rc+XJFZQlW8kEYOEj2ZNAs3B0FdxH9xw8o5jz7mzkuns/wehlcCDpk8JCm98dUchh2zSguSkefruEKx/yaG4RwmbHn0PI+SgrjfGXEwvYpv9sfKcZNzBI2i6vz+nP7+5K0NaS6bKSZA+8Vx0bMgIHETjo2EqJzvqRWiAEBlXFaR44+j12XXuRIuALj8v9XyThwufX5YoX10WLSQQhD0LbCuy62oKDUBo4Frf5zeEWh2wyX5HWLM/CMhK8WV3CeffB1wvzIK3JLtw0OfPwJKfs2ohlFfLE20VceE993vnzrqxtBQ7GrsNlJ/elpLCVbOAT812sJeDAINBS6H4WTyvhgjubue6ez3Jh+F4+hCdwxB7FnL53G+VmI89PKeOiCT6LGjKdIoXmGjJJS2eTc45Ost/IeeC0ksYgbsP71f059744Cxa2dmrcXjbHii8XgYMIHKxSCzK6mVXNAlJl52dM/nbwNH6zy+csbIxj6oFqjmcbOS7d7jdvy+QvK9Btt1t1SlZrcCBEuIqKGOccFWO3YXMxvEZ0Jw5GIc9/Wc4lE1wam6T7Ysd3rOHiECLeOeOSnLRzG21+OXe9lODaR79WnIbeLp8TF3/U2BFcdkolxQUpsgHEfZeYL3yDGL5h4Ott4EulRgnn3dHEdfd++oOAA+nYuO9O5fzugAz97Hr+82EZF050WLC48xUjQu60LJPTDo1z5Oi5WF6GNoToqfF500AuesDmk89FN6Lzz3eV+AhE4CACB6vEQoxuYlW0gNIDCTRs02PS6W+wXlULaSfXH0cOiRxUFmS56MWRXPzkhpgFWfVn3XWs1uBAyt3W6m9w8bEamw5YhJVtJvBNHLOIR6ZU8PfHPDLpXBfCznIEcuAgwSk7t9Dol3LHK4Vc//B8nGyelQ9deGICDo4YO4LLTy6jsihLytPQ8Yl5OoZvEmjSYMoj0NL4Roxz72hV4MCgZ3JRK5qKkAUP3a2cX+2TotxYzEvT+3DRRJcFdZ0HB6pMQjM5ei+LU3aoJhY4eL6GpcGc7GD+/HCcd6bWYdudF5XqwuPovp9G4CACB923mqKR1jALhOAgbnm89cvXGdGnVcmchxQrBQ4KM1z675Gc9/hGEThYsrPXICXKiEN8rjg2zZCKNixXwio+jlXI3ZPKueGfvirB6/whTsngVwcV8ovdm/HtBA++U8SV99TR0pLNKxLR+Xv45heSSjp8vxFccVIJ/QrTpNGV0JPlB9i+juZbeLqJo7XhmTYX3N7GdXfPVOGn3kos5BZygGWbnLJfMSfu3Ezcb+aF6RX8aaLD4sZsp8P/SoQq0DloR4Mz91lMzE8rxUlJXXztVHLZ40lefbeFuK2pMNtqd0TgIAIHq92ijW64Ny2g0gpZk1vGvc/J28xmQVMcy5BeJJoS9kvaHvvevjX/+agfRiK3eequY7WNHEhopS0LWw33ufq4JkoKM5gKBwS4ZoJbXyvjH08HKrSej9+QPP/hu5Xym/09Kss8Xp6Z5OxbWliwsK37CIlKEnkFd9euMytnHLnfMP5+ah/K481kNB3XAFPyTqqe0cLTNNKag2MlOf+mRm66dyaWSBSsZPKSBugOsn9IICwqivGHw+MctFk9rgsPvlXC/z2RplUUJDsZwVEVEJ7GvttonHNgPbFAwIGPZsZY7BVw2WNxXpgckLDFjt31SvTiOBE4iMBBLy636FKrnwUUOHCk428rjx8/mdEDG0k7pgIGkm646qW1+cOTG6FZ3kq/9Z2d/WoODjTGrJ3l/46tJ1EYoEvtJy6BleAfrwg4ABGN6KzfyDmlgG02LuX8o2OqLO/D2UnOvM3lky+llLHzaYpvPxhx2pZtkIib7ToMuRr+XJxDihRz/5TDNGHcTyu5YFwZJXFpnWypyIEAH5mxABlPl1+KVLHJJfc0cfMj1bmfK+cvPQhk/G/dhaaTyXpkpLFSZ1fOt4dqb5s9sF8B54/z2G1kPfXZYq55JsYjL6fwOlk9nXhlAAAgAElEQVTKqGYvSomuxt5ba/zx4HqSQVqVqqLbtGg2lz2W4Kk3TZKxCBws7/Et3Vshkk/u4iKPfh5Z4AewgPp+Z00GVbRw+vZfMaqqmTbHVCJ/D7wzGPX1zqM9wMqmskaAg+uOqyNZKL2WTIzAATvGTS+Xc9MzXQAHrs9ag0u4+KRydl9nATUNMX5/r8FLk0UOuGsNf3I1/LDrDgPZb8dSzExLu2CRj6eJk9fRAxuI4ZgSqncYNRA2H2IR00w8YvjSI9rIRUpEOdDXMug4aFmfqV9aTJurqZJHX8+AnkXzRAdBR/Ny4QQv8PFjcT743GXC41+uOIKxslXU7silm+IWGxZz4eEpRvVZzLxUX85/wOK195oRteeVRTG+fZllwUEDCTIYWRdNN2nRi7jksThPvUkEDlbwfCJw0IHFG50SWWAVt4ACCBIultbqMRc8cSJGroSxh+59NQcHsNUIn2uOa1BpBT+IYwk4ME1uebWcG5+RkHvnOQdhiLywKM4vD+/HKdsvxtZdrny2mBsfr8PLOqqpUb4PRY3v6/zy2GGcfVgcu7WemGnjCOgwXLVjNoMEGgkc20GzPXQ3wNQsdFFH9I12cCBxA9E6kI6FogQpiyZAC2w8z8CV/zZSeEFa8AO6a6O5BoYPaekaGXd5YVqc0y+ZRzabzYu4Ga5LcUKOD4f9pA/n7t9EiVHHh4urOOtOjZl5VhSEaYX9t9U464Am4mTRsznZ6lq/L39+LMm/32klEXEOlvt5iMBBD305o2EjC/SyBeR7mCvxzkVVxQNF8snf8xCEc5DOwqihOlce38qQ0iY8z8aSRkSGwd1v9eHaf4InHiuPmLn6qGoGB+7eh4sOSVOVdHjig1KldVBd09YlUqJqbhTonHFkP8472MTKZMBIkjVMfFOctIsZmBjY6IaOput4EilQHZY8DLycRUQZUTpMCUpRPZ2yaFoWHJ3A1ZSaYKB5KkogTZkCkVyW8L7v4Hpt6IbHc1MLOO2vtWQyXQMHcgPxuMWZh5VyzLYNGH4bj39Yxl8muNQ3pPOyV85OGofsJITEZgw/jeH5WFqGue5a/OmRQt58fxGxqFohAge9/KGOLhdZYE23wGobOQg79601wObS4z1G912I41oqrWCaJo99WMmVj0Bbm5PXjjiUA95yozL+crx0G0wxry7Oufdm+c87jZ2WZF56IeVY+Bq/PqqK847Q0TMunl6Io1ugO5jyPwyMwFL/DLDwDJPA8FSKQBcAIEJNmpH7n8gpS0kjHp6RFtoFuqpikAhFgBuAq0nxoyDNDL6fAl+6T5g8834Rp/ythkw6f6XBUOp45LBCLjnOZvOBTaRcjWueT3Dn0615RW+W2EvTOXYPQ4lRiTy0Lk2s9BRfZIdx8YOFfDhtUVTKGKUV8v5Oy7uoqzThshUvsqYVXynIAdR8jpWPrUmg7wc/wvvMhSFze42ld6k9uTvtickLWU/tsGVvvZR9JR2c6zqbf9RXjS0deL81RneM3RO26MqYqzU4EBGkvpVxzjs6YKfBX+P7Qu7Llbq9/Hk5f5qgs6gui5kHgTBMLVSUJzjvuEoO2LJNyRNf+WSMmx6vE4LDEsJgZx+Acqa+zhlH9+ePR+qQacU3kgSajaG52L73P1qhiYgkIx8uXRQQYwSil6w56OL1VW8FHVFO1qQBh2vjoZERAOF7GL50MJSPm0QOBDbIS+/hB1kCSTO4GRKawbPvFzL+KgEH+UcOwh3+HmOK+dNhaaoKXT6uLeDSiQH//SA/voH6TgVgWjqnH6Bz+OaLFcjwfQ/LyvJx0yAuuq+AL75oikSQInDQboHltF5Vvn1ZLywfecXRdSSPK/wdH1XupIhdkvfTVQRO3j9pdKOb7ed3wJmrDrBqbNG47cDYRvvYnf2QdOF8mb8cvi/3KPNtj0DKfNVftNtS/lvKokxp1Z4DUZ3lDnXhNlVzoe89vkXAy3GvA3z13NrnIs9Tnqt6/MIyN3LzMj00y0cTpcEOlP5979iW5GlXMLbcS56gskv26sYfr9bgwPcCkoU2Zx0BB224ADcjjYjkhYZpCys49x6d2fOz2F1Q0BOsedJBgzhjX5cKvYnnPi7h3DsaqalpyStULs8uTCv8+qjBnH+ESZBtBCORAweBr9IGEhHwdR1fIgG6hhEkczwHRTOQRks2muarFISIHeHZuCIApUsNrPBXHcVB0CSNICBBrWMVSkDsFngOpp3l6Q9sxl9Zlzc4CGWs7ZjFb44o4ditGzB1jadmlnH5vU3ULMo/pZCTTza44Ej4ybo1iqchraRt2+f9hX057+4YC2vyEVfqxjeoK0NFpYzdWspoGQG2rP+lnom8axlPX0Y5TpG7MpZyHOsPaGSHtepYv6qFyoKMqhsXoZmGtMXchgTTqouYNLuMRXUFqlxMmtysyKGEcrea4TNqYBPbD1vMen1l7CwJKzd2fSo39tTqYt6cXUZdfTI3tuH3uEORuatdddZUjjJWkGWDqmZ1j4NLUpTEpQ26r5T45D5nNyT5aEERn9UW4KVzNtOlbO5bu/IlJl9e29Y83hO5T7HZtw8BJykBXSEkFKDg6QroFRen2W7YYrYY1MjQMpmP8MMC2rImC5tjfLG4gDfnlDL96xK8rIked5Y/l3bAEY5dWpJi+2F1bD6ogSGlOVuJMVuzBgub43y2KMlbc8r4eL6MbeTGFjCVx9y/9yfdaNuO3NJqCw6WTE7X+e1hOieNWUS6RcLzJrqpsaCtgjNvM5j+RTpvkZwl3Rk3KuViCZf3b+GL+jLOvTfD6+8sxljORmVlhg932r8+ei3OP8xCy9ar8jyEcBgiYEMnK7LPin9gEAusXJhT1/A0i4CYcv6GpBnwCPwYgS/RA1nsLr6QFNsFoAKJXcq/y1vlB3gSXHA9LNvl6Skmp1yZf+QgTCkMGZjgr6cWsW3/xdS2mlz/cgn3PrsYXy6WB+kjjNyUFNtcdaLLNgMWkPE1wTbEYgb/nVXJWXfotLWJnPV3qzRX9gxWib+PwEG3gAMR+3JbbU7f/VN+t/MXLGq1lQCYpANKYg5/fG59Jr49BDMp3UE1VTe+/bq1/Gr7r9hh+GLKk1lVgeSJg2lfGPLf8r7Jh39+U5xHPuzP1a+NoLYuiR4XsbVlV5AKwwudx9XZZf0aztjuK8YMq6c8kRvbXWZsX307Wh1DgYSJHwzg2teHU9+YUA6lp3acuZr5XAfXzdaq49CNq9l9ZC1rlaUojLnEc0IxS9IKygk7Bs0Zk09qClXp3CNTB/BldfEyYEbZrs3iiG1mM37rOdS3WWrOMg8Z97o3hvHMlIEdFulRfC9fozSZ5dmT36Yo5ubAXQAx01cO/uC7tyAr5Grdx8uYlBRlOHXMLI7a9GulJJi0PAXiwpSQAARp7y7jNKQs3v+6hKtfH87z0/orUCZd7L4dEQmBXnlJmtPGfMURm8xnWEWbAiySmgifk4yt1puvKUD1zpxS/vbacF76uD+66amIb77RlrDxUv+yNq7Zfzq2meurIOMlLF8Bt7Oe3SDv8Vf0HVytwUFY6nbqvjpn7FqjHJ8rTlYPaHDKOH9CAa+935w3PyB0UOVlcc4+upCDNm8l0Au485UYf3+ghkwmTz5DO9HuzGOGcv7hJkGmjkC3FbdAGAYSvnMNHccw0YWW6JnEEH6Bi2d6uLqkFCwlhKFrEiGQF0GK/aX8UT4u0oApt4MSXQB50SQJIqBB9AZENTJwA5KGxnNTLMb/tZp0Kv+0guT29tulhLMP9Kmy2phZneTs+1w+/Cz/DpYh6Bg2pJArxrWxftnXpIRHIX0lLKnxreK8uyUikh/hNAIH4vxQHd52unEMM+aXqB1hTzmmpe29pIIioPvAQUuMC8dO46J9ZtDYHFvysS5OOJzy8Cbc+uoIzLijwssX7/0xZ2w/i5jp0Zo18bzc7u7bYmDyARbgKYp04uSmLyji7Gc24Nlp/dFtsVVuVioS4enE9IDL9p/Oz7eZo5xjm2PgSsnZcscOsI2AgpjLB18X84enR/Gfj6vQY93cQEcVR4OXNll/SD1/2OUL9t9gAaUJh7RrkPUkIvfddIFMT9aIzEUEd6TRT3VTnHvfG8Q1rw2npq5AgRnpEOg0xbjggOlcvP9HtDbHlCOWMRPJLKc/NJob/j0Ss7Bj2v/KIXoa5QUZPv7Dy2qHLk49dIgzaorY8todyEhZX8ZkyxGL+MchH7LJgCZSjq7+XK3jdnZ/uPZCBy3zKbBzDv72dwZz0XPrsbgltsz6F2DopSy2X6+GGw/+kFFVLep5SuQnrBZYek2HYwtIkLHlvfrHW0P58/Pr0Zi20AQk5JFmCEWQ1q5q5v0zX8sBE5Xa0YjbLpO+rGCHG8eo+S5dmdQd37fVGhzIi5vKwoHbW5y3by0FcRdHWP0aNFPBTS+UMvGFevXy5nuExJb9dirhvCM8BheleXdWBb+5tZVPv2rqtCSw+lC0t5r+7dEDOeeQgMBpUZwDXzENXAzNU5UInm6rJk+Wb2DrcVWaKKWNgSnpUV2RFeWL5suOwFewAt+XUaRzY+5DH8+mVZVCGrP9z1zF+CejUaD7PD/d4sSrF9HWlum8gmF758TSkhi/PTzBAVs0kfViPP52IVc/VE9Lm0Q28stRhlGbnbYo5/x96+kTqyYd6CQIVDrn5kn9uO5J1Eco/6eb76ropt9FkYNuBAc2f9zvIy7ZayY1Ld+AA3GApz22Mbe9vDaFRWmuOehDTtxqrtrhyfshTqAjhzinAuEeaAGnPb4xd74xTEUQZPUFrq4cws2HTeHIzb5WO2cJu4d5/ZWNL05Kfi9OZ/zDo3nw7aHdFkFQ3z7Jw/saP9/pC87f7TMqC7M0pU3lHMVRduTI7VY1JHVTHHP4qKaIPzy9Ps9NHYidyJJtiXHWPjO4fO8ZLFzK/mVJh188tiG3vrJ2h7X/lwYHU377KsXfAgcSxdj+hu1INcfYfdQC7jryA/oU5OYUEgNXNqcQBFcks7z8RQWH370ltc2xXEREvmtpi702ns9dR3xAUdylJdO5sWWM8oIsz87oy1H3bk5DylYpqc5GEMTH+Y7O8Kpm3vjFJOLmN+CgQMDBrHL2vHXrCBx8+4GHFQubjoxx5eENDOqTVqHnQJylXcrT71dy+b31OK7k8PNkHAuPxQkYMjjJn0+Ks/vIBtrcUi58yObB52tVA6TOHqo+FYPfHT+Ecw/VCNIN6FZcNVCy8HKCSIaoIMZxjQAzCLBd0S0IcIQ/oYlWganKHQNNyhxzmoqBJwvbxdLTuIZG2jModFNIWiEt55ElEMa/5+OkNQwrxvPTbU69Yh5trZ3vGSEWdTzYfvMyLjzaYWjRYuY2VXDFoxb/frM+77RLCKCkCvWk/Yo4ZUwtpt+kIiYCkbL/I1Fd9GQVz7wFVjtRrLPPYJU4PwIH3QoOztvvI/6810xqv+WcTn14NLe/NpyHTnmTQzauXpJ2CNeA7MQUkTl0lOJP24lqEsULD3GQskuOGR4nPbQJEyYPBdulwPC575j3GLvBAha32cs4XBlbdu1Lxlnu2JqKdgjZ+Oj7N+PJqYNyAKEDhLnlreWccE4OuPz9wGmM32ouzRkDRxq2fQ8oCOcc8hKW8AraKzfC6yigZOe4AOe/sC7XvLw2fsrinP0/4rK9ZnzH/qc9thG3vJwfOJj6PeDgs0UFbHLlLuy2bg0PH/cuphGQcb6Zkzj+XNQjV1kghwQY5c/DaoOl51KedHjp8woOuXMrmoS0mDE5YNN53DXuAxU5ksjKEgJn++5/6XGWP7ZORTLDUx9XccQ9W6jvsXomnfj4LA0OJp3+3++Cg6/K+cmt2+aiGd+h3XbiQt9z6modOciJCQVUlFhce5LD6KGNOSlg4SRaSd77qoIL7veYX9O+K+6CrURr4MQDyvj13m2UFZo8PbWIi+6oZ3515zUPQs7BuP2GcPzexQTpZkyREERTNQqqi6Ru4Og2jhUQ17IMKYKqUk3+Ei+IYfgxqVUgkPBdu4yy5ruKjDi/LsW8JpOMVkDMSSvQIBE430sT+Bn1305WQ08W8+anGn+79VOcTraiVuhaCIMJi58fXMKxOzWQCFI8N60Pl03IUlOb6hJhUxZ7LK5z1pGw3/oNkM3i675KrSzKFPG7O0v48Asf2+q88mIXlkH3/jQCBz0ODoRPcMz9mzOgJMVVB3zEoqbYEscozkJC5bIDEwcgKQZZd+KkC+2cGFlTRt7Ib1gz8hvJezdlDHa7YTtmzi3lH8e8x6nbzKa2neugnNFSY0uYW+RuZWyJdMnY8iX/vrElbFzdFGOn67fn68ZE3uHoMNUh0Y57jn5PEbYXtUkkMkdIXAJ4hHQvgMf0leORv8yFznNgRewjYCDtGIrYuYS5355ykZD/Va+M4OwJm3LOgdO4bJ8Zagce5uAlctCd4EAIo1O+LuXkiaP55/i3GVCUUdwN2VCFqQR5npbuK66EACE5pLOhABrhkGRcY5moTtjd8OpXRvCbCZux+XoLeXb82yRtX6UoBGTkxpZn5ymeg0QSFGhoH1s4Dq2Oqc5fOmIUjn3es+tz6bMboCeznQJ8ETjo4idX2gSfd7TN2M3q0LItGIodZFDdVMLfni3m+bfzz32rD0N734AN1inmT8cn2XGdDLUtNufdH/DES7V57ZCl10FBQYySopiqOsh9gcKeCrn/DNphb9wKGLdHH844sISCGHieEBeFwOgrwqK0azYELQs6NnSueWQRtz1RgxfIS5Crq1K9FSQEGgjnoJ3Ap+mk0h5NTelOP4HQJqPXL+ayEyzWrVjE4rYEf38qzsQXm7rUETKMCK27lsX5R7SwXkUrmi858gyaafHWvCouuFunts7Nq0y105PtqR9E4KBHwYE8NtkhP/lRFTuNWExpGJ5ud/cSHp9dn+Cpj/sxaVaZIgeKAxQC3LCyNnZfp5axGy5UZ4uTCdOTuQ9+luveWItXPu/DQ8e8p6obVHlkO5CQUPSXi5I8+XE/3ppdxrzGuHImxTGX4RWt7Dmyln02qFGAQXgJ4Q5Xdu/iUG+eNJRfPLRJ/vwD2SUHAfcf8x6HbzL/O9ES9TnQUPcjufSPFxQyeW4ZsiuX6IfjaiRsn/5FaaXlv/XQeoaVp1RERc4P5yqphoqCDKc9ujExw+fqg6ZT29Qz4ECMG1ckvEKqm+PstV4tjSlTfWtEN0YctJzz2pcVPPdJJR8vLKKuPZJTVZhRPXIOG13NelUtNKdzzYvUd1Y2ZGqjCWPv3IoLdv+MXdepVcTFcGwBHDJ3ed7Pf1KJ8B7Cv68qyrDZwAY19tp9WhUoWTJ2e7Qp7Wrs8Y8xfDivFN3uOKckAgdd+PiGoe1xexby273rSKZrcyIVhomrF3LHfyu5/vE0Wh7h/2/flkQPfnX4AH75E5/CIpPHPkhw9vWz8lYAFIftfx+7ZekLt0tlHn/gCP5ySj/KE2kcN0BT2gcevu4oRGsGOp5nktKKOP+Wr7nx/s9VCPQ7Iaxl/kDGkRcjh647eoTli7G4zc8OreLUXVqwsm28/FU5l9zXxKy5rV1y2opL4sBPt7Y5/+BFJGSOUsLou5hWGTe+Ucatz2XwJaeRZ7qoo3Pt0fMicNDj4ECcYK4XSi7UrLQzdDANn5smDeWvr41gQW2h0goJwpp4JUQq0buAgzafx40HTiNhe8s48RwZWldgQsrlQsKc5ORl/V77+jCueX04i+qSuZRfWBMfjm0EHLnVbK4d+5EqHQwBQs5RCateZ8frt8sRRTvhTGS9KhLb/8DKn/abzh93/5y69uqBJdGCQFPENvn0PP5hf26dPIS355SRTVk57X5JOYQxatkx2x7lRWn2Wa+Gn4+ZxZaDG2hpj7KodEx7VcdXdUlGD2hSu+dcVDcHdLorcrB0xEOuKTZX15GqlLjDR9VFnPPc+rw4s6+av1QghA2J1PP1NMrK27j5kA8ZO2rBsk68fR7CDSiKSfljzloydmnc4b15JWrsVz6tVE2QlMZB+zmapLJ9jb59Wrj10Kn8dL3aZcaW+xROxI3/XYvTJ27aKT5JBA668AWWh5jJBmy7SSFXH9dKhfe1chiOpqNbCV79oh9/muCxoDbTJYcV7mY3H1XOVSf1YcMhaapThZx/ez1Pv75AfXA6Szbp+LQ1jjpgJH8ZX0FlsiUXKpOAgBAXdUHLooNgKB2AtF7EH2+t4R8PfIL1feCg4xdd7pkhWXDzUWX86fhSNuxbT1va5pInDCb+W6pGOs/DCC8WpivsuMX4vZMcv80CPE/qhR2SUqIZ9OEPjxTy7LtpEtJmojMJvG6Ye7cOEYGDHgcHSz8vCQ1L5YE44l8/OYp7/zssJ4YTktDa88lh6Fw5hxabPUbPZ+Kx76mhwtyu/LsKUCoHkiPrKX2ArM4vHt+Ih98egmavYGzhHrTZjN18Lvcd9f6S8Le6pq+p8soLX1yXS57eACPpLOFArGz9qbLClMXuo6r554nvKEcdRjNCZyfRAtEt+M3TG/Di9P7KfwZCthRg0w6g1HXCfH27YyVrkijM8Osdv+DsXT5X8w8jKgK9JPcv0ZHQifckOAjtkCtXdXnh0z6Mn7gpCxfnKihE4CjXiDZ3N8oKAiTaUxAPHPcOB264QO3+l+ZfKPu18zxkvRTHHZ78qB+nPDSauoYEekLSTd+AzWXGzhoqffHwCZPZc12JauTGVh14jUClncZcvz0LGyRd1DFyYgQOVrbiV/D3KrztBvTva3PpOIfth9SS9QN83UAzNGpS5fzxPps3pmW61KAn3C0n4ha/OHQgp+ytURR3eOqtGOfdtoAFi1rzqlzoyNRlgR95wDpccUo5lfEWVd8ricIl6QhfFMEECWRxdJOzb2vkpglf9iCTP8CwLH57eDmn7CbJR4PJX5r84ZY6Zs3regonRwBNcNHRSTYvryHtZwnIUKSn+XJRMWc+UMJncx1i1rKStx2x5Sp1TgQOeg0c5CIGOed11P2b8uKHAzEKsiqXvCJQr5xFq8XlB03jNzt/seSDv/Q6UmMbOU2EI+7ZnNdm9FPM/JXJ9Ib6AP93+BR+NmbWkrHlniRELqWT212/PU572mFlOFhlEH35rcsrp01iw35NiusQhrjlfqR649UvKzjmgc2ori3ESMi7leNIrOhQgEkiCp6OnzbZZ7N53H7o1JxoVDthb2kQEoKcnoochOPLfCZO7c9JD2xGxjMw2jUIljcXFVXJmqzTt5kXfz4JISMundZZGnRIxODudwfxs4mbqrTFysZWzzNtstHARp7/2ZuKyxKSXUPbn/TQaO55Y3iHKzcicNANX2xh7Z+6p8FpP2kh46ZVSN1QNf8x7nqjnH8855HNSilS/opV4Y55k1FlXHl6oaqrbWqp5IL7Ujz4QnVOpKgb5vLtIQQcjDtgOFecXEGfWIqsbykFxSV7AvViSy2D6BvYChzc2EPgIARjm2/ch7+eaDKyooH5Th9ueDrgvier27kN+RshZ2P46Q5J1WypSmvERWrRIR7TeebDGBdPkK6TuT1BT9g7/7vv5C8jcNBr4CAU5PnFoxtx+6trYxZmllFNXN6TUw7X1Rlc1sakM15XOXpxFEu70lz9vcdJEzdhwptrdbiePxQlGlnZzOtnvE7MFOGm3J2IvkDG09juuu35fGFRhzQocmDD5pe7fco1Yz9aJp0gzklKAoVbcfCdW1HXGsNoz6N3ctXm8vCtNntuPJ8Hj31PdQcMneDSY/Vk5EABKNtlyvwS9vrHtkpLQOl0dKC6Iwf4bC49cBrn7PbZd/gYaq1ImeDsMva9ZVvahGTYQfXKcOyrD5vCr3b8csnYYWpB0k1nPrxJhwWhInDQ2dX5rfPDDo1jNkpwwVE+fRN1SobYDDLYusb0RX05+x6Dz+ZmsPLosxBeLgx5m7bJr47pw6l76pRoGi99pPH7f9QxN4/KhY5MPQQHl4/vQ2U8Q0YaLUl5URBgBDmI4OkZAtI4FPDH21q4ccIX3R45CKMn0n3xnBP6c9x2KbWj/9enpVx0ax3z5rd0OXoiPAzLMvn9MTH2HTUfO9umlB9FPXKRX8zVz9g8+0bXJLE7YvNeOScCB70CDsRJlSQcnvqoioPv2DoX0u3EAw4BwsTjJnPgRguWiR6EO8KJUwZw9D1bdpofoG7D13jqpLfZY91vctXioGTneeyETXl48pCVphYUUJbfxBzePP0NhvdpUxUGCoC0KwuKgNGeN2/LV7WFOaJjBxzp8swUOsFf7v4pf93v42Vy7Et23z3IOZDnJ5UU+9++NS/PqOqws5V7yykfWuy07kKePGny96Zs5Jy9b92WSZ9XYMRzZMSOHGFaZ6+Nqnn4+HdUiaX6brY/T5HL3v3mbZXt1bpayaAROOiI1VdwjiKleAFFRTEuOsFilxEL8LM+IkViGdAUFPF/L5Ry3wvivFb2OFZ8M+HOeYORJVx8ahXbDm4kk/W55mmDGx+pFWmvXA+Erl1mmZtQaYWxw7l8fF8qkinSgeQGpUGThu6b+CKgbKbxyJDVCjjvllb+0c2RgzC/KhzAXbYu57JjTAaWpJjXkuTKRz2efGmx2kF05VBRAydgo3ULOPswlw3LF+Cn0+ia7HJ83q2p4Kw7EtRKvwYp9+zKxVaF30bgoFfAQegQ9r11G974vBIj5nSq06LaKbfY/GqPT7h67EdLdoNhGF3cxl63bMNbX/ZBj3VO/jjchZ+9zwz+srdoBOSkn8MSuLOe3oArn91gpZGOMGpwxDazuGfcB8sAmHAnLEDjobeHqnRKR53dil4T5biyBvcc+y7jNvn6O/n7noochIBMpJzH3b0lmi3qgx1/oRWQEq0GIRr++jUGlmTIuu3kxvbUy4T3B3LsfVt0Guwphy/Ex4Is75/5KhVJR6WF5BDeweI2i43/tjPNKSvHi4jAQccfXL5nqsB6oHHUnjan71ZLgeYj8EDXfQzb5N8f9+HPE7IsbsiqUsaedNwAACAASURBVMeVPZQV34c8VJ0j9u7PWQc69E1m+bimjF/fVM/70xowDMlBflOelO+cwt8pcLDfcC4/uYKyghYymqvAQcwz0d0kATaukcbV0qpC47xbmripGyMH8uK5Xm4HMnhAAX8YV8jY0S1kA5vH309y1X2LqKtPY5p6p17S77eLxvj9CjhhlyZi2UUYjszVxLWy3PZ2FTc8LvoO+RMeu/osuvX3ETjocXAQRg2e/qiKg+5sjxp08uUPHe+4bWZx5+FTFFNfdpYhS/7J6f045K6tOkwyW3oNheDgpB2/UBLAIUEuLJe85F/rcP4TG600R62ckmNw/7HvcPjo+UoBcun+Bq99UcEeN2/bIYfU0TUe5u9HD2rgX6dNUpHKpQmbPQUO5PFJ2aREDV6aWYUR7zhhU+aWi7LkeCIv/2wSmw9upE0aJbWXNordDrxjKzV2Z8FeGMERae5Jv3xDNbQSSWd5PvKsRR9hi2t2oLoh2aH1EkUOOroaVxI9cD0YPtjiL8dkGdVHxCZkF59r2bw4VcnlTyV56o0GrFzvkbyPMHpQ1TfJuSf2Y69RKWKmxuufmbwxPcXM2Q7vTG8hlRJma8fCUSu6GZVW2G84V4wvozLRjCP9kwT0SOcFT1SAbDzdxSNNQJJz72jl+gmfd0taQQoPCgtMNlm3gA2Gxhm9VsAOG4rAUZYP5vXlyvuamTqjvkuVIOqFldIwJ2DEwDh/Psplw0GL8TIOMeFTuGlqKOKcCWVMmuYTW52Fj5Z+0BE46HFwoBjnMUcpGt47aRhGsvO75jBU/JONqnn02HdxJCTcXlUghLvb3x7CqQ9u2uldpiyFcOyxm83jgaPeV90Q1ffF1xBp3xsmDeOMh0avUO8g3K2WF2Z491evq7K5kMQozlrEfw6/d3Oe/GBQp8LvHflAivKjqCPecMQHnLrt7CVNl+S3PQEOQrLm1PlF7HjTdjhu51UHl8wr0HjihMnstV6NEqTK9arJ2V5C/1Nnl3X6mYY8KPnn8ye/xU7DFyswKRUOikfiaux003bMnF/cIR5JBA46sgo7eI5uaIzfN8kpO6QwvEZM20eXUL9RwlP/YxFfcn8jDQ1dK2sMnZnspjfeoIzLj0+yxdAUWSNGoLm0pDSemBTjyvsXU9/Y1uU8vGDdcWOHc+X4EvpYLQSBjWvpqpTRkGpGafIsOxkyuEGCc29r46YHP++yEJGkakpKk/z60DIO2tKhLOFh+w6e1sQnzQkuuT/JS2/Wd1hDfqWPUNMZt1shv9qtHtNqUh+4mOMSsxwe+ag/Vzxi0Nrq5hQkuwDuVnofvXVCBA56FBzIEhGSsOwKt/q/HZgnbZc7WEK29BIIu/NtN7KWp0+avGTtheHth6YO4Kh7t8hrbNXgJ23xkw2refS47wKPOyYP5pQJm63QSakxMiY7rVfDkyd+k0OXd0TKK0XcaYtrd6QtbXZr5GBpcLPHqAU8dsLkJRoHPQUOVESlIMvlL63NOY9vtFIuxvJe5ZBHcv8x73LY6PnLpETk7/a5fSsmfVrZJRGqx4+fzN7rLws8ZM3sfvM2TJld3iHgEYGDbvoYq92nG7DZugVcOs5jrbI6pR4oJX+GaVOdruLSBw3+M7khp0vQheuG5DzhOVz9iyLGbuHT5ifQ9QwFuk5bUMWFE1u5/eFZXc7Fy20efuA6XDK+iko7pRoyuaah6pOVzgc6jkADzSFtJPjTjbXcdf/HXdc50HWO2bcf5xwao1ivw/PT6FkTw8gwpaGAM6+Hjz6RSEzXnLXaKXkBwwfGueBIk9H9G0hraWxRRMu4NP+vqdSF/6zgmbdcElYudLlGHBE46FFwEJLARKFwt3+MUcmofCpcVgYOJk4dwNE/IDgIUxOn7vIZNx40bYkqYLhzv+udwYx/QADGN50ku+v9CfP3xUmHt3/5OoNKU0ocSvHAeoCQuISo+cBmPPzO4G4FBxIFUSWbwN53bMWbETg4dE351Oa6aQUBsZjFLw+Ic+x2jfhuG4Gpqd27T4x/zajk8gltOVKbkb9TC0mQffsW8NfTi/nphlmyToEinag2pzGbLxoK+MXfFjDpvRpsaZiUp6WF4TBy7b5st0Wl0kBXUiW6aHjntL1lOUshoxs4eLrBW5MXMWP6AqWZns8Rhvh32qqCq04tYUSRRCQcXK1V8hmYgcaMumLOudvjrXequwwO5B5lTifsFWP8zo1KvyDjtWG5PnEjxitfFXLB/Tp1DS7SgiJfO+Zjix79TQQOehQcKDGhgiw3TRrG6RNXHJpf0XNeXcDBnw6Yxvk/+WwZUqOkGM54YkOu/1fHWyZ3ds0rgODpTBRhoY2ql5AhuxscyH3JTloiijvfuB0fdzA0/33z+b7IQQQOlrXUat14aXkPXerkt9gwyeVHeQwprCejmRiaj60HLHIquPbZOA/9q75LO/owclBcnOCvZ/Zl300y+NkYcQEAlo9v+pixOE9MNjnnurlULxRJ4fwJe4JpFX/hWxyGkNGQwx1KEkxpDeRLuQx38VV9Elzys0rGbhZIOAbXd/ENYXkHaL7Jxwsq+M3NdXw0c1GXwEFO1yBg5PBCzj3MY9P+NbjSNc7LYgH1XilXPV/Ek6+2Ku2KNeqIwEGPgoOQ1Hf2M+tzxTPrd1h/4NtrbFUHB+H9XX/4FH6+7awlkYOwSuEE0V94a628+BYded/C61932BROG/PN9bsdHLQrDQrjf9Ord6Kh1UYzcgqEnT0icLByi62R4MD3AmJJm3PHJTls43pc0TwQyImDZtu8O6eUC+9z+HR2W5ccW84da5x57CB+vq9NIR5JycmLjKjpo+k+lpng2scDLr1rPr7r5HTWV/5cVnLG8kboGvkxBDyWbfKLIwZx+r4WMVLgZ9R2XdIXrueTDmI8NMnginsW0CKtnvPkACzRTYiZnLBvgiPHtJHUGtEDB0taRmgmL82r5OIJUFvbtUhPl03eEwP0Mjh45sS32W3kIsWYDglSWU9jxxvHMFM0/JXeftfWUKfMFPAdcCBRN7mnnW4ck+sr0IF7CksNv7dlc8LhZ49uzG2vjlgp4395977qg4NcSeFtR77P8VvOXUIKDLUADr57C16cNqDbyYihvcK0xkX7T+fCPT9dErnoCXAQs3w+rSlk2+u2V90VO9sCObznCBys/E1d48CBTFnBAC9gm40K+fPhGsOL6xEFRQ9fNVzJkOTmlwu59ZkWMmk3b9XEcNe7/ohi/nTqEHYe7mAEjQS2gyshMD9B3AhYmCnk9zc38M//1OQd6l/5o+z6GWE56AG79uWiE/pQmUwTuGl8PYMmjY9cUym4fVhTwNm3Lub96Q3YQozME+0o+3mw/aaF/H5shmFluTSQEbhYboJ6r5w/P2Xx3NsZ1ZI1z8t03TA9NUIvgIMlt+5rPHr8ZPbdYFmClIRod7lpDB99XYpudbxbXFdMsnTe/7nxb7HLiKUZ3QEpx2DM9dvxVY0oA/or5ZisCByIvO6pj27MHWs0OMhJAt8y7n1O3GopcNAufnTYvZvz7NSB/8/edcBXUWXvb+qr6SGhht6lC4IIYsfewIqo2HVXXduu+t91dy1rQRB7BwuKiooiimJbFJAmvfca0svLa1P/e+68CQECyUteIMjc/bERMuXOuXfmfvec73ynwcCBLYj02MUr8PDpe8MaiQYHlhKlgbX5flajIKo64GDulnSc8cagyhTSRH4j/7DggLgHpOR34zke3Dq0hBEFTYgQOeIfmNhUnoHHPuHx8yIqL1x3ciJLaTKBc4Y0w9PXpyMzqQQaH2KxMUn1Ua4STLeAxdu9uH/CbixbXVyvBbU+H+VDnWunZ/bqlo4nbslA3xwFmqaD4yk90gCnmxA1HvlUlvlLFe9/UwizngWWKESRnirj/pEenNWlCDwo1KOA00n1MYuVXX3q0yBKSqL14oc0lM3qfd3DBA7sXdL71yxiOfCUS0/xVYrSELnzrDcGYtGWjFqxp+v9zFXyzGlR+eHWeTghpwTBWLqXlQsuoO/4k5FXVrsCNTWBA/IcvPVHBwdREc+NXIY7T9pSKdK0TxrnnLZ19pzUNOa23sErly/BzQO3V8o2O+DAyVaoae4ckd/bu9LObdx4dJSJHi2LmHKVSMJIRhSc7MI367Px+HsR5OWH6rz4WKxcE163jHtGtcJVp5PmdwXcnAmXzkP5X62DiCABLi/mLBfw1+c2YuvO8kYFEJitVAMtmiXh37c0w9m9VQhqkIVhNF4DZ/Ks+GPUlPHRfA+eeqegzmWqKycDZVmIAi471YvbhgWQIoVhoASiQHnoHmwpbY3HPxexaFUFI3gmEhEfkQlZ3U0PEziwc+mfHbEM9wzdzKrD0YJKOzEiuI58rx++acCd5f6PbgvFeGQNi++ajVZpFsOdGku9K/Gg34ShCMcAQ01jf6yDg32ff92+Kos+BfdN74ZnZ3apM+eiVu+LweGLG+ZjeBUJaAccOOCgVnPnSB3ECzxGnpmC284sQ4ZcBh4yZI6c/jqK9Sy88WMS3v26BNGIWq/wAlWGbNHcj/uuy8LFx6tw62FLRllMgc5zMPgwZC4ZU3/l8cQ727Fzdxkk8iocKcPE7muFRgw0a+rDPaNb4PLBPDxKGJwZZIWcDFNmP+nb/esGHx57J4SVa8sh1SP7wvZS9OjsxcOXGeiZUQxdI7JlEAavIMRn4L1fs/DGl0HoamKEpI6wmau//WECB/bi8Zez1mLcBasrwYFdDOauacfhhe87NdjOcv+HtwoOCeiQHcCcP/1aWXCIagNQwRuqGjj8jYGVpYZrekcccGAVQrpuyBa8PnIpK0LEtA9iNSU+X9EMl5PMsBBfTYnavDOWV4pDVkoE8+/8pVIuuCFSGZ2wwhy4RZ0pc7I6GlQcygkr1GaaVn8MMfdT0zz42+U8LuxFufo6XKQRQFX9BBEbyjLx2CcCfllYXK8dKoURolQXoEsyHr0xFUPah6x64rwHJhEiRUvRMIIkfLlIwtPv7cDGLSWQ6pHBUHerWGcyjoFhommWH/dd2xKXDzXAKxWQSFkSKgsbGLrAiJWrC1149P0IfppfxkImdW12Cmhmuow7zvfg/F7FkFHOvBOcQQWkOMzPz8B/PhKxeWvkj5W6eMAWmgOnR6GldobadDBgqLFRqat1qz/P9hxQFb2poxexEru2wl+qV8VHSyhPvz84KT6N+rr20pYjvubELXjrsqUoj0pMSMsGK8//0hZ3U+U6ksWtBUHyWAcHtlu/f9sifHfzb5UbDvr+UGp1YVBC/wlDUVThtgBCTWgrjoG1x/LSfjvw/qjFLDxUtUR0Iks2O+DAAQdxTM2aD7UWQOCk3j48fJmGthkU2+Ygcy7wnAhFdOHbdSl4dkoFtmwN1jm8YPeEJvDwIen412gf2qQRy1+HIEgwDR68TACBIvgZ+GypB0+9uxXrNxQyxb8j0Yi02aZVCh64LgcXDeAhqaUAp8HkwuB1HaZGgQUehaEUvDBdwXsz8qCpxv7ZlHF1ncCaKAu4/NQ03DI0ghS5ABA0QFchGhLytRQ8O9ONr+ZEwRuJ3+nE1dmGPvgweQ5szkF2ahiL7pyNZA+lplpzjhbW0rCIk14Ygh0ltdN7r69ZWH9UAVOvn48Ljttb5ZCAQKpbxY0f98Y7v9Y+Rn6sg4OqhYQW3PULcqoIEdm8A+JdvP1L+4SnM1pjyeOj6/bVOKA54oQVnLBCfb8VDX8+lQF2Sbj67GTccUY+kvkAJCEDOnwwZZNVOXzvvxJe+TSEQCBaL3leAgeCyGH0+S3xl4u8aOatsBZ/eokkg+2QXVwSwlwyZq4Enn5nM5atKYAQqy+QQFBfrV1toSgKt3Rql4I7LmuFiwfxcKkVTMNA42hnEYZshCjygjw1Fe/+LOPVKTuYbeojHEUdooTI47sn454LBPTMKgCnRwBegKbrMHgOM1Zn4ulPNEviuh4iVQ0/qRJwh8MEDmwvEQnVTL1+AS7oXmVBjqnYPTKzMx6f0S1hFfsOZh3bi3FylzxMv2FBZZ0CW+o4qAgY/OJJ2EplhWuRqWADHKqaWF0qI2Ur/NEJiWQD5j2IiHjlyiW4ZeA2FIYsXoldi2B1nh8nvzQYQTUmoZyAD409lqd13YMvboxJJ1cZeAccOOAgAV/Jhr2EHeNu1cKLh0e7cWanYpiaCFNIAi/oEMUwtlf48czHPGbMLoFZD33eytx9ypS4JAf3nC+jibscislBl0Tm8nMJEnRTgC758NsGHi9O2YVfFhciUBFlPASGxhPw8la1qn1NkilO8ks4fVAWbrggE4PaAwiXgJfBeAW0o+RNCi9EEdST8eE8EePe34bCwnC9iitZBFETHXN8uPsSL4a1D0DUS5kfhQidnCRidWEyq5+weHWExUwTbIKGnWR1ufphBAd2utk1gzdj4hXL9ubCx6rTlUdEDH9tEFbtSomrfn08j81y0g0eLt7At7fOxcCc0r0VDmOlcqetbIqREweAk2rv/j7WPQc0BvZCfXaP3Zh63UKWDmo7JO0aEA993RXPzOySEADIxlLn4RUNfHXzPJzYuqRyLO054YADBxzE8304osfSrvXkAan42yVAh/QwOVUhcyp00YAmyli6PQ1PTwlhwbLiesW6LZVBA6kpXtw2ojluPFNEhj+KqG6Cl3jmuuc4CRInQOAkbM6XMXVOBJ/M2oONWwNQFY3t0C1WQGIaFVGSZQFdOqbh4mHpuOQEEa3SFCrZBBg6dElF2KDyyDJ4TUBQScbHv5p4/uPt2J0XYCJSdV2sbW9FcrIbt5/nxZWDApARZp4KAxx0U0W57sVr36fik+8D0Ej84FhohxEcMHCoc0j2qPj1T7+iXUaIVQCkBYTc+UlEbtqWhovfOsGSv5V15hZOVGPinlRNNCpi3Mhl+PPgLfsUu7E180e8czxmxJk54YCDvTUjiOL88+1z0b9VaWX83/bKkI3Jvj+uagbRq1SGluId48qxVES8ePkS3DZwG4pjJaKrXssBBw44iHduHbHjKd7t8si49uxU3HyGgTQxCMGIwJQEREm5UEzFN4v9eGpyHvYUhiBQtkEde2sT73x+F24c2Rq3X+hCuhCEyQNRXoHbFODm3DANDoLAI2IK+HW9hqm/hjB7YRl27a5gIIFFJGgRiX2na/IoVD2OnpecIJIkoFUzPwb3TcPlp6WifwcTHqMChqKB4hmaqcHkTeg8YBg8whEfPp4t4PmPtmP3ngCk+ggdxXLpCZhcMCwDt58RQXNvAeU/wOAkGIaIsCHh2xUevPyZivxCIiHWvQ5FHYfryJx2GMFB5e4yJOFPp27A8xetrHQ90+/seP+365rgug/7oLDEy0RzaP7XRzWRQVxybysUOAP+ee4aPHjKxkqVRnZvg0OyW8NPmzIw/LWBVGY0rgJJDjiwpq/tPRjZfzsmX/U7yqJW1gI1GkNiuhcGZYx4pz8Wbcxk2Slk+3i+ceQx4EyOhTDuH74Wjw1fi0CMULr/S+SAAwccHJkPax3uai/YzZv5cPelPlzSqxwCFAiCAZXnoQkpiEZ9eHuWgTdnFKKign5X94WKhRh0E74kGddclIO7LkxFti/AMibIa2EYHCTOhMTTQqnCdPmwJ5KMxRs4zF1UgiWrS7FqcwCl5WEYKmUQAJxAIsYWh6FqY5kRpgGmS0RCTyKPZL+Mru2SMLB7Gk7tl4LubXikJ0WhRitYtgZPoQ0q2SToMAyT8R4CUTfe/ZnDS1N2oKCo7voPdt+oX8RvOLV/Mu68UECrzDAEtRQyglBMETDcmL8jHc9+pmPNRks86phphxkc2PoCsqDju1t+w6DWJaBwAi0qNkBIcatYmZuEv37TFbNWNmO7fVPW2TGUPlXbiJt1vFWQx1REZGdW4KlzV+OqPrsQIP2C2CDTnS1KjomzXx+IeZsy4y6T64CD/d4YncOXN87H2V0KGNnUHl8CCB5JR2GFjBs+6YXvVzQHJ2vgRVKhPPR3jmUg0PcsSlVZDfx9+Fr89ZSNLHxRFVxUfX0dcOCAg6PuW07rZ//uyXhopIjeLQMAaRJIMhTOAzcvIDfgw/gvDUz7uQjRKIUA6v6IDJBoJrx+GaPOb40/n5+CtskBRAnNi/SRjEKECoEXoZNAk+AmKRgoCo9NuTrmbTSwYE0pVqwrQ2FJFIGgwvpEYQJa0K0dgwUGvB4Zfp+I9DQZPTumoF8nN/p3ENA5m4ffbVB0HwoR/+h/hgHRJI6BDo3Oh4DcQgGTf47gjen5KCwMWTv4uj86O5POH3ScD3+5UEK3FqUIcxxkROHRA9A1EbmhJhj/NWUnBBJPtKhn3xv89MMMDuh5rDoBEo5vW4QZN/0Gj2iw1MbK9DOTg1eywjpTljbHy3PbYOmuVOhhCSAQIRpgOaexd4K9G1a9L6tR6qHOgdMEmLyBJukhXNYzF3cO2Yy26SGUR6y0RbuRxyLdo+LvM7vgiW+6gHercXsqHHCwd6baaY3dm5dh1m1z4ZN1VsXQBt30ySDhK1q4x81uhwm/tENZaSxLRaDy9rS3sMaH/p8AIY0pRyDANNG9dSkeH74G53QtQCAqVHp4SGWW56y5ZH8uHXDggIMG/4Y2xA14QcD5Q1Nx7wUKmvsrwLHyx+Rap4XWjXV5SRg7TcP3vxXD1AlO1L1ZOeUmXG4JF57SAjed5UHvjiTjrMIk/gEracSTuDMEQvC0q+eJMCnCEICigIntJTJ2lwnYsEvBjgIVZQEd0Qi9zCY8EpCZKqNTjgdtMg2kJZloli4iza8BZpilU5KYEOksMJcgb7ASzBwVVIILClKwfIOKd7+rwBezC1AeiGUK1P2R2Zn0IerY1o/7LhBwSqdyqJwChdeYhLVbNRGKePHmnCRMmhVGRQWJUP1BlRAPZscjAA4YQCA3f0jClSdsx9tXLEFEE0BT3F5AaEGgeUWCRBWKiIU7UjFjTRaW5aZgfb4PhUEXNJqnxEmweQmcAV404RF1NE+Ool/LUgxuU4KzOuWjLfEbNAERja90c1M/WNVEn4JJi1ri+g/6WhX26jDnHHCwr9HY+IYlXHXCNja+pD1Ahq0acqSx9rs1rN6ThMm/t8CMNdlYX+SDGhVIbMQCeQQCJRNJbpWN58ieuRjRMxeUARKIWnoGLBtC1rG9xI01+Uk4u3P+PiRTR+dg31omBJhOf20glm5Lr5VcOY2TofJolx3A3D85Ogd1+DzEd4pFkAM8HhGjhvtxy5kGMqUgJN5AlDMhijI4TcLCnT489ZmC+UvLElJLkbnuRR5UqGn0eU1x6YkuNEsiVUCOfSg5yhKI7b6YZJIosroPVPQIkguG4EVElxDWRGiMfEBAQofI65BFkzGHJVJ/pOM1DaqhQONUqNAhQACn0ALAQUcUpqBBFyXsKpTx40Iek2fkYfm6Mug6AY56uEqqiCs1b+bF7Rcl47xeJCcdgEq25RTiYyISTcb0pX68OD2I/CIK3xx7jgP6Wh8OEaTq3g4r9U3CmJM244WLV7KdZFUPggXuaMdpso8/LcC0IJSFRewo8zAyYTAqsIWAfueWdKZR0Co1jHSvyhYQWTDYwqRoFmdmXz4MhwyfwhamG6f0QYR2nHUsv+uAgwNH2B7fh85eg38PX8fGi/EFqhxq8xBo7IpCMjYXebGhwM/+m7wNVOSoWXIEXbIqmHYCzQOaAzRXbGAgCQb7bp71+kD0bV6O50YsR0G5m80Jx3PgeA7iW5kbydFWRoGJJhku3HtFOi7sHYZbVCEItKPWIXESdF7GN2tT8MzHZVi3oTxhRDmSK85q4sOZg5rgytNT0aejCI9IlEjdcrnSSyyY1qbMJIQusZda4Hiq42TxAwSqSMYx/gLpKNCLTmRCOoknhUNThc7prHy0ZuowVQOCDibIRFoGRRFg4VYeX/wQwPezC1FQFGbPl4hG7sf0dA+uuSAbVw6MIJXbw8AIARpOpZq8AmZvTMPY6To2bfsD106oyZhHEBwwDwLtSiIiLj1+B164eAUyfSpb/GkOVsWHdjyaYtf0R6KiTbx1DEWcbdIiAW7N4JkXgn7aLPmqZqAFwy0ZIN7DC3Pa4OHp3RE1CBhQ6mLd5p8DDqqfaKywlsrjkXPX4O+nbWBcD3tht8+wuEpWMTq20AsmBM4SOqPf0TgSaCSwQBwpGndq9jjSmN82tSc++LEjHh65FI+dsxYFAZcDDkwOn1/ngIOaPoGN9vfMg/C/2GqXtj7cNTIVJ3ZVkWSWQ+YN6LQoSwIUyYsvl3jx3OQSbN1G1R3r9gGragQ7zCCIAlq3TMKpJ2Tg/CEZ6N1eRrIrCt4MgaMUS/Ia8C5wnMA8BLxJH2dy+TFdZiaoRDWgaT+g6+TWlcFRciAVlmL+ApP5DChsIRLO0EyUqW4s3mJi+pxifDenEDt2BWHo9DFIwHPFilClprhx7XnpuHwokCpWQDZLYWrl0E0ZGpeG5dt8mPBlFAvWUA2HujiSG+2Uiq9jRxgcWCEGwAiL6NW6GGMvWI1TOhSwEAARzWhGVOUHVC4odiz6gKc1qyWU0hATwKCFJ8mlYUuRF/+Y1RkfzG/FyHA0jeszDRxwUP20q0w5VAXcNnQTnjxnDfMwUtXL/QEgc1jGxrXqWNgchEoCaYy4mOJRsbPMjVs+6YXvVjdlIil/O3c1/nPuGgccxLy/DjiI73PYSI/mcHyvFNxzmQcntAgz7gEJAnGSBp7XoRoZ+GKhH+M/2IUdu0ldse4ZDPsbgGobuF0iurTPwMn9UnH68V707uBButdgIMUwdRgmpTRacUAqRc1ajAjGxdQXDeZBsJjDHKjMMvEZREZwVBUJpQEe63eq+HphEN/+VogNm8ugRIgIeWDmQ10GyfbEpKa6cfmZqbj+FANZngCiJvXLhKmEIZgC1hSmY8KXJmYvJkJi/aSY69LPRnVOIwAHFkAgkqIIl0vD9Sdsw+2DtqJrNilmcoiopF5pEVOZt6AWBqxcZJi3fkYOMgAAIABJREFUy4RLMJi3YE/AhY+WNsO4/3bATlJArAP5sLrb2+Dg4fNXsdS6/Iq9O1dbIfHt2e3rXFjKInGKGNypANPHLKgEMra40EfLmuOa948HR0AnTqzLCiRFJZzRPZfVvVApvFhFevjtBa1wy5S+tYpPH2xo7BDDSZ3z8Mz5azCgVQnCxAFhJEMrBbKmZnscvLLBiIdfrWmKB6Z3w6bcZLh8CqLlbjxA4ODsNcirYn/iHPzp8+Pw5s8dam1/W5Mj3RfF0nv+y9JcKexatbbC4JdOQpQAbB3F0tjnU+cxedQijOi1m2l72POb7n/uWwMwb0OTuDNnKu1ocviMPAddDuQcnPF6HTgHWQHMvmPuAYWX5m1Nx/A3B7IweWxJqGkoa/17zt1pZM0zo9aXO3oPpEX2pOPTcc8lPvRoGWTueFqcTS0CiRegmJmY8psHL328Ezt2lbPsgHg/BNVZx3bf2SJFrZr5cHzPTAztk4ZBnV3o3FKFZEZgGqSu6AExCCBSxQOw2gPUCY4ToXOUg0BMYR6iUQZeMFGiJWFtroxl6xX8urAMy9aVYsuuAJSoxkBBIpUYyRaUKXH1OWm49nQBGXI5eI5e6ig4jVQf3dhU6sdLM3TMnFMGnVIza7PSHL1TquaeNxJwwLAmy1nkYEZEpKWFcUmPXFzaI5cR0egDT4tYVLeAAnnbiIy4fwqbvctkgECkRYRSYwVsLPRh+uqm+HBpc6zfmcoWUU4k0JuYCWCBAxceuXAF/nneGpRXcWsneVTc8nEvvB7H4rT/wNngYEjnfHx783zLcUdeR4MDXf+jJS1wBVU9rAs4oNh8WMJZPXbjyzEL9wEHSV4VE3/LwZjJ/eoFDhgAjAGcJJ+C607YjhsHbEPnrCBz/5MYFoUPaIFhY2rtMNg3huYFeXxII4G8SYt3puD5OW3xxbIWbC7wks4K1qkBF/51yXL846KVUMtd7BwCFIJXwV1T+uD576hkdLRWwktVwcGaB35CSqwWiA0O1uT5cfyEofUDB6yaJI+Pr1uAkb13I1AVHACgBXzO+vqBgxk3/IZzuuVXkjeZ4JjBYehLJ2JJrQmJVgXTjk0DWHHfT3Cx4mhWVUZe1rBwcwYGPj+EvUsOOKj5k1u3Iwh5iQLOGpyOey6V0SaznGUPSIy0q7AFOMBl4qO5Al7+ZDdycwNsgU00siKQwAscaAfevUMKLhqWjvMGuZGTzsNQ3NBFDaYYBG/wkCgGGHuXNdJpMDkIjPSoYd1OHpN/DGPW/EJs2xFEWbkCXSOpaEZ5TFizQyR+v4xrzkvBNScraOLWoZOAlBGBrEcgQMS2QBM8/y2HGb+UIhomeyasC0fvhRoROLCNyBYRimdRdT2Xhk7ZAZzUpgh9WpQzYlrrtBBLdWSxaeIgxHZu9NGjXa+iCcgLuLC2wIeVe5IxZ2s6ft+ZglDAxdIgqfIjI9Im8MVhi4nGg9L3ejUvZ4udDXzJjU7ZFpvy/XVavCuddJRZkRTF0HZFezeHsaqH20s9oB0cE4WIs9kLYdOUMIa0La4ETGQfWTSwuciHBdvSmJBU/FfftzM0tiRfbSoCkpMjOLNzPs7sWIjjW5Uy4qFbNCAKFqgjoKDqPAMEW0s8mL8tDV+vzcLsjZlQKB3VRQXaLO0LO33ypE4FOKNjQWW2AiN9SwbLhFi8pXbs/L3GtZ7/7C75bK7ZgIzmG4kufbc+s/7g0uRwYptiRqIlTkXVbxKVDS/8H+Cpj92HtC1imTu2N8jGXT9tzERJUK7VtdmCT/VPfApuGLCdcUMsngjZh7LYPHhvcct6z41qN66O58Ayi5XBYMLtlnDFGRm47WwFmSkGJCqUZKrQeBOK6ENAT8fnvyp46eNc5BWEGgQgUH+IdEgfg4x0Ly46qyXuGJmGLplMhQQGq5XoAW+I4HkFBh+FaUpWupKgY+kuL558pwAzf9qBSFhhL7vNlajvB6bqJLJt5vNJGHGmH2OGc2jijjKBJSIlSoYCWYtiW9iDt2cn4eNZFQjWU1gqzm9v4z68EYID22D0EWZERFZwQwAEA4JLY+mNmT4FGT6V7SbJQ0Au36jKs9LLBAzKowKiUZEBDAi0gpKnypLKTiQo2GdwaTJSX9WYvGLVX5I2A/2p7+QnhrBqKT3u08gtH9OGqPOEO9i1hVjf63zhfU8kM5E3wAKANK4mPF4FzZMjLCMhya1BFkyWdkrk1G0lXhYOUsKyZT8STYoVdDrA/nQ9+lMV+LNzdOtPXexP82j/RiCMrpeIRuNZnUw4jWctwi2H7MLBrk19jxdIkpeNtEaqm3tuKvWe+OaEFarYlCkaGiZTFrz6zDTcdDaHLG8ZUxI0RRnED5AEASHVjfd/ceHFqbnIt8WC6jLxDzGe7P2KEfy8Xhk3jeqAv13uQxpXAQMuGAQO6HPLK9B4FbwhQzB0FEZ5PDo5ijenrIeh0YtsvamJ/ijbapMkvHTVmWm45WwTGd4ANEhMqdHUFbhhoqwCeGuuD5O+CSJQXj9BqcRP/yN8xUYMDmzLMFJiTO2QZcMwQkFM3+CAuALNWRJMMEEUGbZTjZERD4elWVijmhWImBKJmP8Nef2GvPbBbM8AYCz2botXsZ+Vg0/ypkRKIG+mBa4OFQpim5BqFj2WSVXH72N116PuJSok1ZB2P+i1CXTH+UKwbLVqwArNa+IGNURzwMF+VmVuchNIT5Fx/bkpGH0a7ZKiMEwfSMOQ1yNwyW7ka5l47xcOr32yC/kFFLuLf8BrM6A20a9DhzQ8e3crnN0TUKM8dEGAwGsMgaqcCEknNjiHr5ZouG/8NmzaUgwpQbyIA4B7DLQk+WVcdloT3Hoq0DI1SBRIFk7QdJVlIZSGeHy+QMbEmWHszgs3mJelNnZslMccBeCgOrvZ7tcY7IwdYs3/RCzCjXKs/uCdshYyto2oul2q86L+BzfXMfF4DjioZpjtBTkjTcZ156fgmtNUpHk4SBDBawoEXkBUcqNMT8Xnc0y8/NFO7MoNQBITs0M5sEukeyDgwZu64q8jksCZUeiiAsEkd5ILCueD29RQoUp47INivPrBRmgK7dITD1gs8GTC73fh6vOaYMzpEpq7qMJi1Pqs6OQ+NFChefDZIh6vTCtHbl6EiTnFi5b/8G/gUQoO/vDj4jygYwHHAnDAwSEmAXEQMtPdGHNhGkadqiPVpbG4JiPscByrhxA2ffhsPocJH+Zi5+6KBvEg2GBlxNnt8PRtbZCVUgZdCEDSBXCGG1HOBTevY3OBhNuf3YKf5+YmTLCpqnlYWJeFXVy4+fymuOo0CUm+CibHTCENzlQoqIBQWMK03114fXoFtuwIHlvFlOL5qDjgIB5rOcc6FnAscBgt4ICDQxjbXgybZvlw40XJuOwkDakuIvhxEHWOlXTmZAFRMR2fzRfx9KQd2LGT0hwT60EgcECqioOOb44J93dH9xbl0MwAXIYA3nRB5XhGIlqyQ8SNj23E8lUFCQ8p2ByDlBQXxpyXjdtOFeCXQwgIOnQRkFSVZXYQKW3mYgGvflmBTduDlo6C06q3gAMOnJnhWMCxQCO1gAMOahgYGyBkZXpw68WpuOpkBWlyBDJkmOBBKYSC6IImJeOz+QKenLQDW7aWQKZ4f4IGnYED1UDPHtmY8GB3DGgTga5EIHPUA8o7FyFIBn7bKuGGf23AunWFkCWriloiGvNcaAbS0ny4/fJ0jB6qIw0KKS5AFYhspEMyDESiXnz+u4SXpxVh265jrPxyXQztgIO6WM05x7GAY4HDYAEHHNTSyMS2pToMN12QiuuGcSzlx+B4VmFQoDoIPJV8zsCPSwU89f4WrFxfnLBds+056NQxA+Me6IrTu5jQFAOCGIZAIsm6G5CAb9YI+POj67BjewmkBIEDAkeKZiKnpQ+3jczERYNMJCEAyRAYY1jjNVYCWol4MW2+C699VYjNO4mg6XAMapxaDjio0UTOAY4FHAscGQs44KCWdrcWaCrU5MGfLsnG1acASe4I4x5QqhfPyZB0GaLowU/rOPzng1zMW1rI1MPq24hYqGk6mjZPxrh7u2FEPwO6zsMQI+CgQNA9UAUJT04N4Jm3NkCNqCyFsb6OA9tr0raVH3delYmLB2jgNdJZ4CGYBgSTVNWiqNDdmL7Ajec+LsDOPcEGJGbW15KN7HwHHDSyAXG641jAsYBtAQccxDEX7Lh7Rpobd13WFFcOM+HxhFmFZBfvgsuQmJoV73Zh6S4RT35YhJmz95CIN+Mp1M/Jb7ISzmMuaIlHr01GaoqECJVVMlRIkLGpQMKfxu/C93N2JWhxNln+bP8e6fjLSD8GdwqTDg4Megoq72iY4DQOYc2Lj+cZeO3LUuzcE2ZgqH7PGceAHO2HOuDgaB9Bp/+OBf6wFnDAQZxDy3bTuonsTC9uvqQJrjs9ijS3ApheGCbJ/siQeECSTazLl/DEByWY9sNuGFRVsR4AgYAJufeH9WuCt//WFM1bC4gqIlwkiSyQngBw99i12LMnCKEehaGYXKdJ5aJ5nHFiBu69PAV9mgXBayoi5CngFZgmVX0UUBpKxZRfeEycUYjd+SFIDaT1EOcQHT2HO+Dg6Bkrp6eOBY4xCzjgoA4DbhH0TGSku3HzxU1ww+kcspNNhDQXW5h5SunjDPCCC5tDGXj+01JMmroRmqpBEOpWsMkGByf1ycLEB5uiZRseUVWCW6V6CSLe/EHHX8etQjAQqXNIwSYeirKES85qjjtH+tAuMwAEIxCo3DL5DYwoE17aHfBj4iwOH87MZ3UbqPSv0+K0gAMO4jSYc7hjAccCh8sCDjioh6UpnODzyRh1dhruuMiLpukmOCMKERp4ymSADLh8KFVTMOmrAF78YDMKi0KQ5fgBQlVwMOnBFmjVkkNEN+EWRCad/Mo3YfzfhFUIhaJ1Agd2RkRqihujL2yB2y9JQbJcgqgehWxS6qbBpKVhithZloQJ0wL49Ps8RKN7JZrrYcpj81QHHByb4+48tWOBo8ACDjioxyDZHARJEjHynEzcc5UfbZJVQAmDFznovASRERJF6HIW3vu2Ak9N3IrdeaG4eQEMHKgGBvXJxjsP5aBdjoCIEgFnGpCkVLw5M4IHxy9HMBg/OKAuqrqJlk19uPeKZrjqNBkyVwFFN5g0s6kHIUFhIZPNhal47rMIPv8+F6ZuAYP6Eh/rMQRH96kOODi6x8/pvWOBP7AFHHBQz8G1KhOClVk+99Rm+PvVaeiWFYSiUlUvCbypged4VnNAd7kxc7mJp97YgyWrShhAqG2zwUGf7k3w9oNt0KM91WAnMqQOScrAlJ8juH/cShQUxWoY1IIVaNf/VlQT/Xql4+EbcnBmVwOGWg5DJZAhIqyK4IVyGJyCFbtSMfbDCH6YWwSOCuzsU36ttk/iHFdpAQccOJPBsYBjgUZqAQccJGBgbBKfyfE4e0hT/G1UFnq01IFoGCIvshKpHG9AEw0YLhGLN7vx2Jv5+HHOHohUaatqIfGD9MfmOeS0TMb4e9rivAGUGVEB8CJMLgVLtwF3jt2IBb/n1corYacpkh7C6Sc2wQPXZqFvaxVGJAyNsisMBdABxfSD4xTMXW9g/Mch/Pp7Kat8R+mVTqunBRxwUE8DOqc7FnAs0FAWcMBBQi1rstr2A/tm44HR2TilowqXQTQ+EQavW/tsymTwebBmtxv/eScf077fAU1Va6xYaJeTdnskPHRLR9x9iR+yWQ7DpPrpSQiaAh58vQBvfLgJgpVwWG1ja7ppZT40yfTi6vOa4cbzBbROB4ygAh4RqKIBzaQaix5UaGn4YX4UL0zZg5WbghCrKWefUBMeSxdzwMGxNNrOszoWOKos4ICDBhguSnXs1C4Zd12aisuHCRBdAhTDA5kEi1hVQxlutws7y2W8+kUx3p++C3l5AZbpUFOjEMaYq7rj0ZsykCEWg7z7huECJ5v4bS2H+5/bjvnL8lnhpeqaphuQRBG9OqfilktycM5ACT6pGHqUi9Vq0BARAJ2LoljxYvKPJl7/eCf25AUhSfETKWt6nmP69w44OKaH33l4xwKN2QIOOGiA0bGY/yYy0yTcMaopRp2TgiRZg2xS5UIDHCdDBKU9AgHVhanzNDw/eQvWbypmWgg2F2D/rtmphiec0BpP39cRA1qUsxLSpskDJGNsSJg+n8fjE7dixbrCfdSISLuAF3hkZyfhvGHZuO4ML7q1oNRElYUNqLCT2xAhaByiohcbi3W8+10ZJn2Zj4pA1Kry2AC2OqYv6YCDY3r4nYd3LNCYLeCAgwYaHVrgddOEyyXhinOb4a4rUtE2TQFHagGGDhF+loIoSBwUmcOva3RM+KAQP83NhUphhmoEk+zQgtfvxkN39cJtw2V4tHKYhhVGMDkBmuDDwo0mPvimAPOWlaC0LMpKJqclu9C/RwbOH5aK/l0MpMpBaJoCztBhalHopFOgkeJiMn7b7MX4T/Lw3wUFUFXdyUhooDlCXBNOj0JL7Qy16WDAoFJWNXuPGqo7znUdCzgWcCxgW8ABBw04F+xUR1EUMHxIU9x+SRoGd1YgGLQY+2BwMjhOh8CpkGQXVu3xY9LMECZP24iCgkC12Qw2MXHwwGYYd0979MoOQteJsyDDMDiL2+DyoDDAY3chUF6mszoIGUkCstKBjGQdaiQIztShMQoE1UuIwOB5VGgyfl7lwtjJ+Vi8vBAC7xAPG3B6MCKqAw4a1MLOxW0LGAcBnUSIdppjgWos4ICDBp4WtJiTS1/TgW6d0vDnK7Nx4QkGUt0CdJPKOhsQWOllHrzoQXHUj49+qsDEaduxen0RDIPCEHtf7EpiolvGLVd1xt2XpCDbF4ZpWseYps4KIxE/gAAAZRywbAiNlA11RBQDHCTwggCV7muqcHMGdpa48OHsCF6flost28shkwY0aR41sH2O6cs74OCYHv7D+fApbpVprlR9n+m/S8OS844fzoE4iu7lgIPDNFhMaIgyBLI8uP7ibIw6JQUdm5jQoYAXaBWWwBkikyE2BAFzNwh4YWohvv3vDkSj+4YZLG0FE2lpPtx9bVfceG4qUuUKGLrllhZImEinUs4aQBwHgiCmAYovECGRUi4Z4KBqj6Yba3eaeHlqHqb9nI9gUHH4BYdpTjieg8Nl6GPzPlaKNQdZ1PHtTfPQJSuIsErvPlgKdSAi4qSXB6O4wgVOMB0xs2Nzmhz0qR1wcBgnBOMhGCbcHhnDT8zG7SOy0Lcr4DLKwBscOM4PBS5wXBSQOKwt8OL5Dwrw6YwtiEaIOLi3szY5sVnTVNxyZSdcfUYKsv0B8FApfYHKH5AaATjyThiWF4ABBE4HL5B3wURxmYivF+l455tiLFi2G5xhWvyCw2iTY/pWjufgmB7+hn74quBg/p2/oFt2xT7goDwi4rixw1DkgIOGHoqj8voOODjMw2aFBaybdu+cjtuuaoWLB+pI5RXoXBIUXgZQAc4MQ5K82F6YgVemFWPS52tRUR7Zp+KiDTZSUz0YfnIOrhmeir5tFSTJKiQSR9Kt3QCBBJOXAMGFiC6ioEzDkvVBfPZTIX6YX4CikgjzNlghkMNskGP5dg44OJZHv8GfvSo4mPOnX6sFB73HneyAgwYfiaPzBg44OILjRnoIrZon4cqzszHqrBS0zeKh6ipcsgpOV8EZbghCMvJCXjz23la8/+VWREJUAXHfegZUEEkQBXRs7ccZA1LQt0sSWmTKaJYuIMXHQdN0lKtu7CjmsWGXhrlLirBgaR627Q4wNEDAwGlHwAINDA5oVEmd80g3Bk5r0Y1DzcJanH6kH7PR3d8BB41uSI6qDjng4AgOly1hTOmOZw3Jwu2XNkH/DoBf1AFTgGZKTM6QCjttLfPiifd248MvqPQzsQz3DTFYpEcKCwhITnKhaZYHrZu5keYX2L8XB0xszw0jtyCEYJAKNgFirLZDbT7cR9BMf9xbNzA4AJFU1UZQS5sY8WLMXXao0aT+VseqZxLjDjyI90VwwEG8FnOO32ddcXca6bx1R3BO2ORCIhL2PS4Td1zaEhcNdMHr4RGlkSH+AZGKOA/W7uHwz7e2Y8aPO1gWw/6NhQUMghMmK6/MBtbk2BrBkQgS/WThg4MLLR1BUxx7t24gcGAvCikeBf1blR4xu9L8k3gTu8vdWL475aALvN3fJLeKJv4oDDvzBmCZPCUhmf0hL4jzsar9cDrgoPa2co480AKO56ARzQpa79vnpOCuUR1x8bAkJLmD0BGBABGSJrLqjj+sMvHXFzdg5ZoitvM/2K6/0kVbxVfreAga0WBTVxoIHPCcCUMR0a9tEb6/eR4DhUeihqZucEj1qJj8e0uMfr8fOMmodr4Sc14LyRg9eDNeuHglyiISAwVUpyTLr+BfszriyRndIPoU9m9Oq50FHHBQOzs5R1VvAQccNKKZYasqNstOwp9HdcC1Z8tIEitg6gI4uFgKYtSQ8caMcoydtAElxaF9CIqN6FGcrtTGAg0ODorx3U2NAxxcN7nvocFBUMaYoZvwxshlLPeeBLgICGT4o3hkZhf8+4vjIPodcFCbaWUf44CDeKzlHHuAJ9oJKzSuSWFnIDRt6sPdo3Jw0+leuF0aQqIHPATIHLC7WMa/3tqNKV9tcNILGtfwxdcbBxwwezHPQVDG9UM34fURy1FaxXNAYYZ/zOyCR7/s7oCD+GaXVaMlpnPgZCvEaTzncDieg0Y4CVjhJs1A+7bpePzm1rhgiAdhjgdv6pANBbLgwozFwF1jV2Pb9lJIolMtsREOY81dcsCBAw5qniV1PsIBB3U2nXMiRT0dz0HjnAesLoMJDBuQjSf+1AbHtaV/CEM0VAjgkauk4uG3CjHlsw1MDdFpR6EFGhwc1I1zcLDUQyaqGQclMC7OgeM5SPgEdsBBwk16TF3QAQeNdLjtLAa3R8L1I9rhr6P9yHJHAJUEjUQobje+WiDi/55ZhS3biiE63oNGOpKH6FYDgQN7UUj2qHFlKxCRMawK6N28DI+eta4SBlD2gE/W8MvmDDz+Y0eWgVCbrIG92QourDhEtoITVmiYqeuAg4ax67FyVQccNOKRZhLJuok2OSkY+0BHnNMDEAxKXeehCwYKAkl4+KVd+OirDRAthWSnHU0WaCBwUGmCOHUOWJZDVMQJnQvwza3zKgtvUbVPyjqYsqQFrpk4AJxYfdbBQU1fg86BAw4aZtI64KBh7HqsXNUBB0fBSNM3/ppLu+KJ67PRxBum6gkweQOy6MPLX1TgHy+tQEVFBDwXj9P3KHjwP3oXGxgcxKuQSOBAi4oY3LEQX92wICa9TXLfHFI8KqYua46r3u8HQaDKHLVvNSkkOuCg9raM50gHHMRjLefY/S3ggINGPids70G3LtmYcHcHnNzDgGaoTOiI6ifMWy/jzrHrsWzlHie00MjH8oDuNTA4iNcctudgUKcCfD1mAQMA9Mf2HHy8rDmufu/4+D0HNXTEAQfxjlTtjnfAQe3s5BxVvQUccHA0zAwTkN0SHr6pO+69PA2GWcEUEAVORG7Qh/uf34JpMzeDhHLj2dEdDY/+h+6jAw7Y8DrgoGFmuQMOGsaux8pVHXBwFIw0S23UTVx4RjuMvasDWqYGYFCCAscjYnrw4qf5eOattQhXU5TpKHi8Y7eLDjhwwEEDzn4HHDSgcY+BSzvgINGDbBU02PeqtLrXo9m6Bx3bZeC5v3XFaT11GFEihZmQRR5fL1Rw25MbkJsXqAwt0O/qKpdcl+5SvQanxWkBBxw44CDOKRPP4Q44iMdazrH7W8ABBwmeE7wgUDI4a6xuEv2kIkjVFEqq7a2Z5oFuIj3Nh8f/0hFXDwN40wBv6BBEDQvWihjzZC7WbSiCJFFwgYPbLYG6Qo2KLllIgZgKrEexv8cq9tkFbeifwUNnRZti5MYYzmE/Ys9l/bCeTiASpGkiGiWapNPisoADDhxwENeEie9gBxzEZy/n6H0t4ICDBM0IAgDpTXw4sX86kmUTnMFDhAldErF0Yxgrl+dRnZ06NTqPOAayLOLWy9vgoVFJ8Lt0wFAhCgZW7/DjxrG5WPj7bgg8kJbmw+hLOqNjCx7QFIhQIWhRhg80UwDjmpsKOKrGY1JRHgOaaUI1eSiGhEAEiBoSdI5nxxomHaHDpJKP4C0hJkOFDh4pMo8deQam/VSAiqDCKj46rZYWcMCBAw5qOVXqcpgDDupiNecc2wIOOEjAXGAZBZqJ447LwCPXedHWF4Ksc/BxKkLeZLz8k4RX3ttSLy0CqygTcO7JzfH8XS3QLIuHqUQgcga2FPrxpxdyMWv2VkIRaNs6Da/9vRcGd44iqtFCTrLLGqBxUDgZTE9RD4Ezw4ChwdQ56AZpKhB4MKGSlgKBBgNW+Vydyj4rMLkwDE2ApBsQzAiCJsdAwqLNfvz9PQW5eU4hqLimkwMOHHAQ14SJ72AHHMRnL+dox3OQ8Dlgg4NePVLx+BgDXVIJHEjw8BFEPMkY+20yJryzs37ggNVbMDGkfzO8/kBrtG6mwdAicAEoDvnx4NtFeHfaJmiqjo5t0/Hm/3XFwA5BRHiJhQgETQWnatDBMS8AgQPyPJA3gNM4K/ShG9BNHYapQSfGo8GBY7ls5GkwQGcbmguCTlcMo4IKARtRLNyciocmm9iVG3SqRMYzuxxw4ICDeOZLnMc64CBOgzmH72MBx3OQgAlhg4PePVLxn+t1dE4PwTQkiLwCU/LjuZlJGP/+bhAdoK6phoyUqBro3zsbbz/YBl1aalDIvW+aUFQ3nphSgXHvboQSVdChXQbe+ntPnNg5xLIcFAgUHACnh8EbCkyDFnmNuQZ48igoUWiGAN0QGH9AN6MwDA2cQcDBpIAC4xZwJoeo4YZh6OCNAFRDYbhh7tYm+Mf7igMO4p1LDjhwwEG8cyaO4x1wEIexnEMPsIADDhIwKSrBQc90PHMthy6Z5VBMATynQRJ9eO5rP575oP4m2cv7AAAgAElEQVTgQFEN9Oueibcfao3urU2oRBqkHb8p4dmpQfznjXWIRBS0bp2BZ//aDyd3jEKJqlAEF1TGPQxD0MIwNQOqJsDQdHjNCqQKZQBP4QYZuk7AIYKgZiAUFWHqEiKcCWIquIh4KMiImiYkIwhRCcHg/Zi9NR1PvpuHwkLHcxDXdHLAwR8KHNBizJNUdKwRx4cxcGI0HBKTquvmIK55FTs4keCAvnE8+SCJ/xR7CJteZPGdD++zVWcPsr2t9cJszwqFWRsy6p/d77rY8lg8xwEHCRh1Gxz07ZmOp2xwYAjgBQ0S78P4r30Y+2FuvT0HBA76dMvAJAIHbTnGCyAHP89JGD+1Av9+dS3UqAaXW0LXzk3QNFVg4EGjDAT2QmuArllcAoNDVDXRvhlwz4UCWmTo0Ax688EIjLOWc5j8k4qQIgICZSXQi2fA4AgmcJXZEgYE5JcBG7eWQdOMOpMuEzAMR98lHHBw1IMDtmhyJqgCJTQB0Hj2DrF4XCwZiMJzbJUSdUAwIfBE8LUWrIZs9QUH9M6zfur0XMQ9irk+hRjq0WP9p78LOjjBBMeb7NtyOFql7akf1Ef2k4/ZnjGtSWfe+jsVpRFNcALRqIm/dXj6eDjs0FD3cMBBAixrg4M+PdPxdAwcRA0egqAzcDDuax+eTRg4yMSkhwkcgBEHqfG8C89NDeKRl9dA1yilkGOpj5Xph1W3Kzbq5wFVMdCpnR+vP9AU3VpGoGgKeJNjHoJXvxXw+PtFiCoqeM7+yh1oLCuh0Qo72DukBJj02LiEAw6OWnBgl682VAsQSD4FnTKD6JYdQE5aGKluFW7JgKLxKIuI2F7qweq8JKzN90MJyZSLDF7WKne1B0z46lwMca5ndQUHtAM3aKGNioBoICM5gp7NytE+I4hmyVH4ZJ0BoqAiIL/ChU1FPizLTUJeqQcge7h08ILRYCCBnouBEIVsL0D0KmiTFkKfFmVomRJBsluFz6UjovKoiIqsj+sLfVhX4EdRmccCOi4NvHD4gMzR+EFzwEECRu3AsEIZooZQCQ6e/dqLcR/uSZDnwAYHHFSDEg1pJ+LGc1NDeOSl1dA1jaUTHsx9abvZeA5QFAMd2ibjtfubonebMEKqwkiJLgh49Tsv/vPuLmiKAo4nLYMEGMq5xL4WcMDBUQkOaGE0NQGmzqNLyxKM7JmL4Z3z0SEziCSXDrekMw9aZVgBQETjEYiK2Fzkw7frmuDj5c2wansaW+Q4iUjAlndOj0o4o3su7jl5E4KKWOmVoKqY7/3eEu/OaQvBrdZq5xsXOKBwCMP3JoywBLdPwVld8nFpj1wMal2MJn4FXlmHJOwVV2P6KwbHQEJxSMbCHSn4bEUzfLW6KSoCLvAuDSbZKoG7dI68ADoPUxXQumk5RvTMxYXd96BjkyCSXRo8ZHtbhSUGphSN+iiiKChhztZ0TF+djRmrmiISlsG7VSsjy2kHWMABBwmYFFXBAfMcZJQxzoHtOUg8OMhB93Y8FMo9JHAguDF+ahD/fGltjeDAflwCB1EGDlLw5n1Z6N8uggDxEzQNLsGNV2Z58fQ726FGow44SMAcqfYSDjg46sABK04VkZCTFcC9wzbisl65yPIriGo8FJYSzFcb26ZvhMBRJVUTbtFgC9Uny5vjmZ/bY+ueZLZI0TupBWWMGboZb131O8IRiQEGCvd5/VE8ObMLHvy0J0SfYoUAa2i1BgcBN3gCKLTrN4ELe+/CfUM3o3+rUgi8ibAqsPsxV3yVTQLzGsbCKlQfgxZmAkTLd6dg/C9t8dHiVgw8sGsnYAFmtldEJPuiuPvkTbjphO3Mk0F2VzQiVB/IK6A+0nlkW+ojARx6lgXbU/H0T+3x1bIWVv+cwjQOOKjpharL7/cBB6M5dM4ohWqK4AUdIu9lnINxUxLpOcixwgq6VTqX4yQ8NzWMf726Drp6aM/BgeAgGW/ek4UTclQEFRUqR+42GS/N8mKsAw7qMh1qf44DDo4ecECLIHF1VAGXD9iOJ4avRZv0EMqjEjSdeD8WWa+mZle5pIUq2a1he6kb/zezMybPbw1J1qGGJVwzeCveGLEMZdG94IAAyL9ndcQ/vzgu8eAgKDP3fFZKGE+etxpX9dnFdvtBlbKcCNTUzm1IAICO9ErkYTAwbWVT3Pdld2zP94N3a/UCCDYo69G6BJOuWILezctRoYggrwB5E2jxZxnX4Jj3w/IeWB5PG8DQ2NhcA7+ssWOe/KkDHv22M0vxtvK2nWZbwPEcJGAuVOUcPDUaDBwopsjq3oucF+O/8WLclLwEhRUyLM5BG+IcELGJ6IEyxn8awaNxgAPqM4UV2rdNwRv3NseJLTWEoxFoXAim7MKLs/wYO8nxHCRgehz8Eg44OCrAAQsRGBxxCfHPc9bggWGbGJeAQgW0s96/MXJibFdNC5XNlqd/q3o8HecSDbhFHeN+aYd/ft0VkaAL1w7ddAA4ILf+v7/rhEcSDA76PjcUBQV+9GxbhIlXLEGfFuUoCsmMtMdc+LFF1lZ/p0WaGn11aOEl4LA/KLIzA9K8KjYWejHmoz6Yu75JnV34tsegV04xPrtuEVqkRFAeEZkngPXF4CAKJnyyxuwbVQVGwCaAIgsmGyfyfhB4qex/zJOR4VPwxPcd8fCX3cG5LM+H0ywLOOAgATNh32wFoFN6FXBAnoNvfBj3IYGDGEmwDvdkiznLViDOQQ66tyElQ2ITEytRxvipYTz22vpaew6Il6AoOtq1ScGr9+dgcEsdaqQCGlcBU5bwwqxkjJ20wwkr1GGsan2KAw4aPTiwgQGtQy+NWIZbB21jiyfbnVbxFNDCQ393iTpb7BmnR6MsIYtLIIsWQS+sCSwEQY1xF2JZCxn/I9VNWtQS108agNGDt+Cty5eitEpYoSHAQUVUQOcnTkfHrACmjVnIwiOBqLB30aW+81YYhJ6Ldubkvqc+08JL3zNy6Uc0gT3r/t4Tct8TebFCEXD1+/3w/aqm4D1qXERFZn+dg9+l4cfb56J3s3KUVgEGtJiTBya/QsbPmzKxeGcqdpW5oBo8yDvQOi2Moe2KWIjEIxmgZ65MwYzZno67cnJffL64FQSPamWeOM0BB4mYA1XBwZMxz4EVVjCssEICwUHfbpmYyMCBwbIVqO4BOBHPfhLBE69tgK5rexOrD/FwNthok5OMV/7aCie10qGEgzC4cpiyjBe+S8Gzk3Y64CARE+Rg13DAQaMHB2zXGhUxfsRy3DVkM4qC8j67f3txT3JpLJa9tsCH+dvSsL7Aj4IKGVFdgEvQ0TQpii5ZFTihdQk6ZgaZS5vc4vZOls5tkhTFE7M6YsWeZLx75RKURyT2e/a7BHsOZMHAnoAbYz7qhbcuW8pY/kTao904ARr6SQtySUjCkt3J+H1nKraWeFESEtkOPMmtoUVyhC3W/XNKWOyfQALzplRxzxMgckk6QqqAC94agPkbm8QFEKxwgoj/O3ct/n3mWhSGZNY3K0sKoOd49/eWeOan9thSkAROEWDa3pzYIk/ZDH1aluHekzfhouP2IFgFINCzkMdheW4yTnppMNN/IY+J40BwPAcJ+fTv4zkYzaET4xyQzkEiwYG10+97XAYmks5BGx2KQYxomsgEDsJ44vWNMHSKpdUsSFIVHLx6fxYGtdERikZhIABedOPlb1Px7DuO5yAhE8QBB4c0I33siYh3/dBNeH3E8v12zFH8Y2YXPPpld4j+2hHxEjVmLKUvJOHWkzfhhUtWoCy2WNvXp4WFFifaRc9cm4XX57fGfzdnIEQxfFIdi2UAwCbySTqSfApO71jAPBCntC9ESBWhGeRFsGLjtBOmlMeu2YHKzOBEgwO6Fy3g5VERhUEZnZtUMGBAXgICBgR0SsMi3lvcCu8ubolVe5IYCZPpNVRdeAkEuHTkpIUwoudu3DxwG9pnhA6wE12TFuBNRV4Mf/VE7Cr1sAyNmrIYGG/A4OB3a1h412y0TKV0a8tDQ7anHf8j33XCU193Y9eDZFSCLZtrYIcdTEp75E28fNlS3DhgO+ujHeKh/qW4NFw7pTc+/K01BK/jPXDCCgn6iuyjc3AAOPDECIn15RzsBQeTHspBt9YGFAIGpPVhihj3SQhPvEHggKg1tQcHbVv58fp9aejfzkCFokE3w5AEN179NgVj33XAQYKmSPWXcTwHjdZzUBnnblWC726Zx1zrtEjbLmm24Ek6y6H/29dd8NHiliy9EUR0Iw2DmGd6n0WKCHukH6AIEF0abhi0Df8+ax1bOGnHbZ9DgEMhMZ9YawhwwD7+BBJ4E2rlggukuDX8vCkDf/myO1ZuS2fPYko6U35kj2RvqauoPlqphTyyM4N4dPhajD5+J0K0g4+RAek0eoYMr4oPlzTHqPeOBydaZOpDNQZWwhLO6bUbn4xexHQLbGBApMdlu5Nx8ksnQaGMCAJyh7ggSxPVePZ8P94xh2lSkDfDFrBK9ar4bHlTXPXOAHCywz1wwEGCvvz7EhJJPpk4BzybsKRBMO5rP56rNyHRBgeZeOehHHTNIXej9YLpkDBuagiPv76BeQ5qo0ZU6Tlo5ccb96TjhHY6AqoO3dAgCTJLZbTAgaNzkKBpcuBlHHDQaMEB65jB4asb5+PMzgUoC1s7a/bPsV3r6nw/rp7cD2u2pbHdJuX010YdkEksU9pdWMLAzvl476rf0Tw5ykhzNg+hatS7ocCBvdbTveiZkl0qJi5qhbs+64lIRITAMgxqVnKk89niTNkNOoe7T1uPx4evQ5RAQ5WvkbVDVzHqw774eD7t0JVDxveZR6lCxv9dsBqPDl+DggoXCymQPTJ9CsbPbod7p/aqNU/A9lDdduoGvHzlEmgxTgeBGBJEKgnK6D52GHJLvBZ4qQm9NNiHoXFc2CEkJmAc9iUkWqmMleBA8GDcDF/CwEG/HpmY9GBrdM0xWJllCioYEK1shdfWMc5BbT0HVMipdaskvPGXTAxspyCg6NCpboIo4eVZbgccJGBuHPISDjholOCA7VhDEi4+fgemjFqMQNSK/dvAgHatG4u8uOCtE7A1L8lyQ9tSwnHMGZE3oIVk9GlbjC9vmM92tUTwsz0IDe05sK9PBLw0r4J3F7XEmA/6WcJMpHAYpzYBSxkE2U7G3Weuw9PnrWFZBfvaTmNhk6EvD2bS7MwzcZBFmO32IxKeG7kUdw7ZwkIgNjggDsajszrhH5S94a1duMkmN2YlRXFln53MzlVvTf38aFkL7Cr2gBMP3q84hvioPtQBBwkYvkpw0CsdTzGdgxJWCZEmm9AA4OCdh9qgSyva5VvgwPIchPHY6+vq4DlIwpv3NMEJbaOV4EAWJbz0gyeWyuh4DhIwRaq/hAMOGiU4YJ0yOXx/y1wMaVfMlA3Zjp5S9yhVTuNx7psnYNHmzFrvWg82h+zd7KX9t+Odq5awa+/PlW9Iz4HtBVm4MxXnvT4IZREhtmuuG2OfSRuTJ0IR8OqVS1h8vyRcJb7PgIiKmz7piYm/tD+k94At5hqP90YtxhW9d6E0dh0LzKiYtLAVbpzclykxxgVkiDsREasfEre2l1fRYC/+0XFhBxwkYJxscNCvdzqeJHCQXgKVwAFPHxM3nk2w58ACB+Q5IK+BCYOTMO7TMB57dZ1VirkWaix2WKEteQ7utcEB7RZMiIKEV35w4xmmc+CAgwRMEQccHMKIjYmQaMe5T+6Sx0IKlKJXyTMwOJCM8V+/6oZx33WG4Du0W7y288b2VDx1yXLcO2wTSkL7ZkQ0FDiwBI6AqM7hrNcGYem2NEusqJ6pfPYOnUh+3942Fz2bljPiJeNxxEIyv21LwymvnlgZdqjOecCuo/KYeNXvuKbfzkqQQSCNZJzzKmSc8uIQ7CzxsBBIbb03zMNxEMEjJuR0jIcT7HnrgIPavsGHOK4SHPTKwJPXEjgoZuBAIMIygYOvfHjuo8QQEimswMABCyvQy2aBAworPPZq7eWTqwMHFYphhRUE8hy4HZ2DBMwNJ6xQsxEbHTgISXjq0uW4f9imSlc2LRoUTlhX4MPQF09i3gSqQpiIhYSlzmkCmieH8d8/z2FpjzYrn6zXUOCAduDpXhXP/9IWf/mkV0JZ+gzwBGWMHLAN71/9+z6hGXomWpzPfH0QFmzOYAWoqtv52/PiXxeuwD/O2ICCWFjBDu9QtsK0Vdm44aM+CAZc4NyaxX04zKWxa57hR+cRDjhIwLjt9RxksLBCp7QSqBx5DqywwtjpXkxIIDiY9FAbxjnQYuDAJHDwWQwc1FI+uSo4ePPerFhYgcABpWY54CAB06LmSzhhhUYVVrBqEVi70l/v+BXHNQtUkgQZmc6t4u5px+HlnzrWSKarefD3PcLyHsh48Ow1+PfwtZUu9IYCB7YsMjH2T31pMNbmJSWsBgL1uWqBt+9vnocT2xRX6jrYhMIHZ3TFU990PagctO3FOfO4XHx+/UJEVEuDwG5ElvS7dKzITcaj33fAV6uaWSmXos5CI/T9tbK56hYiiXcM/2jHO+AgASNqg4P+fTLxn9Fg4EDjaCLTBCVCop2tUHdxDVvRkBESHyJCIrF2KS/ZhMlLeO6zMB57eV2tCy9VBQdv3UfgQEF5lAiJMXDwvQtjmc6BE1ZIwBRxwgpHQViBub1VAR2yA5jz51/hEuj9sjpO5DhaSAdOGILtRT5wUmLZ7Na9RXRrXob/3jGHEe9o8aNlrSE8B+Q1SPGomL6qKS59e0DCn4dsZu/8iZw47oJVlV4Y+96fr2iKy9/pb3lgqpkfewGGif/eNgf9c8oQoCyKKpLVtkeHTp+zLQ2fr2iGGWuy2BiZiggIBis7baWXklfBqrngtJot4ICDmm1U4xE2OBjQJwP/Gc2hY4OAAyCqGjj+uCZWtkIrDZrJQSfOAU/ZCmE8/sr6OnEOCBwMYOCA3HsmJF5kYYVn3tkBzQEHNY5/nQ9wPAeNynNg71TP672LZSkwcmAVwR3K/x/+xsBYaeN9me51ngOxE+2FkEDIj7fORf+cUsbmbwiFRGLpWyEFBfdM744J33WudTGneJ7T1oro26YYs26Zx+o1kNg7IQGqKbGl2IsBE4YgrIoHVSW0yliLOLVbHqaPWRCTpLZEo+xGYkrkHPBLVm2FvIALi3emMEGqeVvTsDIvGYGQzPQlyKtAYEEQLP5DIsJC8djkaDrWAQcJGK294IA8BxRWKGZhBdtzMP5rP8Z/mJiqjP17ZmHSgzno3NKAZgKaqUOPpTI+8dp6mHGkMlKtBiIk2mGFcoX0002IMXBgKSQ6noMETBHHc3AUeA7sne6tp27ASxevQHGMGGjv3P/zQ0c89HmPhIcUbNPYqXvjRizD3UM3H5C6l6jCS/bCSve7cOIA/Lw2G4JLraxYmKj5bpeM9sgaFt81G63Swmxxp427yJkIqiKOf24IdtegK2BLWN8ydDMmXLgSql590SsWPjDBijBR+WiBN5gE9e5yAgupIBLk3G1pWL0nCWrIZYUfSFkxVkQqUc/9R7mOAw4SMJI2ODi+TyaeujYGDmCBA4H34Llv/Hj2g8QUXhrYNxsT/5aDjs10qCalMZJSooRnpwTxzFsbYNrl02p4rr0iSAQOmmBgZViBCIkiXiZCogMOEjA7DnEJx3PQqDwHluiOCw+etxpPnLN6H9GdJv4o7vuyG56d2Q2iP8pc/Yluh75/YqsyEkCgUtOnvDIIK3elgZfiTAesxcPbHA7azf9w6zyckFPCZJrtEst0/1NfHYQVO9IOSkq0b8NKMkcFjOi3g+kntE4LIaBITN2xunLZdvloAiEEFqgYFjVKh1z3vyqUn61oik9XNsO23GTGT+BYYanEj2ktzNRoD3HAQQKGxgYHvY5LxdgxErpklEA1CSGToJAHr/6QjMcn7q4sGFKXW9I9VM3EsIHN8cZ9LdAmS2G1FSgXKfg/5vS/JpXg1SlbwNXST8auRyJILa1URgYOFEsRTeAFvPKDB886Col1Garan+OAg8YHDoIyGDv+zA2scJJdiCjVreLmqT0xcXb7BnHBkyFsz8XNwzbi5UtXsKJHtLAmmnNA7z4tmlT4qf+EmnfutZ/QBznS4PDpdQtxXrc8Vs+BFnMKMRDPgMI0h8pYqHpFBhAiInKyArhr6GaM6JnLij+pVO2SlWm25N/2F5Gia9DvqJG3xC1Z9TDyyl2Ysqw5xv3cAbsLfXUuKV1v+zTSCzjgIAEDY4ODTu2SMOEWGb2yS6EwnUIesuzDe/NS8MCL21hqY10bTW2qmnDBaa3xwp1N0DQtAlXhWWbB1iIO97y8G199vwuiYDGua2p7wQHJJ2dhQHtSSKRyqgQOSOfAhWff3elwDmoyZH1+74CDRgkO/nnBSjxy1vq94CAmunPbpz3wxs8dGhYcVMi4/fQNeOGiA8MaiQor0LtfSbB8PkawbEi5YBP44voFGN6lwEoBjYED2oic9cZALNpy8HTG/V8vJkZFZaM1Hi2zA7i4+x5c2iOXZZYQgCMCKVWHJK8EeQIqa0JUuZCdwSCJJpJkDRsKvSwLZeaK5g5AqGInBxzU5+MeO5eBA91E8ywPXrzDi4EtS0FOLAMckjzJmLY8Bf/f3neASVGlXZ+u1N3Tk/MMA0MaQBgQEAFJEkRXMaxrDqioJEVwdd3fdddd9/NT12/JiijGXeMadgEVUUEREVSUIJLTDDDDDJNjd1dX+Pe9NdUMcVI3DHLreXxU6LpVdepW3VPve97z3j19HxxG45oiHX1KzAzEMCE5nZhyazc8coMTEU4vzAB92TixcT8wfvpurN9YCFlqnMjmiMjBA8k4v5MPVX4N1AFaZL0VFMx4g5ODEEyPEw/ByUHrIwfVTvx+zBY8PebYtMLDH3fH0x+HO62g4NErN7Nyxvq9BELdstkWJV70wkBsyI1vMKzfnOfATitQWJ+qDfq0ITMkqxyRjh/QHRg+fxC25MU0qYyS3l0UIaDKEmgCJHcA2emVGNmpBBd2LMG56RWsxTXpDqihlaqJ7FjHSz9QVMaj6OyjaNw7ffD+j22b1FK6ObicKftwchCCO0WTVddNREXJmH5vFC7p5oVp6ICgIl5RsHJPEsbOKEN5WS1EsXGLd/3TssY3kJAQjb8/nI3rB2mASj7mDjbemh0Sxv3vVuzaUwJFFpoUOWjXJgovPpCE/p399ciBjOc+c2ImkQNVBZVRNiIYEQIkz7IhODlofeSgRsGdw3bjhaNaR1Ojn9krO+IBavTDvlBDn5+2hXfzbtyASQNzURqmtILdU4C6P17/j374ZFN6i22gj/fk2i2Xo9wB/Hj/V0iLVpm5ExMkCibru9B31jAUVVIvg6aXhtoNn6jyAkQUdAEOp4bUGC8GtC3HwMwyXNC+FN2SqhHvCSCgCUFyUv/u2a23vQHBcopshAbibHhTcXIQqrtMuXpJwLQb3Jg40oAsCAgINYh1mNhXnYZJ8734dn0ZFKVxi/fR5CCgGejVIxFzH+6AwZ116KoHOlQYoogPVur43YyfUVJaC6mR5MOOHLRrE4kFv03EgCwVVX5i0GTcROTAxciBzslBqGbIseNwctCqyIFdLTA6+yA+uP0Hlsu2OxaSO+K6vBj2pUshaxbNC+HMsJX9TknH6imr0C2lGrRYMeGg4WBfwqFKK9hjEuH589Ku+N+Pe4SlAsMqQ5QxvFshFt/5fVDESekEt2xga2EkBj07hH3ZM5fIFuBpRwWYOyI1waL22aQxcAeQlVCDy7oV4oY++eiTXgFvMJJw+ICEMblFLvo5fL4PLbi807IrJwchgp2p/zXgiiEuPDVWQrTTAV3ywyk44BBjMfsjYPqbhccVyzR0CkxvYAJjr8vEUxMTkCCScDCKse1SVcRfXz6EV9/bBYM6MTVys8lB2/RILHggEQM7W10ZiRxQb4V5n7sw83VODhoJZ/N+xslBqyIHbMHXBLSJr8XaqV/Do1heIrTZC+rweYOxmcLgJ7D8bd5EsOyEDb+EgR1LsHTimiOU8+EgB6zHgVPDyt3xuGTBINZu2vZaaO41HL2fLbB89Iqf8T+k4aizP7YbJ73+YwbGUeMkmXq6hOqo1jgk5KQhiSw46jQKrkgfbu93AH8ctRMJHjXofnn0kUfMH4SN+xquoAjtGbe+0Tg5CNE9oZeHVzXRs3MEZkxMQPfkaoiSSrMUoqTgp7xoTJlThB17qxod+qdTs1MWySkxeOqBLNw8xICpAobggSxo2FbowNTZ+7Fi1f5GRw3scalaISOdBImJGFBHDpi2QVQw7zMFM9/I45GDEM2P4w7DyUHrIgd1CnrSDS+buIaFpKn0jhZuWtCo6dITy7rgsQ+7h7QPASMf5IjolTHrug2YMiQH5XUpBfq7cJADez7S++WyBQOwZndi07sbnuTZYERLdyDaHcCKyavRNflwJMQ2YJq6sCfmLc8Km8Cz/jUyIaPhYBhnty/BO2PXoX1cLdMk2NUN9nndvygbz3zeBVJk41pBh/MVcTrH5uQgROgzJzXDhNMl45Gx6bh9UA1g1kBxUmtQAaoQjWeWGJj55kHmRSAIDWsP7DFlRcbd13XD726IRWpUBQLMEcwDlyOAt1b48Mjz+1BwsKJJegY7ckDkgNIKF2RRKaPOhI+ypDDNwYzXueYgRNPj+MNwctCqyIH9xUkNg/54+RY8/qttQSMiu+dCSa2MC58Zgn1lEU0S0Z1sHtlOgtnpFVh+7zdwitTjxEpphJMc2ITnvY3puPm180NKDizPBgVTR+/ArKs2B/UT9DVvixGHPjcY2/OjT47jibQdDJymhxsk0WBeFkPPKcDiu74HuSvam93zgRpR3f9e77BpS8L6Tgnh4JwchBJMSi0ETIzsn4An73AhI64Mkq7DCRGGqGCfNxZ/e1/FwuWFCKgaxAZqG0mE6HIruGJ0Jh65JQnnJKnQBRV+gTQNLhSXu/CnBfl466PcE7YgPdHlBclBmpKXM0cAABzoSURBVEUOBnW1eisQweHkIIST4mRDcXLQ6siBvVCf264MyyetZuXHdo8DtphGBDBvVXvc/25vS9UeAmEisxXWBbx921pc06sAFd4j+weEM3JAyyuRkZvfOA+L17cJSUTExpB6VHw6cQ2SPSrUOp2G3VdhyZYU/PqV/oB44gWelm0XczA8cqM/J6dFZkTVDF0o0zcERHxw5/e4vHsBKv0yK+20ydJb69vg9jfOC0u/iVP0ZgnJYTg5CAmMhwcxTRNOp4zf35GCW4ZXIVr1wak7oDt06K5YbK+KxYtLa/HJijIUl3qDpgT2HLcfFaoQSEny4MrRbXDXr2NwTmI1FN2AJgkwZAcr4/nnMglPvbgLBYWVTYoa0NlapkoG2qRa5GBw14DVW4HIQV1agUoZdTXAqxVCPEeCw3Fy0OrIgf1smKqAd8etxdU9Dx7RIZGeT7dk4O53z8Vba9pD9KhsUWnuZndj/OOYLXjs4u2o8MnHEP2wkgMTUCSTRUguXTAQ2/JjrC/mZl4TIwaaAI+sY9H47zCsQwm7JrtZEpGpKGcA1/+zHxatyzghGWH6B92B2VdvYv4IZJ5kL+BxEQG8sCYT0z/r2qyvexvzJ67ehEdGHm4FHSQH6zJw+5t9OTlwdbmu6bGZ5j4JZ8F+tiFS546R+MudLgzPrIViCDDJnpMiCIqIYi0CK7dE4qsffdi6sxJlFSpU1QBJaBRFRHKSBz27xmHkwEQM76UhJbIKZqCu2YikQDMlrNli4A/z8rB+UzEkoekBtiA5SIlkDokUOajwaewzSZJkPPuprTng5CBs05aTg1ZJDixxoIyhXYqwZPy3rEbe3ii9QHX79Gdj3+qLTza0YQShqU186PkTYLVpHjt4L56/5if4dfqTYz+Gw0kO6LpoUYxyaVh3IAZXv9IfheURzSIITDcRECA5gBdvWo+xfQ+gzHuYGNBxot0avtzZcAOrw2LGLfify7agok7MyLowKjrW50Vj0DND2X1oauXIyXpYUAXHM6s6YNq7PK3AIwdhePOzNqsmMOL8KDx6oxtZSV7oggGqKxZhwHAI0ORklPlikVtooKpWhT+gwzQFOJ0KkuLd6JDuRkKUClkog2wAhqrAoYDpDTYfcOH/3jyEj5bnsi/95mz10wqMHHQJoMJHDokUOZDxLPM54ILE5mDb6H04OWgEOVDx2Kdd8NcPe8AZQoEYK3k7yY1ioWe/hOdvXI/xA3NRUmtZKdNm18VTaHvKwmy8810mqxwSZHqGrb8/0UbEg0LhBnUINByYfOFuPD1mK0td0OJpL3T1RwgnObDJCAv3uwKsQdEd7/TB9v2xLG0CUv03gBWrDDAdzNo4NsqHedduxPXnFqDCZ4k5abOPQ7+94qUBWLkj+aTNnuwFfFSPAiwc932wQ6aFPxCp6Ljx9fOwaF1bSBFNFA5SNkJ34JPxazA8qwTVdZbODGePigc/7I6ZS7txQSKPHDT6Vd6kH7IvDMmBi/rHYPwYJ/p01qGgGiL7OnBDlFwQRBeZI8Ah04uKqgREKIIM6j/K4giCBsNhQDIlSHBCdchYu1vDM+8dxCerCuD3WV/1zdnqCxJffDAZF2QROVBh6jrzOZj3uRuzODloDrSN34eTg4bJQZQfD3/YHU9/cG5oGx65NNb75EQbIweaiLRoH5bf8w0y47xHlL5ZEQQy8zHw0rft8NSXWSgoioRDNFiUkLn4BUVzlviYFlBHgHxOHMhMrcRjo7fjpj75rO7e5vgiMwgyjlgMw0UO6PxkdizLZ4BEkJGKhkNVTjz2eRe88UNbBLwKHLIGUzSta6qjVFT4yGzaidAERJiigVHnFOJvl21D7/QKlFMqoR6+ttjviWVZeHRxdoM2xUHfB1nH1/esQo9UqnYQrZJPFj3QsPFgNC6dP8g6lqJDrxfhOdF9paiPViPj/I4l+HTSamZyTwXgdhmnIpgY83J/rNxO5EULi9lV418Qp/eXPHIQRvxJfyAIInp2icS4MVEY1UtHUowDuiFAggqZLEBNBYbgJnMvSA4DTkigvzXIH0GmEH8AUFwoqIzCsh8D+OfHBfhuQwFUf/OJAV1y0AQpIwoLHkrB4CwDNbU1MA0VkBTM/SwKs1hvBT8cjaisCCOMv9yhOTk4KTmwa/E/2ZqM/2xOZQtXSwWAlmeIA+9uTEf5f5ssOerq4Y83yVhu2ithxDmFWDhuLWhBJCsRm49b1MKBaGcAOWVuvLWuDRZtTsOWwij4yLEvQPk+WlGJSRhwOzX0SqtkvQBu7J2H1Gg/aynMyuwo9y+aqPKL+CY3HqOzioLXGg5yQFEQioZsL/JgZOdiVHjlYJMpinA6JQOrc+LwxroMLNuRiAOVbuh1dsXssgWD5eTJL2BI+1Lc3DcPl3YrpD5wqAmIxxCDhIgAlmxLwrWv9offECzcGwh6MvxrFPz24m2YeeWWoE8CHd7WB/xrYzrufrsPfD6ZuSPSuDYnY9GKOs0ikS8iZaZPQlyMD++P+x6DM8tY86kg4ZB1bC6MxOAQGTOd6S8uTg5OwR2kvgvJCW4M6ReHy4bG4tx2GjKiyxElUSzRiQBcgEIvEh8UOFglAkQZXoeAggoZ63NMfLi6CivWHMLBg5WsJrpZMt1612qTg/S0KPxlQgb6tDVg+KohoBaQnXjt6wi8/H4e9IB6+G14CrA6qw7BycFJyQELR5ukWDfgaoa97tFziZ4a+pqlxjy9Zw3DjoMNlNHV8x8YN3gv5l/zE/vKJ4JQv/MfkQ1aTMlFkSoNckojWFvgQ9UK0xHQ36VE+tEtuZrV1ke7NBbKDugCe5bpGul5jHYFcOtbfWFoIt687Qe2YNPCFWpyQMciIkKmRKOeH4j5v9mE0V2KgqkTwokWUo9TgwgTh6pd2FEcgb0lESj3KcGwfttYL/MvaBPtZcSiSpUYGaIohL3Ruce6NWzIi8avXxmA/HJXo0tAba8EIiDLJ69GVmLNEdEbS9yo4eu98Xj88y5YlRMP3SuzaAalQ9jGLoY6TRmQ/+u5MLxTCRN+npdREUwn0M9YZCMigInUXGtlp7DYSZ9p7zZODk7RHWPaAFFEYrwbfbtEoFdnGW0TRGQkOBHlkRARQeu9Bl1zoKDURF6JjgNlJn7apeGn7ZUoLq2GrukQj9ePtJnXwGq3FRFdOsYgNkKAQ1chOjQ4JBk5hTpyDtQEw4jNPATf7WQIcHLQIDmw3u/UYa/lU6k+ORg2bxB2F0Y1yp2PfVn6ZEy6cBer2Vd1gf1TP2zOIuymg7VCViRqCWxCdBiWhoC+AUxqAORg+7FugXULKP03tQ+mcsI/LOmGWR9l445RO7Dguo3BqEI4yAEt5tV+ET2eHsnO8d/jvmdNi4q9CrsGi5hZqQM6P5muSTAPVx0YDuYeSdcU0IlCWC6P9TfmhOgOYH1+NK597XzkFkc22VnSqiyQcem5+fjPuLWMHFCTJDt6Q/gxJ0tDwLq8aHyXG4c9pR6U1kosQuuSdGaL3DGhFgPalaFXeiUTgtYGDushyCabtAYfbU7BVa/1D5K1EEy5lk/a0zgCJwenGHwiCaaDWjmLiHSLiI8mciBDIa8kB+DXgJIKPyqqAvD6NGgBakhiQLTjYyE+X9I6WOE9CsZZMThKh7CmJs2TM4T4DH/Bw3Fy0ChyEKoZUJ8cDHl2MHYxcqA3KlVBzwLZG1973j48e/XPiPMEUOm1FpijZT9MX2DT6rogn/V0Hf6tLVykKAJFG6YtysbbP7RlPQFuG7IHL127ERV19ffhIges8dHsYSgqjUBclB/PXPMTbuqdz9oqUxWAXX5of4CzlE69FZMwqR8lsO8TkQLK7ZPA8aMtyRj/bh8Ulrstk6VmlEja1tL3j9rJumUSQQgYh8kZnRedB3VhpAgTEUnq12ATFkqT0D2iVA9FjaxIjSWipN/ER6gshXL9P/o3KbIRqnnZWsfh5OAU3xl7vTWsNwgTw1gs3fo3+3uKitX9UKh785ztLPYU36ZTc7jWSg6yivAxc4+z1gJ6ocf8ty3u+xvTccsb/SzRXQgRssvW7hi6h4XujxazhepQ9cnBhc81PnJgH58RBJ+Enpll+PsVmzGqczFLDbCvWQoM2qHsk5wwLZw0Dpn7ULphxe4EPPRhD6zfGwclQoNao+DWQXux4NqNzJzHTiskR6p4/PMs/HVxdqPthm1RnyLpWHnPNzinrpkTvVLsroj9Zg9DSY2TySKoVdHkYbvxhxG7QMejfLzVfMpqsXyyzc7pEykgbQilRGZ+3REzv+jMFuXGkrATHYMZRakiJg7bg6cu28raLFPkg4iBjbs9V2mMw1USh51oKYXDNCfsHpisJJL+/92f0vDgwp4oqnJZ4ssQGFuFas6eznE4OTid6PNjn90ItFJyMLhLET6f8K2Vrq0jB9R2970N6bj+tf7Naq97shttW+1OHrUTz92yjoWRG7PQNnXyWAI1k31V9po+HNsboTk4+hislt8vwSlruKHfAdxzQQ56plWx8DV9ldIXNyvrsz+36wRxtBjRwkm/o9TC5oIoPL+mPd76oS28VErn1EALoFajYPzwXVhw64/Q6xT/FDmQovz4+8fn4Pfv9m50iV19xf/Pv/sSnVOrmHkaYUDCvWqfjA5PXITiShcESWe5ekOV0CWjHNOG7MVV2QVIjfIzjQVVNJC2wqq6qPuQqateIBdJlkoRDGamtGRbCmtvvTEnnqURTJJThYBNWtEbEb3blzJr6xGdSpgehbpXanXpmqPTT/ZhSShp3QODdYT0BQR8ty8W01d2wtKf06wLCoGupalzsjX/npOD1nx3+Ln9shFoZeSALSYkzIrys/yzvdl9BfaXu7E6J/6kJYDNuWEsbBwQ0SezDJd3L4Q/IBwTqm/OuMfbh5mU6Q68srYtSqudJ61WONEx2eJKBMAvw+XxY1RWES7pUsRy2m1jfSwqQHl6tpiZdDyBNfjJq3Dju/2x+HR7EpbtSEJtlROOupJKIhQ2Due2K8eV3QuC5Yx2Xn3F7kSs2JbctLw9kzqZuKv/PpDBDxENO2Xo1wQ8vyYTtaoUbJnMKieoNNFwoENaJa7qfghDO5awKgtKE5A2gkgOLbr0BU5Ep8onMZX/qr3xWLQ5FdvyYlj4M9SdK+l+MA2HKkKWdAzqXIxrexZgRKdi1tKaxImEva3zsH9P//aqIhMgFlYr+GJXIhZvScGqXYnw11U5WOnUUM2yX8Y4nBycwvvIMgR1odpQHTZYVsUndqggPXXjtDJyELxwygtT2doxn82kTjvW6z4kgNGzQcf0iy0txGnc6ZDBz0l8DhozCFvMCStS6TtMOCMCSI3yMU+EGJfG0gbUU4By+/vK3MivdMNnq+kVzerEeHQIm+EgAH4as95Z0POt6NY/zXnW6bjHC5e7qRrpyKtl5IciRqx0UWQlgjERfrSL87HrI2tkeu/QF/uhaierziirVZhoE6IOQdGtqFOYwvNM50BRDMIdJjyRfnSIr0WPlGrr/BQdkS6NXUONX0StJiKv3M0IzN7SCNRUO62qCsUqfWxpeWxj5sqZ+BtODk7RXaPQnKZRN0ZAJr/jEGwkbqQySXoKZDF8X1shOFU+xAk+Yx26H1psVwRSB9PbuMUlqqEAur7ZTf3xgsY3oTjIccagL+2jFe9hOhT76m3OGnu887FKi63mSayMjsx46i+MLKFPz6kJgcRxdV4LJ7q2E+FAi1hzqzYoTXM82QBrXnSCjVk81xEg6nPA8gNHGw2x6zLYIiuItNCGjxQcw1Xtio8g7iJgc1e7oRM7X7oQg6UNqMSR7gG7X2EiL+Gas6d6XE4Owoy4FcY00TbFieyOHhwsM7FpZ0WLY1gkaExMiEC39hHw+nRs3l0Fv09rtmNimGHgw59B5IDfrJYhYIn36lMPi4ic6WHr45HGcBPGxt4JRgFo4a/bwSZRtpCS6EBDNtCNPdbZ8jtODsJ8p2ly1vpN3DjCjT/floSlP7vw6Py90AOBZjsPMgMjzcTIC9Px6J1xOFRo4P89k4+c/RWQpcPq3DBfGh++pQi01rRCS6+L788R4Aic8QhwchDmW0hphFqvidtHS5g5PgYfborEfXMOQvWpEJppS2yTg8tHp2HO1AgUHBJx15PF2LqrBIpM3u1hvig+fGgQ4OQgNDjyUTgCHIGQI8DJQcghPXJAmxzccbET0++OxZJNHkyZcwD+45CDYAgsuLpbNdFHhyRtcnDV6DTMvs+D/UUSJv6tCFt3FlvkwKjrglaXTjwZWTha0Hj4HMIMDB+eSa9bo+aA3xqOAEeAI8DJQZjngEUOgHGjRcycEI9Fm2Jx36wcqP4jIwckLqRUAeXwZFmCIDpg6CYCAY0Zlkj1RIw2ObhyVCpmTotEfqkTE58swKbNRXCIAmRJZCkLNaDDYRiQZXIQO1Z4RLqFAIm2BQck2oeE1yq1nTWgSA4W2eBbGBHg5CCM4PKhOQIcgZYgwMlBS9BrxL42ObjjImD2pAQs3BiLKbP2IaAeJgcUGYiJVphgMat9FBJjRLicGiprA8g9aGDd5lrsO1gddCmzmiaZuHxkG8ydFo9DJSomzyhAda2GC3rFICVRhsspo7hMw9rNlfh5ZxXr4lh/sdcNE5EeBed1j0TPzi7ERLlhajpqagPYmqvhx62VKK/0NeIK+U+ajQAnB82Gju/IEeAIhBcBTg7Ciy8rXaTIwdiLRMycGI0PN3gwdXYBAoEARFFgX+rds1Pwp9vbYGBGDQSXC5q/Eorsh+Khtq9urN2h4Mk3i/DdxiKQGxltasDAmBEZmHtvIvzlJfhyUy16dY9Gx4wo6JoGtwBEOQXsKlDx/hoDL/z7IAqLaiGJAnTdQFJiJKbdkoFrLzAhmSqqjDjWXjre44NhuvD61zqmv7wV5WW17Dy5jiEME4WTgzCAyofkCHAEQoEAJwehQPEkY9iagxsvisCMSVH4ZIOAabOKoAc0CKIAv6qjV680/HVCV3gL92HlpnLsPeiDopjo3dWDKwfEoFs7D95eY+LR5/aiuLiGpRj8qoExw5Ixc3IEUj01UHUXtuTJWPp9DXbu8yEp2oGL+rhxYXcHxAg35i51YMYb++Gt9sMUBIy/pgP+cFs8duwsxAsLy7EjT4DilJDdQcIlg2Px1RYDr/xrD4yAxls2h2uOcHIQLmT5uBwBjkALEeDkoIUANrS7RQ4MXH1xMmZOiMAXG/yYOqskWMpIWgNZkZCeEo2KSi8qKn0gXyP6VJdlEVePiMdj4xJwsDoSDz6bj/Ub8qHIDvhVE5cNTcKMe11Ij9Pw1SYXHn+1FBt3VTOtAm1JsRLuuTIGky4VUKjH4565Vfjqm/1ITorAE1Pa41d9gYfnH8LrS0pYm1bSHpA2ITbGCUo7VFX6ue6goRvckr/n5KAl6PF9OQIcgTAiwMlBGMGloSnPX+vVcMUlmZg1wY2VP5ZhypxyGORz4LDNUUyoqsFaOTsVCU6nyNIRRBw6Zkh4YnwK0tLa4IHnDmDV6hxWkUARh0uHJmP2VDdMh4FHXvBj4RclwR7zpEvwBwx0yYzCjCkJOL+Hgpn/0TDr1RxERTrxlymdcd0gEf9aXoMXFhXhQEEtamt1GAY5uFHfdi5IDPPU4NUKYQeYH4AjwBFoLgKcHDQXuUbuZ5ODMRdnYvakSKxaW4x755TB0A83CCE3r6REN4b2jsQ57UREOx0QJQmaKSDOo2FAZwG6nIwHXyrGFyuJHFDkwMBlw1Iw934F+eUmJjxVhW27KlmVgdWvnBzBTIiKgmlj2+Kh30j47FsvJs0oQGWVH2NGtMWfb89EuwQDWwuqmQAxN1/HT7u82JpTg7IKlXWNOU6RQyOvnP+sQQR45KBBiPgPOAIcgdODACcHYcbdTitcNToVcyfH4MsfanDP7MIgOdB1E53ax+Chm5MwJFtEUZkf+Qd9qPFZDUMSIjX072DAp6Tg/pfKsXxF7uG0woh0zJ3mQW6RgQlPFmHP3grIR5kgUTRi/C0d8Keb3Fj5bRUmTc9HVbUfLpeM/tmJGHO+G0OyXUiJA1xuJ0p9CjbvKcUrS8qw4vsyFr3gW5gQ4OQgTMDyYTkCHIGWIsDJQUsRbGD/oCBxdBTm3JuIj9fqmDIrn5EDsipyuhQ8dGsGJl4s4t/fVOGFD6tRUaVB1cj3AGifIuHRmyLRvlMypr5Yga9W7rPIAStlbItnpyagtErFpJmFWLu+hEUOaD2nL34iHpEeJx6a1B5jL5LxzuIKPP5qAXx+q8EP+Rwkx7uQnuBE+1Q3enT2ILuTjBE9VGw/oOOeOSXYtKOaHY9XK4RhonByEAZQ+ZAcAY5AKBDg5CAUKJ5kDDtycNuvPJgzOR7/WQvcO7MApq6BOjVmZkTjmfuT0TlRxf3zK7BkdQVcioOlBEgz0KNzNKZPTEJqejQeeLEUK7/ezwiAXzPxm4vaYtaEBES6dMxZ4sOM13PgrVGZXoC+94lcDO2biBnTkhAf6cMjz1dj0cpSK2ohimzB1zWdGS5JomWClJakYPrEKIzoIePe5/x46/NiOKnbKw8ghH6mcHIQekz5iBwBjkBIEODkICQwnngQW3Nw/SUpmDvRg027vJj8bBX2F/qZE2FasgdP3xePYV29+L93AnjpYy983gArc0xJcuKuS6MwYZSM4kAMfvdyKb5Ylc/IAUUWrhrdDrMnpSAlwofcKjfmLS7FRysKUFJBHgoO9MiKxdSrE3B5HxMffKfijy8ewoG8Cng8Toy4IA2yoGLtpnIUlQag6VakITFOxOypsRjTz4OJs6rx9jJODsI2RTg5CBu0fGCOAEegZQhwctAy/BrcmyoSVFXD+X3TMeueRGTF1mLpBgNrcwws/64SO3MqcduvU/H7GxX4fCYWrxWxfY+KSLeA/j2c6JrkQ6LLCz0iEX94uQYfLdvPOi8SOfjNpR0w+75UyP5yFFYpcMfH4uccHw4cqIZTEdCrqwftE3X8tK0Gj796CN9uKoWh6WjTJhp/+21X9GvnxbqdfmzL9aGqwg9dUNCxYzQu7idg6w4Vj8w/iO251bzTY4N3uZk/4OSgmcDx3TgCHIFwI8DJQbgRZpYFJtwRTky6sRuu7i8gLqoWubUKnnrpEFasKkBqqgdXjkjEFYNkJMUDpi5CCwjIL/Rh6bdVaJ/hRLeuCXhxcSW+/CoXkuiAppkYcWEmHrojE0UF5fjg80L0zk7C0L6xSHb5AT2A/CoT32z2YuGyImzbVcFSFZQecLlEjBiQjGtGJqBdqgPRESoizAqojkgUBRKwbkst/vHvXOzYWwneXSGME4STgzCCy4fmCHAEWoIAJwctQa8J+5L4Lz7Wg15dY5CWDByq1PDjxgpUlKtMH+Byy2iX4kS7NCeiIoCSSgM5B/woKlMRF+OEJ1JBYbEXVZU+tmAT4YiJ8yAzIwZebwB7c0rhcknISItESrwEh8PAwSIVeYd8qCQzIweJFK2lnioQRElAckIE4mJktEmVkRJrwKsK2JVnYN+BWpSWeZnXAicHTbjJTf0pJwdNRYz/niPAEThFCHBycIqAthdlIgJska6rKKjfMtkqG6RV3BIAOhwmBDJKMi0yQPqF+r4DTFBIXgQA0xgE/5+t6NYgbIE/gVkBOSkyM0YHmTUJ7JxMMkFyIChqPIXwnH2H4uTg7Lvn/Io5AmcIApwcnCE3ip/mLxABTg5+gTeVXxJH4JeBACcHv4z7yK/iTESAk4Mz8a7xc+YInBUIcHJwVtxmfpGtEgFODlrlbeEnxRHgCACcHPBZwBE4XQhwcnC6kOfH5QhwBBpAgJMDPkU4AqcLAU4OThfy/LgcAY4AJwd8DnAEWikCnBy00hvDT4sjwBFwOLOu5a75fB5wBE4RAtT3gkpS2cbJwSlCnR+GI8ARaCoC/x/kBQHrm67I/QAAAABJRU5ErkJggg==" alt="Umami TLabs Logo" class="cover-logo">
+        <h1 class="cover-title">Umami TLabs</h1>
+        <p class="cover-subtitle">Healthcare Technology Solutions</p>
+        <p class="cover-tagline">
+            Empowering healthcare providers with intelligent, integrated technology solutions that streamline operations, enhance patient care, and maximize practice efficiency.
+        </p>
+
+        <div class="cover-features">
+            <div class="cover-feature">
+                <div class="cover-feature-icon">🏥</div>
+                <div class="cover-feature-text">Complete EMR/EHR System</div>
+            </div>
+            <div class="cover-feature">
+                <div class="cover-feature-icon">🤖</div>
+                <div class="cover-feature-text">AI-Powered Documentation</div>
+            </div>
+            <div class="cover-feature">
+                <div class="cover-feature-icon">💰</div>
+                <div class="cover-feature-text">Revenue Cycle Management</div>
+            </div>
+            <div class="cover-feature">
+                <div class="cover-feature-icon">📅</div>
+                <div class="cover-feature-text">Smart Scheduling</div>
+            </div>
+            <div class="cover-feature">
+                <div class="cover-feature-icon">📱</div>
+                <div class="cover-feature-text">Custom Mobile Apps</div>
+            </div>
+            <div class="cover-feature">
+                <div class="cover-feature-icon">👥</div>
+                <div class="cover-feature-text">Staff Management</div>
+            </div>
+        </div>
+
+        <div class="cover-footer">
+            <p>© 2024 Umami TLabs | amarnath@greyquill.io | www.umamitlabs.com</p>
+        </div>
+    </div>
+
+
+    <div class="page">
+        <div class="page-header">
+            <h1>About Umami TLabs</h1>
+            <p>Your Partner in Digital Healthcare Transformation</p>
+        </div>
+
+        <div class="intro-content">
+            <h2>Who We Are</h2>
+            <p>
+                Umami TLabs is a healthcare technology company dedicated to helping medical practices transition from traditional paper-based systems to modern, efficient digital solutions. We understand that the shift to digital healthcare can be overwhelming, which is why we've designed our platform to be intuitive, comprehensive, and fully supported.
+            </p>
+
+            <h2>Our Mission</h2>
+            <p>
+                To empower healthcare providers with technology that allows them to focus on what matters most: patient care. We eliminate the administrative burden and complexity that comes with running a modern medical practice.
+            </p>
+
+            <div class="highlight-box">
+                <h3>Why Choose Umami TLabs?</h3>
+                <p>
+                    We don't just provide software – we provide a complete ecosystem that integrates every aspect of your practice. From patient records to billing, from appointment scheduling to AI-assisted documentation, everything works together seamlessly.
+                </p>
+            </div>
+
+            <div class="intro-grid">
+                <div class="intro-card">
+                    <h3><span class="intro-card-icon">🛡️</span> HIPAA Compliant</h3>
+                    <p>Bank-grade encryption (AES-256) ensures patient records are always secure with regular audits and compliance certifications.</p>
+                </div>
+
+                <div class="intro-card">
+                    <h3><span class="intro-card-icon">🎧</span> 24/7 Support</h3>
+                    <p>Dedicated support team available round-the-clock with average response time under 5 minutes for urgent issues.</p>
+                </div>
+
+                <div class="intro-card">
+                    <h3><span class="intro-card-icon">💝</span> No Lock-in</h3>
+                    <p>Month-to-month pricing with no hidden fees. You stay because it works, not because you're locked in.</p>
+                </div>
+
+                <div class="intro-card">
+                    <h3><span class="intro-card-icon">☁️</span> Cloud-Based</h3>
+                    <p>Access your practice data from anywhere, anytime, on any device with automatic daily backups.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 1</span>
+        </div>
+    </div>
+
+
+    <div class="page">
+        <div class="section-label">Billing & Revenue Cycle Management</div>
+
+        <div class="page-header">
+            <h1>💰 Billing & Revenue Cycle Management</h1>
+            <p>Optimize practice solvency with automated financial operations</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">📊</span>Overview</h2>
+            <p>
+                Our Revenue Cycle Management (RCM) system is designed to minimize claim rejections and accelerate days sales outstanding (DSO). From invoice generation to payment tracking, our automated system ensures you never miss a payment and reduces administrative overhead by up to 40%.
+            </p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">40%</div>
+                <div class="stat-label">Reduced Admin Time</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">95%</div>
+                <div class="stat-label">First-Pass Claim Rate</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">30%</div>
+                <div class="stat-label">Faster Payments</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">⚡</span>Core Capabilities</h2>
+            <ul class="features-list">
+                <li><strong>Automated Claim Submission:</strong> Direct EDI (Electronic Data Interchange) integration with major payers eliminates manual entry errors.</li>
+                <li><strong>Real-time Claim Tracking:</strong> Monitor claim status from submission to payment in a unified dashboard.</li>
+                <li><strong>Denial Management Engine:</strong> AI-powered analysis of denied claims with automatic resubmission workflows.</li>
+                <li><strong>Patient Payment Portal:</strong> Secure online payment gateway with recurring billing and installment plans.</li>
+            </ul>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 2</span>
+        </div>
+    </div>
+
+
+    <div class="page">
+        <div class="section-label">Billing & Revenue Cycle Management</div>
+
+        <div class="section">
+            <h2><span class="section-icon">⚡</span>Core Capabilities (continued)</h2>
+            <ul class="features-list">
+                <li><strong>Insurance Verification:</strong> Automated eligibility checks before appointments to prevent billing surprises.</li>
+                <li><strong>Financial Analytics:</strong> Real-time dashboards showing revenue trends, outstanding balances, and collection rates.</li>
+            </ul>
+        </div>
+
+        <div class="highlight-box">
+            <h3>🎯 Case Study: Multi-Specialty Clinic, Mumbai</h3>
+            <p>
+                <strong>Challenge:</strong> 25% claim rejection rate costing ₹12 lakhs annually in lost revenue.<br>
+                <strong>Solution:</strong> Implemented Umami's automated RCM with real-time verification and denial management.<br>
+                <strong>Results:</strong> Claim rejection rate dropped to 5%, recovering ₹9.5 lakhs in previously denied claims within 6 months.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">⏱️</span>Implementation Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h4>Week 1: Financial System Integration</h4>
+                        <p>Link business accounts and map existing insurance codes and fee schedules.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h4>Week 2: Data Migration</h4>
+                        <p>Securely import open invoices and patient ledgers from legacy systems.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h4>Week 3: Automation Setup</h4>
+                        <p>Configure rules for auto-invoicing, payment reminders, and claim submission.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h4>Week 4: Go Live</h4>
+                        <p>Full system launch with staff training and real-time analytics dashboard.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 3</span>
+        </div>
+    </div>
+
+
+    <div class="page">
+        <div class="section-label">Billing & Revenue Cycle Management</div>
+
+        <div class="section">
+            <h2><span class="section-icon">💡</span>Key Benefits</h2>
+            <p>
+                Our billing solution integrates seamlessly with your existing practice management software, ensuring a smooth transition without disrupting your daily operations. The system learns from your practice patterns and continuously optimizes claim submission for maximum reimbursement rates.
+            </p>
+            <p>
+                With real-time analytics and detailed reporting, you'll have complete visibility into your practice's financial health, enabling data-driven decisions that improve profitability and reduce administrative burden.
+            </p>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 4</span>
+        </div>
+    </div>
+
+
+    <div class="page">
+        <div class="section-label">Smart Appointments & Patient Access</div>
+
+        <div class="page-header">
+            <h1>📅 Smart Appointments & Patient Access</h1>
+            <p>Maximize provider utilization and patient adherence</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">🎯</span>Overview</h2>
+            <p>
+                Our intelligent scheduling engine balances provider preferences, appointment acuity, and room availability through a proprietary algorithm. Patients can book appointments via multiple channels including WhatsApp, SMS, web portal, or mobile app, while automated reminders reduce no-shows by up to 70%.
+            </p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">70%</div>
+                <div class="stat-label">Reduction in No-Shows</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Patient Self-Booking</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Calendar Sync</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">✨</span>Seamless Patient Experience</h2>
+            <p>
+                While doctors manage their schedules through our intuitive calendar interface, patients can book appointments instantly via WhatsApp. The system automatically syncs bookings in real-time, sending confirmation notifications to both parties.
+            </p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h4><span class="benefit-icon">📱</span>Omnichannel Booking</h4>
+                <p>WhatsApp, SMS, web portal, or mobile app - patients choose their preferred channel.</p>
+            </div>
+            <div class="benefit-card">
+                <h4><span class="benefit-icon">🔔</span>Smart Reminders</h4>
+                <p>Automated confirmations and reminders sent 48 & 24 hours before appointments.</p>
+            </div>
+            <div class="benefit-card">
+                <h4><span class="benefit-icon">⚡</span>Real-Time Sync</h4>
+                <p>Instant calendar updates for both providers and patients, eliminating double-bookings.</p>
+            </div>
+            <div class="benefit-card">
+                <h4><span class="benefit-icon">🎫</span>Waitlist Management</h4>
+                <p>Auto-offering cancelled slots to high-priority waitlisted patients via text.</p>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 5</span>
+        </div>
+    </div>
+
+
+    <div class="page">
+        <div class="section-label">Smart Appointments & Patient Access</div>
+
+        <div class="section">
+            <h2><span class="section-icon">⚙️</span>Core Capabilities</h2>
+            <ul class="features-list">
+                <li><strong>Dynamic Availability Engine:</strong> Real-time slot calculation based on procedure duration and provider templates.</li>
+                <li><strong>Cascading Notifications:</strong> Multi-channel reminder logic (SMS → WhatsApp → IVR Call) to confirm attendance.</li>
+                <li><strong>Bi-Directional Calendar Sync:</strong> Seamless integration with Outlook/Google Workspace for staff availability.</li>
+                <li><strong>Queue Management:</strong> Real-time patient queue with estimated wait times displayed in clinic.</li>
+                <li><strong>Video Consultation:</strong> Integrated telemedicine for remote appointments with secure video links.</li>
+            </ul>
+        </div>
+
+        <div class="highlight-box">
+            <h3>🎯 Case Study: Dermatology Center, Austin</h3>
+            <p>
+                <strong>Challenge:</strong> 18% no-show rate resulting in significant lost revenue and wasted time slots.<br>
+                <strong>Solution:</strong> Implemented WhatsApp-based booking with automated reminder system.<br>
+                <strong>Results:</strong> No-show rate dropped to 4% within 60 days, adding 12 billable hours per week and increasing monthly revenue by 22%.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">⏱️</span>Implementation Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h4>Day 1: Configuration</h4>
+                        <p>Define provider schedules, appointment types, and durations.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h4>Day 2: Patient Sync</h4>
+                        <p>Import patient contact list for automated notifications.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h4>Day 3: Portal Launch</h4>
+                        <p>Activate online booking portal and send announcement SMS to patients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 6</span>
+        </div>
+    </div>
+
+
+    <div class="page">
+        <div class="section-label">AI Assistance & Clinical Decision Support</div>
+
+        <div class="page-header">
+            <h1>🤖 AI Assistance & Clinical Decision Support</h1>
+            <p>Augment clinical expertise with ambient AI documentation</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">✨</span>Overview</h2>
+            <p>
+                Our Ambient AI Scribe is built on a specialized Large Language Model (LLM) tuned on millions of de-identified clinical encounters. It passively listens to patient-provider dialogue, filtering casual conversation to extract and capitalize distinct medical necessities, populating the EHR in real-time. This reduces documentation time by up to 70%, allowing physicians to see more patients daily.
+            </p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">70%</div>
+                <div class="stat-label">Less Charting Time</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">Additional Patients/Day</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">99%</div>
+                <div class="stat-label">Accuracy Rate</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">🎤</span>Voice-to-SOAP Note Generation</h2>
+            <p>
+                Simply speak naturally during patient consultations. Our AI automatically generates comprehensive SOAP notes (Subjective, Objective, Assessment, Plan) in real-time, extracting vital signs, diagnoses, medication plans, and follow-up instructions.
+            </p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4><span class="feature-icon">📝</span>Zero-Click Documentation</h4>
+                <p>Automatic generation of HPI (History of Present Illness) and Physical Exam notes.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">⚠️</span>Drug Interaction Alerts</h4>
+                <p>Real-time alerts for potential contraindications based on current meds and new prescriptions.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">🏷️</span>Automated Coding</h4>
+                <p>AI-suggested E&M (Evaluation and Management) codes based on documentation complexity.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">🔍</span>Clinical Decision Support</h4>
+                <p>Evidence-based treatment recommendations drawn from latest medical guidelines.</p>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 7</span>
+        </div>
+    </div>
+
+
+    <div class="page">
+        <div class="section-label">AI Assistance & Clinical Decision Support</div>
+
+        <div class="section">
+            <h2><span class="section-icon">⚙️</span>Core Capabilities</h2>
+            <ul class="features-list">
+                <li><strong>Ambient Documentation:</strong> Passive listening eliminates the need for manual note-taking during consultations.</li>
+                <li><strong>Multi-Language Support:</strong> Supports English, Hindi, and regional languages for diverse patient populations.</li>
+                <li><strong>Custom Templates:</strong> Specialty-specific templates for cardiology, pediatrics, orthopedics, and more.</li>
+                <li><strong>Voice Commands:</strong> Issue orders for labs, imaging, and prescriptions using natural language.</li>
+                <li><strong>Quality Assurance:</strong> Built-in compliance checks ensure all required documentation fields are complete.</li>
+                <li><strong>Integration:</strong> Seamlessly integrates with existing EHR/EMR systems via HL7/FHIR standards.</li>
+            </ul>
+        </div>
+
+        <div class="highlight-box">
+            <h3>🎯 Case Study: Internal Medicine Practice, Chicago</h3>
+            <p>
+                <strong>Challenge:</strong> Providers spending 2+ hours on documentation after clinic hours, leading to burnout.<br>
+                <strong>Solution:</strong> Deployed Ambient AI Scribe for real-time SOAP note generation.<br>
+                <strong>Results:</strong> Reduced charting time by 70%, allowing physicians to see 3 additional patients daily. Provider satisfaction scores increased by 85%.
+            </p>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 8</span>
+        </div>
+    </div>
+
+
+    <div class="page">
+        <div class="section-label">AI Assistance & Clinical Decision Support</div>
+
+        <div class="section">
+            <h2><span class="section-icon">⏱️</span>Implementation Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h4>Day 1: Plugin Installation</h4>
+                        <p>Deploy ambient listening hardware and integrate with EMR system.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h4>Day 3: Voice Calibration</h4>
+                        <p>AI learns provider-specific accent, terminology, and speech patterns.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h4>Day 7: Accuracy Review</h4>
+                        <p>First weekly audit to fine-tune AI suggestions and reduce false positives.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h4>Day 14: Full Deployment</h4>
+                        <p>Live documentation with real-time clinical decision support active.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 9</span>
+        </div>
+    </div>
+
+
+    <div class="page">
+        <div class="section-label">Electronic Medical Records (EMR/EHR)</div>
+
+        <div class="page-header">
+            <h1>🏥 Electronic Medical Records (EMR/EHR)</h1>
+            <p>Longitudinal, interoperable patient data repository</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">📊</span>Overview</h2>
+            <p>
+                Our cloud-native EMR architecture ensures sub-second query response times for patient histories, regardless of dataset size. The system provides a comprehensive 360° patient view with real-time access to labs, vitals, medications, chronic conditions, and appointment history—all in one unified interface.
+            </p>
+        </div>
+
+        <div class="patient-360-box">
+            <h3>🎯 Patient 360° View</h3>
+            <p>
+                Get a complete picture of your patient's health journey at a glance. Our intuitive dashboard displays everything you need to make informed clinical decisions instantly.
+            </p>
+            <div class="patient-360-features">
+                <div class="p360-feature">
+                    <div class="p360-feature-icon">🧪</div>
+                    <div class="p360-feature-text">Recent Labs</div>
+                </div>
+                <div class="p360-feature">
+                    <div class="p360-feature-icon">📈</div>
+                    <div class="p360-feature-text">Vitals Trends</div>
+                </div>
+                <div class="p360-feature">
+                    <div class="p360-feature-icon">💊</div>
+                    <div class="p360-feature-text">Medications</div>
+                </div>
+                <div class="p360-feature">
+                    <div class="p360-feature-icon">🏥</div>
+                    <div class="p360-feature-text">Conditions</div>
+                </div>
+                <div class="p360-feature">
+                    <div class="p360-feature-icon">📅</div>
+                    <div class="p360-feature-text">Appointments</div>
+                </div>
+                <div class="p360-feature">
+                    <div class="p360-feature-icon">⚠️</div>
+                    <div class="p360-feature-text">Allergies</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">⚙️</span>Core Capabilities</h2>
+            <ul class="features-list">
+                <li><strong>Interoperability:</strong> Seamless HL7/FHIR data exchange with external labs (Quest, LabCorp) and imaging centers.</li>
+                <li><strong>Custom Forms Builder:</strong> Create specialty-specific intake forms and clinical templates without coding.</li>
+                <li><strong>E-Prescribing:</strong> Direct integration with pharmacies for instant prescription delivery and refill management.</li>
+            </ul>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 10</span>
+        </div>
+    </div>
+
+
+    <div class="page">
+        <div class="section-label">Electronic Medical Records (EMR/EHR)</div>
+
+        <div class="section">
+            <h2><span class="section-icon">⚙️</span>Core Capabilities (continued)</h2>
+            <ul class="features-list">
+                <li><strong>Lab Integration:</strong> Automatic import of lab results with critical value alerts and trend analysis.</li>
+                <li><strong>Document Management:</strong> Scan and attach insurance cards, consent forms, and referral letters to patient charts.</li>
+                <li><strong>Audit Trail:</strong> Complete logging of all record access and modifications for compliance and security.</li>
+            </ul>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4><span class="feature-icon">📱</span>Mobile Access</h4>
+                <p>View patient records securely from any device—desktop, tablet, or smartphone.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">🔍</span>Smart Search</h4>
+                <p>Find any patient, document, or data point in milliseconds with intelligent search.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">📊</span>Clinical Analytics</h4>
+                <p>Population health insights, disease tracking, and quality measure reporting.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">🔗</span>API Integration</h4>
+                <p>Connect with third-party tools via RESTful APIs for custom workflows.</p>
+            </div>
+        </div>
+        <div class="section">
+            <h2><span class="section-icon">🔒</span>Security & Compliance</h2>
+            <p>
+                Security protocols include AES-256 encryption at rest and TLS 1.3 in transit, fully compliant with HIPAA, GDPR, and SOC2 Type II standards.
+            </p>
+        </div>
+
+        <div class="security-grid">
+            <div class="security-card">
+                <h4><span class="security-icon">🛡️</span>Data Encryption</h4>
+                <p>Military-grade encryption protects patient data both in storage and during transmission.</p>
+            </div>
+            <div class="security-card">
+                <h4><span class="security-icon">👤</span>Role-Based Access</h4>
+                <p>Granular permissions ensure staff only see what they need to see.</p>
+            </div>
+            <div class="security-card">
+                <h4><span class="security-icon">☁️</span>Cloud Backup</h4>
+                <p>Daily automated backups to multiple data centers with 99.99% uptime guarantee.</p>
+            </div>
+            <div class="security-card">
+                <h4><span class="security-icon">📋</span>Compliance Ready</h4>
+                <p>Built-in compliance with HIPAA, GDPR, HITECH, and MACRA requirements.</p>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 11</span>
+        </div>
+    </div>
+
+
+    <div class="page">
+        <div class="section-label">Electronic Medical Records (EMR/EHR)</div>
+
+        <div class="highlight-box">
+            <h3>🎯 Case Study: Multi-Specialty Hospital, Bangalore</h3>
+            <p>
+                <strong>Challenge:</strong> 15,000+ paper charts taking up valuable clinic space with poor accessibility.<br>
+                <strong>Solution:</strong> Professional digitization team scanned and indexed all records within 3 weeks.<br>
+                <strong>Results:</strong> 100% paperless operation, 80% faster chart retrieval, reclaimed 500 sq ft of storage space worth ₹5 lakhs annually.
+            </p>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 12</span>
+        </div>
+    </div>
+
+
+    <div class="page">
+        <div class="section-label">Custom Apps & White-Label Solutions</div>
+
+        <div class="page-header">
+            <h1>📱 Custom Apps & White-Label Solutions</h1>
+            <p>Extend your clinical brand with bespoke digital experiences</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">🎨</span>Overview</h2>
+            <p>
+                We provide a "Backend-as-a-Service" (BaaS) framework that allows for rapid deployment of branded patient portals. Get native iOS and Android apps submitted to respective App Stores under your organizational account, plus custom web portals hosted at your own domain.
+            </p>
+        </div>
+
+        <div class="platform-grid">
+            <div class="platform-card">
+                <div class="platform-icon">📱</div>
+                <h4>iOS App</h4>
+                <p>Native Swift app optimized for iPhone & iPad, published under your Apple Developer account.</p>
+            </div>
+            <div class="platform-card">
+                <div class="platform-icon">🤖</div>
+                <h4>Android App</h4>
+                <p>Native Kotlin app for all Android devices, published on Google Play Store.</p>
+            </div>
+            <div class="platform-card">
+                <div class="platform-icon">🌐</div>
+                <h4>Website</h4>
+                <p>Responsive website hosted at yourclinic.com with SSL certification.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">✨</span>Key Features</h2>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4><span class="feature-icon">🎥</span>Telemedicine Infrastructure</h4>
+                <p>WebRTC-based secure video consultations embedded in your app with recording capabilities.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">🔔</span>Push Notifications</h4>
+                <p>Targeted health campaigns (flu shot reminders, health tips) sent directly to patient devices.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">💳</span>In-App Payments</h4>
+                <p>Integrated payment gateway for appointment fees, consultation charges, and medicine orders.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">📄</span>Document Sharing</h4>
+                <p>Secure sharing of lab reports, prescriptions, and medical certificates within the app.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">💊</span>Medication Reminders</h4>
+                <p>Smart alerts for medicine intake with refill reminders and pharmacy integration.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">📊</span>Health Tracking</h4>
+                <p>Patient-facing vitals logging (BP, glucose, weight) with trend visualization.</p>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 13</span>
+        </div>
+    </div>
+
+
+    <div class="page">
+        <div class="section-label">Custom Apps & White-Label Solutions</div>
+
+        <div class="section">
+            <h2><span class="section-icon">⚙️</span>Core Capabilities</h2>
+            <ul class="features-list">
+                <li><strong>Complete Branding:</strong> Your logo, colors, and brand identity throughout the entire app experience.</li>
+                <li><strong>Multi-Language Support:</strong> Apps available in English, Hindi, and regional languages for wider reach.</li>
+                <li><strong>Offline Mode:</strong> Core features work without internet, syncing automatically when connected.</li>
+                <li><strong>Biometric Authentication:</strong> Face ID and fingerprint login for enhanced security.</li>
+                <li><strong>Family Accounts:</strong> One account manages health records for entire family members.</li>
+                <li><strong>Analytics Dashboard:</strong> Track app usage, engagement metrics, and patient behavior insights.</li>
+            </ul>
+        </div>
+
+        <div class="highlight-box">
+            <h3>🎯 Case Study: Pediatric Clinic Chain, Delhi NCR</h3>
+            <p>
+                <strong>Challenge:</strong> Needed digital presence to compete with larger hospital chains.<br>
+                <strong>Solution:</strong> Deployed branded iOS & Android app with telemedicine and appointment booking.<br>
+                <strong>Results:</strong> 8,000+ app downloads in 3 months, 40% of appointments now booked via app, 25% increase in patient retention. Parents especially loved the vaccine reminder feature.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">⏱️</span>Implementation Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h4>Week 1: Requirements & Design</h4>
+                        <p>Workshop to define brand colors, logos, feature requirements, and user workflows.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h4>Weeks 2-4: Development</h4>
+                        <p>Engineering team builds your iOS and Android apps with custom branding and features.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h4>Week 5: App Store Launch</h4>
+                        <p>Submission and approval process for Apple App Store and Google Play Store.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h4>Week 6: Patient Onboarding</h4>
+                        <p>Marketing campaign to drive app downloads with in-clinic promotions and SMS campaigns.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 14</span>
+        </div>
+    </div>
+
+
+    <div class="page">
+        <div class="section-label">Staff Management & Scheduling</div>
+
+        <div class="page-header">
+            <h1>👥 Staff Management & Scheduling</h1>
+            <p>Streamline HR operations in one unified dashboard</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">⚙️</span>Overview</h2>
+            <p>
+                Handle rostering, shift planning, leave management, and automated payroll processing from a single interface. Our intelligent scheduling engine accounts for staff preferences, qualifications, and workload distribution.
+            </p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4><span class="feature-icon">📅</span>Smart Rostering</h4>
+                <p>Automated shift scheduling based on staff availability and patient demand patterns.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">⏱️</span>Time Tracking</h4>
+                <p>Biometric attendance integration with automatic overtime and late arrival tracking.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">🏖️</span>Leave Management</h4>
+                <p>Digital leave requests with approval workflows and balance tracking.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">💰</span>Payroll Integration</h4>
+                <p>Seamless connection to payroll systems for accurate salary processing.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">✨</span>Core Capabilities</h2>
+            <ul class="features-list">
+                <li><strong>Credential Management:</strong> Track licenses, certifications, and continuing education requirements.</li>
+                <li><strong>Performance Reviews:</strong> Structured evaluation forms with goal tracking and feedback history.</li>
+                <li><strong>Communication Hub:</strong> Internal messaging and announcements for staff coordination.</li>
+                <li><strong>Document Repository:</strong> Secure storage for contracts, policies, and HR documents.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">🛡️</span>Why Healthcare Providers Trust Us</h2>
+        </div>
+
+        <div class="trust-badges">
+            <div class="trust-badge">
+                <div class="trust-badge-icon">🔒</div>
+                <div class="trust-badge-text">HIPAA Compliant</div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon">🎧</div>
+                <div class="trust-badge-text">24/7 Support</div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon">☁️</div>
+                <div class="trust-badge-text">99.99% Uptime</div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon">💝</div>
+                <div class="trust-badge-text">No Lock-in</div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 15</span>
+        </div>
+    </div>
+
+
+    <div class="page">
+        <div class="section-label">Contact & Get Started</div>
+
+        <div class="contact-section">
+            <h2>📞 Get In Touch</h2>
+            <p>
+                Ready to transform your practice? Our team is here to help you every step of the way.
+            </p>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h4><span class="contact-icon">📧</span>Email</h4>
+                    <div class="contact-detail">
+                        amarnath@greyquill.io
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h4><span class="contact-icon">📱</span>Phone</h4>
+                    <div class="contact-detail">
+                        +91-9611373526
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h4><span class="contact-icon">📍</span>Location</h4>
+                    <div class="contact-detail">
+                        Bengaluru, Karnataka, India
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h4><span class="contact-icon">🌐</span>Website</h4>
+                    <div class="contact-detail">
+                        www.umamitlabs.com
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <p>
+                <strong>Umami TLabs - Healthcare Technology Solutions</strong><br>
+                Empowering healthcare providers with intelligent, integrated technology solutions.<br>
+                © 2024 Umami TLabs. All rights reserved.
+            </p>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 16</span>
+        </div>
+    </div>
+
+
+</body>
+</html>

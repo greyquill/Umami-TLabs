@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Umami TLabs</title>
+    <meta name="description" content="Learn about Umami TLabs - Healthcare technology solutions designed to empower medical professionals and improve patient care.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@1,600&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Calendly Widget CSS -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .about-hero {
+            padding: 120px 20px 80px;
+            text-align: center;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-hero p {
+            font-size: 1.25rem;
+            color: var(--color-text-muted);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .about-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-section.dark {
+            background: #000;
+        }
+
+        .about-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .about-section h3 {
+            font-size: 1.75rem;
+            margin-bottom: 20px;
+            color: var(--color-primary);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .about-content.reverse {
+            direction: rtl;
+        }
+
+        .about-content.reverse > * {
+            direction: ltr;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--color-text-muted);
+            margin-bottom: 20px;
+        }
+
+        .about-visual {
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-radius: 20px;
+            border: 1px solid var(--color-border);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+            border-radius: 15px;
+            border: 1px solid var(--color-border);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-primary);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .value-card {
+            padding: 40px 30px;
+            background: rgba(56, 189, 248, 0.05);
+            border-radius: 15px;
+            border: 1px solid var(--color-border);
+            text-align: center;
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .value-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .value-card p {
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        .team-section {
+            text-align: center;
+            padding: 80px 20px;
+            background: #000;
+        }
+
+        .greyquill-badge {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-radius: 50px;
+            border: 1px solid var(--color-border);
+            margin-top: 40px;
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+        }
+
+        .greyquill-badge a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .greyquill-badge a:hover {
+            color: var(--color-accent);
+        }
+
+        .feature-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .highlight-card {
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+        }
+
+        .highlight-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--color-primary);
+        }
+
+        .highlight-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .highlight-card li {
+            padding: 8px 0;
+            color: var(--color-text-muted);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .highlight-card li i {
+            color: var(--color-accent);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-content.reverse {
+                direction: ltr;
+            }
+
+            .about-section h2 {
+                font-size: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="about-page">
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="Umami TLabs Logo" class="logo-img">
+            </a>
+            <div class="nav-links">
+
+                <!-- Dropdown Trigger -->
+                <div class="dropdown-wrapper">
+                    <a href="services.html" class="dropdown-trigger">Services <i
+                            class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="services.html?feature=billing">Billing & Accounts</a>
+                        <a href="services.html?feature=appointments">Smart Appointments</a>
+                        <a href="services.html?feature=ai">AI Assistance</a>
+                        <a href="services.html?feature=records">Medical Records</a>
+                        <a href="services.html?feature=custom">Custom Apps</a>
+                        <a href="services.html?feature=staff">Staff Management</a>
+                    </div>
+                </div>
+
+                <a href="doctors.html">For Doctors</a>
+
+                <!-- Calendly Trigger -->
+                <a href="#"
+                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/greyquill/umami-tlabs'});return false;"
+                    class="btn btn-primary">Book a Demo</a>
+
+                <!-- Member Login Link -->
+                <a href="#" class="nav-login-link"
+                    onclick="document.getElementById('login-modal').classList.add('active'); return false;">
+                    <span class="login-sub">Already a member?</span>
+                    <span class="login-main">Go to your dashboard</span>
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- LOGIN MODAL -->
+    <div class="modal-overlay" id="login-modal">
+        <div class="modal-content login-content">
+            <button class="modal-close" onclick="document.getElementById('login-modal').classList.remove('active')"><i
+                    class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fa-solid fa-right-to-bracket"></i></div>
+                <h2>Member Sign In</h2>
+                <p>Access your secure provider portal.</p>
+            </div>
+            <form class="modal-form" onsubmit="event.preventDefault(); window.location.href='sample-dashboard.html';">
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                <div style="text-align: center; margin-top: 15px; font-size: 0.9rem;">
+                    <a href="#" style="color: #64748b; text-decoration: none;">Forgot Password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About Umami TLabs</h1>
+            <p>Empowering healthcare providers with intelligent technology that simplifies practice management, 
+                enhances patient care, and drives better outcomes.</p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="about-section">
+        <h2>Our Story</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Transforming Healthcare, One Practice at a Time</h3>
+                <p>Umami TLabs was born from a simple observation: healthcare providers spend too much time on 
+                    administrative tasks and not enough time with patients. We set out to change that.</p>
+                <p>Our mission is to create intuitive, powerful technology that handles the complexity of modern 
+                    healthcare management—from billing and scheduling to AI-assisted diagnostics—so you can focus 
+                    on what matters most: delivering exceptional patient care.</p>
+                <p>Built on a foundation of innovation and empathy, Umami TLabs brings together cutting-edge AI, 
+                    seamless integrations, and user-friendly design to serve doctors, clinics, hospitals, and 
+                    diagnostic centers across the healthcare spectrum.</p>
+            </div>
+            <div class="about-visual">
+                <div class="stat-card">
+                    <i class="fa-solid fa-hospital value-icon"></i>
+                    <div class="stat-label">Serving healthcare providers worldwide with comprehensive, 
+                        integrated solutions that adapt to your unique needs.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">99.9%</div>
+                <div class="stat-label">Uptime Guarantee</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Support Available</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">HIPAA</div>
+                <div class="stat-label">Compliant & Secure</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">40%</div>
+                <div class="stat-label">Time Saved on Admin</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do -->
+    <section class="about-section dark">
+        <h2>What We Do</h2>
+        <p style="text-align: center; color: var(--color-text-muted); max-width: 800px; margin: 0 auto 50px; font-size: 1.1rem;">
+            Umami TLabs provides an all-in-one healthcare management platform designed to streamline operations, 
+            improve patient engagement, and leverage AI to support clinical decisions.
+        </p>
+
+        <div class="feature-highlights">
+            <div class="highlight-card">
+                <h4><i class="fa-solid fa-file-invoice"></i> Billing & Revenue Management</h4>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Automated claim submissions</li>
+                    <li><i class="fa-solid fa-check"></i> Denial management & appeals</li>
+                    <li><i class="fa-solid fa-check"></i> Financial analytics & reporting</li>
+                    <li><i class="fa-solid fa-check"></i> Payment processing & reconciliation</li>
+                </ul>
+            </div>
+
+            <div class="highlight-card">
+                <h4><i class="fa-solid fa-calendar-check"></i> Smart Appointments</h4>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Omnichannel booking (web, app, WhatsApp)</li>
+                    <li><i class="fa-solid fa-check"></i> Automated reminders & confirmations</li>
+                    <li><i class="fa-solid fa-check"></i> Waitlist management</li>
+                    <li><i class="fa-solid fa-check"></i> Real-time calendar sync</li>
+                </ul>
+            </div>
+
+            <div class="highlight-card">
+                <h4><i class="fa-solid fa-robot"></i> AI Assistance</h4>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Voice-to-SOAP note transcription</li>
+                    <li><i class="fa-solid fa-check"></i> Clinical decision support</li>
+                    <li><i class="fa-solid fa-check"></i> Drug interaction alerts</li>
+                    <li><i class="fa-solid fa-check"></i> Predictive analytics</li>
+                </ul>
+            </div>
+
+            <div class="highlight-card">
+                <h4><i class="fa-solid fa-file-medical"></i> Electronic Medical Records</h4>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Patient 360° view</li>
+                    <li><i class="fa-solid fa-check"></i> Lab integration & results tracking</li>
+                    <li><i class="fa-solid fa-check"></i> E-prescribing & medication tracking</li>
+                    <li><i class="fa-solid fa-check"></i> HL7/FHIR interoperability</li>
+                </ul>
+            </div>
+
+            <div class="highlight-card">
+                <h4><i class="fa-solid fa-mobile-screen"></i> Custom Apps & White-Label</h4>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Branded iOS & Android apps</li>
+                    <li><i class="fa-solid fa-check"></i> Patient portals</li>
+                    <li><i class="fa-solid fa-check"></i> Telemedicine infrastructure</li>
+                    <li><i class="fa-solid fa-check"></i> Custom domain integration</li>
+                </ul>
+            </div>
+
+            <div class="highlight-card">
+                <h4><i class="fa-solid fa-users"></i> Staff Management</h4>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Smart rostering & scheduling</li>
+                    <li><i class="fa-solid fa-check"></i> Payroll integration</li>
+                    <li><i class="fa-solid fa-check"></i> Leave management</li>
+                    <li><i class="fa-solid fa-check"></i> Performance tracking</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="about-section">
+        <h2>Our Values</h2>
+        <p style="text-align: center; color: var(--color-text-muted); max-width: 800px; margin: 0 auto 50px; font-size: 1.1rem;">
+            Everything we build is guided by these core principles:
+        </p>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                <h4>Patient-Centric</h4>
+                <p>We design technology that ultimately improves patient outcomes and experiences, 
+                    keeping their well-being at the center of every decision.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h4>Security First</h4>
+                <p>Healthcare data is sacred. We employ bank-level encryption, HIPAA compliance, 
+                    and rigorous security protocols to protect patient information.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                <h4>Innovation</h4>
+                <p>We continuously evolve, leveraging AI and emerging technologies to solve 
+                    healthcare's most pressing challenges.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon"><i class="fa-solid fa-user-check"></i></div>
+                <h4>Simplicity</h4>
+                <p>Complex doesn't mean complicated. We create intuitive interfaces that anyone 
+                    can master, reducing training time and errors.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon"><i class="fa-solid fa-handshake"></i></div>
+                <h4>Partnership</h4>
+                <p>We're not just a vendor—we're your technology partner, invested in your success 
+                    and growth.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon"><i class="fa-solid fa-rocket"></i></div>
+                <h4>Reliability</h4>
+                <p>Your practice depends on us. We deliver 99.9% uptime, round-the-clock support, 
+                    and rapid response times.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Powered by Greyquill -->
+    <section class="team-section">
+        <div class="container">
+            <h2>Powered by Greyquill</h2>
+            <p style="color: var(--color-text-muted); max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem; line-height: 1.8;">
+                Umami TLabs is a product of <strong style="color: var(--color-primary);">Greyquill</strong>, 
+                a technology company dedicated to building innovative software solutions that empower 
+                businesses and professionals across industries.
+            </p>
+            <p style="color: var(--color-text-muted); max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8;">
+                With a focus on AI-driven automation, seamless user experiences, and scalable infrastructure, 
+                Greyquill brings deep technical expertise and a passion for solving real-world problems through technology.
+            </p>
+            <div class="greyquill-badge">
+                Learn more about Greyquill at <a href="https://www.greyquill.io" target="_blank" rel="noopener noreferrer">www.greyquill.io</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="about-section">
+        <div style="text-align: center; padding: 60px 20px; background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); border-radius: 20px; border: 1px solid var(--color-border);">
+            <h2 style="margin-bottom: 20px;">Ready to Transform Your Practice?</h2>
+            <p style="color: var(--color-text-muted); max-width: 600px; margin: 0 auto 40px; font-size: 1.1rem;">
+                Join healthcare providers who are saving time, reducing costs, and improving patient care with Umami TLabs.
+            </p>
+            <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/greyquill/umami-tlabs'});return false;" 
+               class="btn btn-primary btn-lg">Schedule a Demo</a>
+            <a href="services.html" class="btn btn-secondary btn-lg" style="margin-left: 20px;">Explore Services</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-cta">
+                <h2>Ready to transform your healthcare management?</h2>
+                <!-- Calendly Trigger -->
+                <a href="#"
+                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/greyquill/umami-tlabs'});return false;"
+                    class="btn btn-primary btn-lg">Contact Us For A Demo</a>
+                <div class="contact-details">
+                    <p><i class="fa-brands fa-whatsapp"></i> +91-9611373526</p>
+                    <p><i class="fa-solid fa-envelope"></i> amarnath@greyquill.io</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-heart-pulse"></i> Umami TLabs
+                </div>
+                <div class="footer-links">
+                    <a href="about.html">About Us</a>
+                    <span class="separator">•</span>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <span class="separator">•</span>
+                    <a href="privacy.html">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Umami TLabs. All rights reserved. A product by <a href="https://www.greyquill.io" target="_blank" rel="noopener noreferrer">Greyquill</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</body>
+
+</html>

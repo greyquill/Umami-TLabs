@@ -47,8 +47,51 @@ const initHeaderLogic = () => {
     // Only run if we are on the Services Page (check for elements)
     const serviceSections = document.querySelectorAll('.service-section');
     const serviceNavLinks = document.querySelectorAll('.service-nav a');
+    const tocList = document.querySelector('.toc-list');
 
     if (serviceSections.length > 0 && serviceNavLinks.length > 0) {
+        // Add IDs to all h3 and h4 headings within service sections for anchor navigation
+        serviceSections.forEach(section => {
+            const headings = section.querySelectorAll('h3, h4');
+            headings.forEach(heading => {
+                if (!heading.id) {
+                    // Generate ID from heading text
+                    const id = heading.textContent.trim().toLowerCase()
+                        .replace(/[^a-z0-9]+/g, '-')
+                        .replace(/^-+|-+$/g, '');
+                    heading.id = id;
+                }
+            });
+        });
+
+        // Function to update TOC based on active section
+        function updateTOC(sectionId) {
+            if (!tocList) return;
+
+            const activeSection = document.getElementById(sectionId);
+            if (!activeSection) return;
+
+            // Get all h3 and h4 headings in the active section
+            const headings = activeSection.querySelectorAll('h3, h4');
+
+            // Clear current TOC
+            tocList.innerHTML = '';
+
+            // Build new TOC
+            headings.forEach(heading => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `#${heading.id}`;
+                a.textContent = heading.textContent;
+                a.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        }
+
         // Function to switch active service
         function switchService(targetId) {
             // Update Sidebar
@@ -67,6 +110,9 @@ const initHeaderLogic = () => {
                 }
             });
 
+            // Update TOC
+            updateTOC(targetId);
+
             // Scroll to top of content on mobile or small screens
             const mainContent = document.getElementById('main-content');
             if (mainContent && window.innerWidth < 900) {
@@ -80,6 +126,9 @@ const initHeaderLogic = () => {
 
         if (featureParam) {
             switchService(featureParam);
+        } else {
+            // Update TOC for the default active section (billing)
+            updateTOC('billing');
         }
 
         // 2. Handle Sidebar Clicks

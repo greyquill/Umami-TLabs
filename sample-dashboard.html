@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Dashboard | Umami TLabs</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            padding-top: 80px;
+        }
+
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .welcome-header {
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: var(--color-bg-card);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+        }
+
+        .stat-card h3 {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+    </style>
+</head>
+
+<body class="dashboard-page">
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="Umami TLabs Logo" class="logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#" class="btn btn-secondary">My Profile</a>
+                <a href="index.html" class="btn btn-primary">Log Out</a>
+            </div>
+            <div class="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="welcome-header">
+            <div>
+                <h1>Welcome back, Dr. Smith</h1>
+                <p>Here's what's happening in your clinic today.</p>
+            </div>
+            <div class="date-display">
+                <span id="current-date"></span>
+            </div>
+        </div>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <h3>Appointments Today</h3>
+                <div class="value">24</div>
+            </div>
+            <div class="stat-card">
+                <h3>Pending Lab Results</h3>
+                <div class="value">03</div>
+            </div>
+            <div class="stat-card">
+                <h3>Revenue (MTD)</h3>
+                <div class="value">$42,500</div>
+            </div>
+            <div class="stat-card">
+                <h3>Patient Satisfaction</h3>
+                <div class="value">4.9/5</div>
+            </div>
+        </div>
+
+        <div class="placeholder-content">
+            <div
+                style="background: var(--color-bg-card); padding: 40px; border-radius: 12px; border: 1px solid var(--color-border); text-align: center;">
+                <i class="fa-solid fa-chart-line" style="font-size: 3rem; color: #334155; margin-bottom: 20px;"></i>
+                <h2>Analytics Dashboard Loading...</h2>
+                <p>This is a sample view of the Umami Provider Portal.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', dateOptions);
+    </script>
+</body>
+
+</html>

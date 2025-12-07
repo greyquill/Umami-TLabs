@@ -232,28 +232,6 @@ document.addEventListener('DOMContentLoaded', () => {
         panelOverlay.addEventListener('click', closePanel);
     }
 
-    // --- Doctors Page Interactive Toggle ---
-    const btnChaos = document.getElementById('btn-chaos');
-    const btnCalm = document.getElementById('btn-calm');
-    const viewChaos = document.getElementById('view-chaos');
-    const viewCalm = document.getElementById('view-calm');
-
-    if (btnChaos && btnCalm && viewChaos && viewCalm) {
-        btnChaos.addEventListener('click', () => {
-            btnChaos.classList.add('active');
-            btnCalm.classList.remove('active');
-            viewChaos.classList.add('active');
-            viewCalm.classList.remove('active');
-        });
-
-        btnCalm.addEventListener('click', () => {
-            btnCalm.classList.add('active');
-            btnChaos.classList.remove('active');
-            viewCalm.classList.add('active');
-            viewChaos.classList.remove('active');
-        });
-    }
-
     // --- Local Video Custom Interaction ---
     const videoContainer = document.querySelector('.video-container');
     const heroVideo = document.getElementById('hero-video');

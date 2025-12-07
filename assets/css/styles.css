@@ -183,57 +183,32 @@ ul {
     text-align: center;
 }
 
-.comparison-toggle-wrapper {
-    margin: 40px auto;
-    display: flex;
-    justify-content: center;
-}
-
-.toggle-switch {
-    background: #1e293b;
-    border-radius: 50px;
-    padding: 5px;
-    display: flex;
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.toggle-option {
-    padding: 10px 30px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: 600;
-    color: #94a3b8;
-    transition: all 0.3s ease;
-}
-
-.toggle-option.active {
-    background: var(--color-primary);
-    color: #0f172a;
-    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
-}
-
-.comparison-content {
-    display: none;
-    animation: fadeIn 0.5s ease;
-}
-
-.comparison-content.active {
-    display: block;
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 60px;
+    align-items: stretch;
 }
 
 .comp-card {
     background: var(--color-bg-card);
-    max-width: 600px;
-    margin: 0 auto;
+    width: 100%;
+    height: 100%;
     padding: 40px;
     border-radius: 20px;
     border: 1px solid var(--color-border);
+    transition: transform 0.3s;
+}
+
+.comp-card:hover {
+    transform: translateY(-5px);
 }
 
 .comp-card.chaos {
     border-color: rgba(239, 68, 68, 0.3);
     /* Red tint */
+    background: linear-gradient(145deg, rgba(239, 68, 68, 0.05), rgba(15, 23, 42, 0.6));
 }
 
 .comp-card.calm {
@@ -262,13 +237,12 @@ ul {
 
 .comp-card ul {
     text-align: left;
-    max-width: 400px;
     margin: 0 auto;
 }
 
 .comp-card li {
     margin-bottom: 12px;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -280,6 +254,12 @@ ul {
 
 .calm li i {
     color: #38bdf8;
+}
+
+@media (max-width: 768px) {
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Journey Roadmap */

@@ -4,12 +4,14 @@ A responsive, high-fidelity landing page for **Umami TLabs**, a healthcare manag
 
 ## 🚀 Deployment
 
-Since this is a **static site**, it can be deployed to any static hosting provider.
+This site is designed to be hosted via **GitHub Pages**.
 
-### Recommended Providers
-*   **Vercel / Netlify**: Connect your Git repository and set the *Output Directory* to `.` (root). No build command is required.
-*   **GitHub Pages**: Enable GitHub Pages in your repository settings and select the `main` branch as the source.
-*   **AWS S3 + CloudFront**: Upload the contents of the root directory to an S3 bucket configured for static website hosting.
+### Steps to Deploy
+1.  Push this repository to GitHub.
+2.  Go to your repository **Settings** > **Pages**.
+3.  Under **Source**, select `Deploy from a branch`.
+4.  Select `main` (or your preferred branch) and `/ (root)` folder.
+5.  Click **Save**. Your site will be live at `https://<username>.github.io/<repo-name>/`.
 
 ### Local Development
 1.  Clone the repository.

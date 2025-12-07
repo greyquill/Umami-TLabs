@@ -72,7 +72,14 @@ const initHeaderLogic = () => {
             if (!activeSection) return;
 
             // Get all h3 and h4 headings in the active section
-            const headings = activeSection.querySelectorAll('h3, h4');
+            const allHeadings = activeSection.querySelectorAll('h3, h4');
+
+            // Filter out headings that are inside demo/embedded content containers
+            const headings = Array.from(allHeadings).filter(heading => {
+                // Exclude headings inside demo containers
+                const isInDemo = heading.closest('.appt-demo-container, .soap-demo-container, .soap-note-section, .appt-patient-panel, .appt-doctor-panel');
+                return !isInDemo;
+            });
 
             // Clear current TOC
             tocList.innerHTML = '';

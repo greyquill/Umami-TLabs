@@ -1,10 +1,12 @@
-document.addEventListener('DOMContentLoaded', () => {
-
+```javascript
+const initHeaderLogic = () => {
     // Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
     if (menuToggle) {
+        // Remove old listener if any (simple way: clone node, or just ignore for now as we run once)
+        // Better: just add new listener.
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
 
@@ -106,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const target = link.getAttribute('data-target');
                 if (target) {
                     // Update URL history without reload
-                    const newUrl = `${window.location.pathname}?feature=${target}`;
+                    const newUrl = `${ window.location.pathname }?feature = ${ target } `;
                     window.history.pushState({ path: newUrl }, '', newUrl);
                     switchService(target);
                 }
@@ -188,18 +190,18 @@ document.addEventListener('DOMContentLoaded', () => {
             let timelineHtml = '<div class="timeline">';
             data.timeline.forEach(item => {
                 timelineHtml += `
-                    <div class="timeline-item">
+    < div class="timeline-item" >
                         <div class="timeline-dot"></div>
                         <div class="timeline-time">${item.time}</div>
                         <div class="timeline-title">${item.title}</div>
                         <div class="timeline-desc">${item.desc}</div>
-                    </div>
-                `;
+                    </div >
+    `;
             });
             timelineHtml += '</div>';
 
             panelContent.innerHTML = `
-                <h2>${data.title}</h2>
+    < h2 > ${ data.title }</h2 >
                 <p>${data.desc}</p>
                 <div class="timeline-section">
                     <h3>Impact Timeline</h3>
@@ -209,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <a href="services.html?feature=${key}" class="btn btn-secondary">More Details</a>
                     <button class="btn btn-primary trigger-modal" data-service="${data.title}">Switch to this Service</button>
                 </div>
-            `;
+`;
 
             sidePanel.classList.add('active');
             panelOverlay.classList.add('active');

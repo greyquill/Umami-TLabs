@@ -1484,7 +1484,8 @@ ul {
     flex-direction: column;
     line-height: 1.2;
     text-align: left;
-    margin-right: 15px;
+    margin-left: 15px;
+    /* Added margin-left instead of right since it's now last */
     text-decoration: none;
     transition: opacity 0.3s;
 }
@@ -1494,14 +1495,16 @@ ul {
 }
 
 .nav-login-link .login-sub {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
+    /* Reduced from 0.75rem */
     color: #94a3b8;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .nav-login-link .login-main {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
+    /* Reduced from 0.95rem */
     color: #fff;
     font-weight: 600;
 }

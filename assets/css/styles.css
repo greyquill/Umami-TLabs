@@ -1477,3 +1477,46 @@ ul {
     text-align: center;
     margin-top: 10px;
 }
+
+/* --- NAV LOGIN LINK --- */
+.nav-login-link {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    text-align: left;
+    margin-right: 15px;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.nav-login-link:hover {
+    opacity: 0.8;
+}
+
+.nav-login-link .login-sub {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-login-link .login-main {
+    font-size: 0.95rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Ensure navbar items align correctly */
+.nav-links {
+    align-items: center;
+    /* Center vertically */
+}
+
+/* Hide login link on very small screens if needed, or adjust */
+@media (max-width: 768px) {
+    .nav-login-link {
+        align-items: center;
+        text-align: center;
+        margin: 10px 0;
+    }
+}

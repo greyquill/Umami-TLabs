@@ -126,55 +126,55 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Billing & Accounts",
             desc: "Automate your entire revenue cycle. From invoice generation to payment tracking, our system ensures you never miss a payment and reduces administrative overhead by up to 40%.",
             timeline: [
-                { time: "Week 1", title: "Integration", desc: "Integration with bank accounts and payment gateways." },
-                { time: "Week 2", title: "Data Migration", desc: "Secure transfer of past invoices and patient ledgers." },
-                { time: "Week 3", title: "Automation", desc: "Setting up rules for recurring billing and reminders." },
-                { time: "Week 4", title: "Go Live", desc: "Full automation with real-time analytics." }
+                { time: "Week 1", title: "Bank Integration", desc: "Task: Link business accounts and map existing insurance codes." },
+                { time: "Week 2", title: "Data Migration", desc: "Task: Securely import open invoices and patient ledgers from legacy systems." },
+                { time: "Week 3", title: "Automation Setup", desc: "Task: Configure rules for auto-invoicing and payment reminders." },
+                { time: "Week 4", title: "Go Live", desc: "Task: Full system launch with staff training and real-time analytics." }
             ]
         },
         appointments: {
             title: "Smart Appointments",
             desc: "Eliminate no-shows with AI-driven scheduling. Features 24/7 online booking, automated WhatsApp/SMS reminders, and calendar sync.",
             timeline: [
-                { time: "Day 1", title: "Portal Setup", desc: "Configure your clinic's working hours and services." },
-                { time: "Day 3", title: "Notifications", desc: "Enable automated SMS and WhatsApp reminders." },
-                { time: "Day 5", title: "Sync", desc: "Integrate with Google Calendar/Outlook for staff." }
+                { time: "Day 1", title: "Configuration", desc: "Task: Define provider schedules, appointment types, and durations." },
+                { time: "Day 2", title: "Patient Sync", desc: "Task: Import patient contact list for automated notifications." },
+                { time: "Day 3", title: "Launch", desc: "Task: Activate online booking portal and send announcement SMS." }
             ]
         },
         ai: {
             title: "AI Assistance",
             desc: "Your 24/7 intelligent medical assistant. Handles note transcription, ensures diagnostic accuracy, and flags drug interactions in real-time.",
             timeline: [
-                { time: "Instant", title: "Activation", desc: "AI assistant is ready to use immediately." },
-                { time: "Week 1", title: "Learning", desc: "Adapts to your specific charting style and abbreviations." },
-                { time: "Ongoing", title: "Support", desc: "Continuous updates with the latest medical protocols." }
+                { time: "Day 1", title: "Plugin Setup", desc: "Task: Install ambient listening tool and integrate with EMR." },
+                { time: "Day 3", title: "Voice Calibration", desc: "Task: AI learns your specific accent, speed, and terminology." },
+                { time: "Day 7", title: "Review", desc: "Task: First weekly accuracy audit to fine-tune suggestions." }
             ]
         },
         records: {
             title: "Medical Records (EMR)",
             desc: "Centralized, HIPAA-compliant patient history. Access lab reports, prescriptions, and history from any device with role-based security.",
             timeline: [
-                { time: "Phase 1", title: "Digitization", desc: "Scanning and uploading active physical files." },
-                { time: "Phase 2", title: "Access Control", desc: "Setting up doctor, nurse, and admin permission levels." },
-                { time: "Phase 3", title: "Testing", desc: "Verifying encrypted backups and retrieval speeds." }
+                { time: "Week 1", title: "Scanning", desc: "Task: Professional team scans and digitizes active paper charts." },
+                { time: "Week 2", title: "Cloud Upload", desc: "Task: Encrypted transfer of digital files to private cloud." },
+                { time: "Week 3", title: "Verification", desc: "Task: Doctors verify data integrity before shredding physical copies." }
             ]
         },
         custom: {
             title: "Custom Apps & Websites",
             desc: "White-labeled digital presence for your brand. Get a custom domain, patient mobile app (iOS/Android), and telemedicine integration.",
             timeline: [
-                { time: "Week 1", title: "Design", desc: "Select theme, logo, and core features." },
-                { time: "Week 3", title: "Development", desc: "Building your custom iOS and Android apps." },
-                { time: "Week 5", title: "Launch", desc: "Deployment to App Store and Play Store." }
+                { time: "Week 1", title: "Requirements", desc: "Task: Workshop to define brand colors, logos, and core features." },
+                { time: "Week 2-4", title: "Development", desc: "Task: Engineering team builds your iOS and Android apps." },
+                { time: "Week 5", title: "App Store Launch", desc: "Task: Submission and approval process for Apple and Google stores." }
             ]
         },
         staff: {
             title: "Staff Management",
             desc: "Streamline HR operations in one dashboard. Handle rostering, shift planning, leave management, and automated payroll.",
             timeline: [
-                { time: "Step 1", title: "Onboarding", desc: "Add staff profiles and contracts." },
-                { time: "Step 2", title: "Rostering", desc: "Create recurring shift patterns." },
-                { time: "Step 3", title: "Payroll", desc: "Link attendance to payroll for one-click processing." }
+                { time: "Day 1", title: "Profile Creation", desc: "Task: Upload staff contracts and set role-based permissions." },
+                { time: "Day 2", title: "Roster Rules", desc: "Task: Define shift patterns and overtime policies." },
+                { time: "Day 3", title: "Payroll Link", desc: "Task: Connect attendance data to payroll processor." }
             ]
         }
     };

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronic Medical Records (EMR/EHR) - Part 3</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .section p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #334155;
+            margin-bottom: 12px;
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .security-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #fef3c7 100%);
+            padding: 16px;
+            border-radius: 10px;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .security-card h4 {
+            font-size: 15px;
+            color: #1e3a5f;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .security-icon {
+            font-size: 18px;
+        }
+
+        .security-card p {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #2196f3;
+            margin: 20px 0;
+        }
+
+        .highlight-box h3 {
+            font-size: 18px;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box p {
+            font-size: 14px;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="section-label">Electronic Medical Records (EMR/EHR)</div>
+
+        <div class="highlight-box">
+            <h3>🎯 Case Study: Multi-Specialty Hospital, Bangalore</h3>
+            <p>
+                <strong>Challenge:</strong> 15,000+ paper charts taking up valuable clinic space with poor accessibility.<br>
+                <strong>Solution:</strong> Professional digitization team scanned and indexed all records within 3 weeks.<br>
+                <strong>Results:</strong> 100% paperless operation, 80% faster chart retrieval, reclaimed 500 sq ft of storage space worth ₹5 lakhs annually.
+            </p>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 12</span>
+        </div>
+    </div>
+</body>
+</html>
+

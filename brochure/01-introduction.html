@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Umami TLabs</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .page-header {
+            border-bottom: 4px solid #38bdf8;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .page-header h1 {
+            font-size: 38px;
+            color: #1e3a5f;
+            margin-bottom: 8px;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            color: #64748b;
+        }
+
+        .intro-content h2 {
+            font-size: 24px;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+            margin-top: 20px;
+        }
+
+        .intro-content p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #334155;
+            margin-bottom: 15px;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .intro-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+            padding: 18px;
+            border-radius: 12px;
+            border-left: 5px solid #38bdf8;
+        }
+
+        .intro-card h3 {
+            font-size: 16px;
+            color: #1e3a5f;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .intro-card-icon {
+            font-size: 22px;
+        }
+
+        .intro-card p {
+            font-size: 13px;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .highlight-box h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: white;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+
+            body {
+                background: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="page-header">
+            <h1>About Umami TLabs</h1>
+            <p>Your Partner in Digital Healthcare Transformation</p>
+        </div>
+
+        <div class="intro-content">
+            <h2>Who We Are</h2>
+            <p>
+                Umami TLabs is a healthcare technology company dedicated to helping medical practices transition from traditional paper-based systems to modern, efficient digital solutions. We understand that the shift to digital healthcare can be overwhelming, which is why we've designed our platform to be intuitive, comprehensive, and fully supported.
+            </p>
+
+            <h2>Our Mission</h2>
+            <p>
+                To empower healthcare providers with technology that allows them to focus on what matters most: patient care. We eliminate the administrative burden and complexity that comes with running a modern medical practice.
+            </p>
+
+            <div class="highlight-box">
+                <h3>Why Choose Umami TLabs?</h3>
+                <p>
+                    We don't just provide software – we provide a complete ecosystem that integrates every aspect of your practice. From patient records to billing, from appointment scheduling to AI-assisted documentation, everything works together seamlessly.
+                </p>
+            </div>
+
+            <div class="intro-grid">
+                <div class="intro-card">
+                    <h3><span class="intro-card-icon">🛡️</span> HIPAA Compliant</h3>
+                    <p>Bank-grade encryption (AES-256) ensures patient records are always secure with regular audits and compliance certifications.</p>
+                </div>
+
+                <div class="intro-card">
+                    <h3><span class="intro-card-icon">🎧</span> 24/7 Support</h3>
+                    <p>Dedicated support team available round-the-clock with average response time under 5 minutes for urgent issues.</p>
+                </div>
+
+                <div class="intro-card">
+                    <h3><span class="intro-card-icon">💝</span> No Lock-in</h3>
+                    <p>Month-to-month pricing with no hidden fees. You stay because it works, not because you're locked in.</p>
+                </div>
+
+                <div class="intro-card">
+                    <h3><span class="intro-card-icon">☁️</span> Cloud-Based</h3>
+                    <p>Access your practice data from anywhere, anytime, on any device with automatic daily backups.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 1</span>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Apps & White-Label Solutions - Part 1</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .page-header {
+            border-bottom: 4px solid #9c27b0;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .page-header h1 {
+            font-size: 38px;
+            color: #1e3a5f;
+            margin-bottom: 8px;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            color: #64748b;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .section p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #334155;
+            margin-bottom: 10px;
+        }
+
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 18px 0;
+        }
+
+        .platform-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f3e5f5 100%);
+            padding: 14px;
+            border-radius: 10px;
+            text-align: center;
+            border-top: 4px solid #9c27b0;
+        }
+
+        .platform-icon {
+            font-size: 38px;
+            margin-bottom: 6px;
+        }
+
+        .platform-card h4 {
+            font-size: 14px;
+            color: #1e3a5f;
+            margin-bottom: 5px;
+        }
+
+        .platform-card p {
+            font-size: 11px;
+            color: #64748b;
+            line-height: 1.4;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f3e5f5 100%);
+            padding: 12px;
+            border-radius: 10px;
+            border-left: 4px solid #9c27b0;
+        }
+
+        .feature-card h4 {
+            font-size: 14px;
+            color: #1e3a5f;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-icon {
+            font-size: 16px;
+        }
+
+        .feature-card p {
+            font-size: 12px;
+            color: #64748b;
+            line-height: 1.4;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="section-label">Custom Apps & White-Label Solutions</div>
+
+        <div class="page-header">
+            <h1>📱 Custom Apps & White-Label Solutions</h1>
+            <p>Extend your clinical brand with bespoke digital experiences</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">🎨</span>Overview</h2>
+            <p>
+                We provide a "Backend-as-a-Service" (BaaS) framework that allows for rapid deployment of branded patient portals. Get native iOS and Android apps submitted to respective App Stores under your organizational account, plus custom web portals hosted at your own domain.
+            </p>
+        </div>
+
+        <div class="platform-grid">
+            <div class="platform-card">
+                <div class="platform-icon">📱</div>
+                <h4>iOS App</h4>
+                <p>Native Swift app optimized for iPhone & iPad, published under your Apple Developer account.</p>
+            </div>
+            <div class="platform-card">
+                <div class="platform-icon">🤖</div>
+                <h4>Android App</h4>
+                <p>Native Kotlin app for all Android devices, published on Google Play Store.</p>
+            </div>
+            <div class="platform-card">
+                <div class="platform-icon">🌐</div>
+                <h4>Website</h4>
+                <p>Responsive website hosted at yourclinic.com with SSL certification.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">✨</span>Key Features</h2>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4><span class="feature-icon">🎥</span>Telemedicine Infrastructure</h4>
+                <p>WebRTC-based secure video consultations embedded in your app with recording capabilities.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">🔔</span>Push Notifications</h4>
+                <p>Targeted health campaigns (flu shot reminders, health tips) sent directly to patient devices.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">💳</span>In-App Payments</h4>
+                <p>Integrated payment gateway for appointment fees, consultation charges, and medicine orders.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">📄</span>Document Sharing</h4>
+                <p>Secure sharing of lab reports, prescriptions, and medical certificates within the app.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">💊</span>Medication Reminders</h4>
+                <p>Smart alerts for medicine intake with refill reminders and pharmacy integration.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">📊</span>Health Tracking</h4>
+                <p>Patient-facing vitals logging (BP, glucose, weight) with trend visualization.</p>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 13</span>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Appointments & Patient Access</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 45px 50px 85px 50px;
+        }
+
+        .page-header {
+            border-bottom: 4px solid #667eea;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+        }
+
+        .page-header h1 {
+            font-size: 34px;
+            color: #1e3a5f;
+            margin-bottom: 6px;
+        }
+
+        .page-header p {
+            font-size: 15px;
+            color: #64748b;
+        }
+
+        .section {
+            margin-bottom: 22px;
+        }
+
+        .section h2 {
+            font-size: 19px;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-icon {
+            font-size: 22px;
+        }
+
+        .section p {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #334155;
+            margin-bottom: 10px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .features-list li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+            font-size: 13px;
+            color: #334155;
+            line-height: 1.5;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            padding: 16px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            margin: 18px 0;
+        }
+
+        .highlight-box h3 {
+            font-size: 16px;
+            color: #1e3a5f;
+            margin-bottom: 8px;
+        }
+
+        .highlight-box p {
+            font-size: 13px;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 18px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            border-top: 3px solid #667eea;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 3px;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 18px 0;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+            padding: 14px;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+        }
+
+        .benefit-card h4 {
+            font-size: 14px;
+            color: #1e3a5f;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .benefit-icon {
+            font-size: 18px;
+        }
+
+        .benefit-card p {
+            font-size: 12px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .timeline {
+            margin: 18px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+            align-items: flex-start;
+        }
+
+        .timeline-marker {
+            min-width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .timeline-content h4 {
+            font-size: 13px;
+            color: #1e3a5f;
+            margin-bottom: 3px;
+        }
+
+        .timeline-content p {
+            font-size: 12px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="page-header">
+            <h1>📅 Smart Appointments & Patient Access</h1>
+            <p>Maximize provider utilization and patient adherence</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">🎯</span>Overview</h2>
+            <p>
+                Our intelligent scheduling engine balances provider preferences, appointment acuity, and room availability through a proprietary algorithm. Patients can book appointments via multiple channels including WhatsApp, SMS, web portal, or mobile app, while automated reminders reduce no-shows by up to 70%.
+            </p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">70%</div>
+                <div class="stat-label">Reduction in No-Shows</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Patient Self-Booking</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Calendar Sync</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">✨</span>Seamless Patient Experience</h2>
+            <p>
+                While doctors manage their schedules through our intuitive calendar interface, patients can book appointments instantly via WhatsApp. The system automatically syncs bookings in real-time, sending confirmation notifications to both parties.
+            </p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h4><span class="benefit-icon">📱</span>Omnichannel Booking</h4>
+                <p>WhatsApp, SMS, web portal, or mobile app - patients choose their preferred channel.</p>
+            </div>
+            <div class="benefit-card">
+                <h4><span class="benefit-icon">🔔</span>Smart Reminders</h4>
+                <p>Automated confirmations and reminders sent 48 & 24 hours before appointments.</p>
+            </div>
+            <div class="benefit-card">
+                <h4><span class="benefit-icon">⚡</span>Real-Time Sync</h4>
+                <p>Instant calendar updates for both providers and patients, eliminating double-bookings.</p>
+            </div>
+            <div class="benefit-card">
+                <h4><span class="benefit-icon">🎫</span>Waitlist Management</h4>
+                <p>Auto-offering cancelled slots to high-priority waitlisted patients via text.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">⚙️</span>Core Capabilities</h2>
+            <ul class="features-list">
+                <li><strong>Dynamic Availability Engine:</strong> Real-time slot calculation based on procedure duration and provider templates.</li>
+                <li><strong>Cascading Notifications:</strong> Multi-channel reminder logic (SMS → WhatsApp → IVR Call) to confirm attendance.</li>
+                <li><strong>Bi-Directional Calendar Sync:</strong> Seamless integration with Outlook/Google Workspace for staff availability.</li>
+                <li><strong>Queue Management:</strong> Real-time patient queue with estimated wait times displayed in clinic.</li>
+                <li><strong>Video Consultation:</strong> Integrated telemedicine for remote appointments with secure video links.</li>
+            </ul>
+        </div>
+
+        <div class="highlight-box">
+            <h3>🎯 Case Study: Dermatology Center, Austin</h3>
+            <p>
+                <strong>Challenge:</strong> 18% no-show rate resulting in significant lost revenue and wasted time slots.<br>
+                <strong>Solution:</strong> Implemented WhatsApp-based booking with automated reminder system.<br>
+                <strong>Results:</strong> No-show rate dropped to 4% within 60 days, adding 12 billable hours per week and increasing monthly revenue by 22%.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">⏱️</span>Implementation Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h4>Day 1: Configuration</h4>
+                        <p>Define provider schedules, appointment types, and durations.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h4>Day 2: Patient Sync</h4>
+                        <p>Import patient contact list for automated notifications.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h4>Day 3: Portal Launch</h4>
+                        <p>Activate online booking portal and send announcement SMS to patients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 3</span>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronic Medical Records (EMR/EHR) - Part 1</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .page-header {
+            border-bottom: 4px solid #2196f3;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .page-header h1 {
+            font-size: 38px;
+            color: #1e3a5f;
+            margin-bottom: 8px;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            color: #64748b;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .section p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #334155;
+            margin-bottom: 10px;
+        }
+
+        .patient-360-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+
+        .patient-360-box h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .patient-360-box p {
+            font-size: 13px;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 8px;
+        }
+
+        .patient-360-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .p360-feature {
+            background: rgba(255,255,255,0.1);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .p360-feature-icon {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .p360-feature-text {
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 12px 0;
+        }
+
+        .features-list li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+            font-size: 14px;
+            color: #334155;
+            line-height: 1.5;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2196f3;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="section-label">Electronic Medical Records (EMR/EHR)</div>
+
+        <div class="page-header">
+            <h1>🏥 Electronic Medical Records (EMR/EHR)</h1>
+            <p>Longitudinal, interoperable patient data repository</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">📊</span>Overview</h2>
+            <p>
+                Our cloud-native EMR architecture ensures sub-second query response times for patient histories, regardless of dataset size. The system provides a comprehensive 360° patient view with real-time access to labs, vitals, medications, chronic conditions, and appointment history—all in one unified interface.
+            </p>
+        </div>
+
+        <div class="patient-360-box">
+            <h3>🎯 Patient 360° View</h3>
+            <p>
+                Get a complete picture of your patient's health journey at a glance. Our intuitive dashboard displays everything you need to make informed clinical decisions instantly.
+            </p>
+            <div class="patient-360-features">
+                <div class="p360-feature">
+                    <div class="p360-feature-icon">🧪</div>
+                    <div class="p360-feature-text">Recent Labs</div>
+                </div>
+                <div class="p360-feature">
+                    <div class="p360-feature-icon">📈</div>
+                    <div class="p360-feature-text">Vitals Trends</div>
+                </div>
+                <div class="p360-feature">
+                    <div class="p360-feature-icon">💊</div>
+                    <div class="p360-feature-text">Medications</div>
+                </div>
+                <div class="p360-feature">
+                    <div class="p360-feature-icon">🏥</div>
+                    <div class="p360-feature-text">Conditions</div>
+                </div>
+                <div class="p360-feature">
+                    <div class="p360-feature-icon">📅</div>
+                    <div class="p360-feature-text">Appointments</div>
+                </div>
+                <div class="p360-feature">
+                    <div class="p360-feature-icon">⚠️</div>
+                    <div class="p360-feature-text">Allergies</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">⚙️</span>Core Capabilities</h2>
+            <ul class="features-list">
+                <li><strong>Interoperability:</strong> Seamless HL7/FHIR data exchange with external labs (Quest, LabCorp) and imaging centers.</li>
+                <li><strong>Custom Forms Builder:</strong> Create specialty-specific intake forms and clinical templates without coding.</li>
+                <li><strong>E-Prescribing:</strong> Direct integration with pharmacies for instant prescription delivery and refill management.</li>
+            </ul>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 10</span>
+        </div>
+    </div>
+</body>
+</html>
+

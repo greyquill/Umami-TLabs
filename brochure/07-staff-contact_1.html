@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Management & Scheduling - Part 1</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .page-header {
+            border-bottom: 4px solid #10b981;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .page-header h1 {
+            font-size: 38px;
+            color: #1e3a5f;
+            margin-bottom: 8px;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            color: #64748b;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .section p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #334155;
+            margin-bottom: 10px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 12px 0;
+        }
+
+        .features-list li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+            font-size: 14px;
+            color: #334155;
+            line-height: 1.5;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #d1fae5 100%);
+            padding: 14px;
+            border-radius: 10px;
+            border-left: 4px solid #10b981;
+        }
+
+        .feature-card h4 {
+            font-size: 14px;
+            color: #1e3a5f;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-icon {
+            font-size: 16px;
+        }
+
+        .feature-card p {
+            font-size: 12px;
+            color: #64748b;
+            line-height: 1.4;
+        }
+
+        .trust-badges {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .trust-badge {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+            padding: 14px;
+            border-radius: 10px;
+            text-align: center;
+            border-top: 3px solid #38bdf8;
+        }
+
+        .trust-badge-icon {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+
+        .trust-badge-text {
+            font-size: 11px;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="section-label">Staff Management & Scheduling</div>
+
+        <div class="page-header">
+            <h1>👥 Staff Management & Scheduling</h1>
+            <p>Streamline HR operations in one unified dashboard</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">⚙️</span>Overview</h2>
+            <p>
+                Handle rostering, shift planning, leave management, and automated payroll processing from a single interface. Our intelligent scheduling engine accounts for staff preferences, qualifications, and workload distribution.
+            </p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4><span class="feature-icon">📅</span>Smart Rostering</h4>
+                <p>Automated shift scheduling based on staff availability and patient demand patterns.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">⏱️</span>Time Tracking</h4>
+                <p>Biometric attendance integration with automatic overtime and late arrival tracking.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">🏖️</span>Leave Management</h4>
+                <p>Digital leave requests with approval workflows and balance tracking.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">💰</span>Payroll Integration</h4>
+                <p>Seamless connection to payroll systems for accurate salary processing.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">✨</span>Core Capabilities</h2>
+            <ul class="features-list">
+                <li><strong>Credential Management:</strong> Track licenses, certifications, and continuing education requirements.</li>
+                <li><strong>Performance Reviews:</strong> Structured evaluation forms with goal tracking and feedback history.</li>
+                <li><strong>Communication Hub:</strong> Internal messaging and announcements for staff coordination.</li>
+                <li><strong>Document Repository:</strong> Secure storage for contracts, policies, and HR documents.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">🛡️</span>Why Healthcare Providers Trust Us</h2>
+        </div>
+
+        <div class="trust-badges">
+            <div class="trust-badge">
+                <div class="trust-badge-icon">🔒</div>
+                <div class="trust-badge-text">HIPAA Compliant</div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon">🎧</div>
+                <div class="trust-badge-text">24/7 Support</div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon">☁️</div>
+                <div class="trust-badge-text">99.99% Uptime</div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon">💝</div>
+                <div class="trust-badge-text">No Lock-in</div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 15</span>
+        </div>
+    </div>
+</body>
+</html>
+

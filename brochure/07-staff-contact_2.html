@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Get Started - Part 2</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 0 0 25px 0;
+        }
+
+        .contact-section h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            text-align: center;
+            color: white;
+        }
+
+        .contact-section > p {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            padding: 18px;
+            border-radius: 12px;
+            border-left: 4px solid #38bdf8;
+        }
+
+        .contact-card h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-icon {
+            font-size: 20px;
+        }
+
+        .contact-detail {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: rgba(255,255,255,0.95);
+        }
+
+        .contact-detail strong {
+            display: block;
+            font-size: 11px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 3px;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding: 25px;
+            background: #f8fafc;
+            border-radius: 10px;
+            margin-top: 0;
+        }
+
+        .footer-note p {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="section-label">Contact & Get Started</div>
+
+        <div class="contact-section">
+            <h2>📞 Get In Touch</h2>
+            <p>
+                Ready to transform your practice? Our team is here to help you every step of the way.
+            </p>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h4><span class="contact-icon">📧</span>Email</h4>
+                    <div class="contact-detail">
+                        amarnath@greyquill.io
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h4><span class="contact-icon">📱</span>Phone</h4>
+                    <div class="contact-detail">
+                        +91-9611373526
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h4><span class="contact-icon">📍</span>Location</h4>
+                    <div class="contact-detail">
+                        Bengaluru, Karnataka, India
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h4><span class="contact-icon">🌐</span>Website</h4>
+                    <div class="contact-detail">
+                        www.umamitlabs.com
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <p>
+                <strong>Umami TLabs - Healthcare Technology Solutions</strong><br>
+                Empowering healthcare providers with intelligent, integrated technology solutions.<br>
+                © 2024 Umami TLabs. All rights reserved.
+            </p>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 16</span>
+        </div>
+    </div>
+</body>
+</html>
+

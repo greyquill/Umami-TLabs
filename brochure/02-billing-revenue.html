@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing & Revenue Cycle Management</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 50px 50px 90px 50px;
+        }
+
+        .page-header {
+            border-bottom: 4px solid #4caf50;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .page-header h1 {
+            font-size: 36px;
+            color: #1e3a5f;
+            margin-bottom: 8px;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            color: #64748b;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section h2 {
+            font-size: 20px;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .section p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #334155;
+            margin-bottom: 12px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .features-list li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            font-size: 13px;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 18px;
+            border-radius: 10px;
+            border-left: 4px solid #4caf50;
+            margin: 20px 0;
+        }
+
+        .highlight-box h3 {
+            font-size: 17px;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box p {
+            font-size: 13px;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border-top: 3px solid #4caf50;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #4caf50;
+            margin-bottom: 3px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .timeline {
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+
+        .timeline-marker {
+            min-width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .timeline-content h4 {
+            font-size: 14px;
+            color: #1e3a5f;
+            margin-bottom: 4px;
+        }
+
+        .timeline-content p {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="page-header">
+            <h1>💰 Billing & Revenue Cycle Management</h1>
+            <p>Optimize practice solvency with automated financial operations</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">📊</span>Overview</h2>
+            <p>
+                Our Revenue Cycle Management (RCM) system is designed to minimize claim rejections and accelerate days sales outstanding (DSO). From invoice generation to payment tracking, our automated system ensures you never miss a payment and reduces administrative overhead by up to 40%.
+            </p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">40%</div>
+                <div class="stat-label">Reduced Admin Time</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">95%</div>
+                <div class="stat-label">First-Pass Claim Rate</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">30%</div>
+                <div class="stat-label">Faster Payments</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">⚡</span>Core Capabilities</h2>
+            <ul class="features-list">
+                <li><strong>Automated Claim Submission:</strong> Direct EDI (Electronic Data Interchange) integration with major payers eliminates manual entry errors.</li>
+                <li><strong>Real-time Claim Tracking:</strong> Monitor claim status from submission to payment in a unified dashboard.</li>
+                <li><strong>Denial Management Engine:</strong> AI-powered analysis of denied claims with automatic resubmission workflows.</li>
+                <li><strong>Patient Payment Portal:</strong> Secure online payment gateway with recurring billing and installment plans.</li>
+                <li><strong>Insurance Verification:</strong> Automated eligibility checks before appointments to prevent billing surprises.</li>
+                <li><strong>Financial Analytics:</strong> Real-time dashboards showing revenue trends, outstanding balances, and collection rates.</li>
+            </ul>
+        </div>
+
+        <div class="highlight-box">
+            <h3>🎯 Case Study: Multi-Specialty Clinic, Mumbai</h3>
+            <p>
+                <strong>Challenge:</strong> 25% claim rejection rate costing ₹12 lakhs annually in lost revenue.<br>
+                <strong>Solution:</strong> Implemented Umami's automated RCM with real-time verification and denial management.<br>
+                <strong>Results:</strong> Claim rejection rate dropped to 5%, recovering ₹9.5 lakhs in previously denied claims within 6 months.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">⏱️</span>Implementation Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h4>Week 1: Financial System Integration</h4>
+                        <p>Link business accounts and map existing insurance codes and fee schedules.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h4>Week 2: Data Migration</h4>
+                        <p>Securely import open invoices and patient ledgers from legacy systems.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h4>Week 3: Automation Setup</h4>
+                        <p>Configure rules for auto-invoicing, payment reminders, and claim submission.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h4>Week 4: Go Live</h4>
+                        <p>Full system launch with staff training and real-time analytics dashboard.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 2</span>
+        </div>
+    </div>
+</body>
+</html>
+

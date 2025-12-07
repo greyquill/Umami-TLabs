@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronic Medical Records (EMR/EHR) - Part 2</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .features-list li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2196f3;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e3f2fd 100%);
+            padding: 16px;
+            border-radius: 10px;
+            border-left: 4px solid #2196f3;
+        }
+
+        .feature-card h4 {
+            font-size: 15px;
+            color: #1e3a5f;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-icon {
+            font-size: 18px;
+        }
+
+        .feature-card p {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .security-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #fef3c7 100%);
+            padding: 16px;
+            border-radius: 10px;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .security-card h4 {
+            font-size: 15px;
+            color: #1e3a5f;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .security-icon {
+            font-size: 18px;
+        }
+
+        .security-card p {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="section-label">Electronic Medical Records (EMR/EHR)</div>
+
+        <div class="section">
+            <h2><span class="section-icon">⚙️</span>Core Capabilities (continued)</h2>
+            <ul class="features-list">
+                <li><strong>Lab Integration:</strong> Automatic import of lab results with critical value alerts and trend analysis.</li>
+                <li><strong>Document Management:</strong> Scan and attach insurance cards, consent forms, and referral letters to patient charts.</li>
+                <li><strong>Audit Trail:</strong> Complete logging of all record access and modifications for compliance and security.</li>
+            </ul>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4><span class="feature-icon">📱</span>Mobile Access</h4>
+                <p>View patient records securely from any device—desktop, tablet, or smartphone.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">🔍</span>Smart Search</h4>
+                <p>Find any patient, document, or data point in milliseconds with intelligent search.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">📊</span>Clinical Analytics</h4>
+                <p>Population health insights, disease tracking, and quality measure reporting.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">🔗</span>API Integration</h4>
+                <p>Connect with third-party tools via RESTful APIs for custom workflows.</p>
+            </div>
+        </div>
+        <div class="section">
+            <h2><span class="section-icon">🔒</span>Security & Compliance</h2>
+            <p>
+                Security protocols include AES-256 encryption at rest and TLS 1.3 in transit, fully compliant with HIPAA, GDPR, and SOC2 Type II standards.
+            </p>
+        </div>
+
+        <div class="security-grid">
+            <div class="security-card">
+                <h4><span class="security-icon">🛡️</span>Data Encryption</h4>
+                <p>Military-grade encryption protects patient data both in storage and during transmission.</p>
+            </div>
+            <div class="security-card">
+                <h4><span class="security-icon">👤</span>Role-Based Access</h4>
+                <p>Granular permissions ensure staff only see what they need to see.</p>
+            </div>
+            <div class="security-card">
+                <h4><span class="security-icon">☁️</span>Cloud Backup</h4>
+                <p>Daily automated backups to multiple data centers with 99.99% uptime guarantee.</p>
+            </div>
+            <div class="security-card">
+                <h4><span class="security-icon">📋</span>Compliance Ready</h4>
+                <p>Built-in compliance with HIPAA, GDPR, HITECH, and MACRA requirements.</p>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 11</span>
+        </div>
+    </div>
+</body>
+</html>
+

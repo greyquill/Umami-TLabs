@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Management & Contact</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 100px 60px;
+        }
+
+        .page-header {
+            border-bottom: 4px solid #10b981;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 42px;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            color: #64748b;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h2 {
+            font-size: 24px;
+            color: #1e3a5f;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 28px;
+        }
+
+        .section p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 15px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .features-list li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.7;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #d1fae5 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #10b981;
+        }
+
+        .feature-card h4 {
+            font-size: 16px;
+            color: #1e3a5f;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-icon {
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8c 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .contact-section h2 {
+            font-size: 32px;
+            margin-bottom: 25px;
+            text-align: center;
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #38bdf8;
+        }
+
+        .contact-card h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-icon {
+            font-size: 24px;
+        }
+
+        .contact-detail {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: rgba(255,255,255,0.95);
+        }
+
+        .contact-detail strong {
+            display: block;
+            font-size: 13px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 4px;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .cta-box h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .cta-box p {
+            font-size: 16px;
+            margin-bottom: 25px;
+            color: rgba(255,255,255,0.95);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: white;
+            color: #667eea;
+            padding: 15px 35px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .trust-badges {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .trust-badge {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border-top: 3px solid #38bdf8;
+        }
+
+        .trust-badge-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .trust-badge-text {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding: 30px;
+            background: #f8fafc;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .footer-note p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.8;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="page-header">
+            <h1>👥 Staff Management & Scheduling</h1>
+            <p>Streamline HR operations in one unified dashboard</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">⚙️</span>Overview</h2>
+            <p>
+                Handle rostering, shift planning, leave management, and automated payroll processing from a single interface. Our intelligent scheduling engine accounts for staff preferences, qualifications, and workload distribution.
+            </p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4><span class="feature-icon">📅</span>Smart Rostering</h4>
+                <p>Automated shift scheduling based on staff availability and patient demand patterns.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">⏱️</span>Time Tracking</h4>
+                <p>Biometric attendance integration with automatic overtime and late arrival tracking.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">🏖️</span>Leave Management</h4>
+                <p>Digital leave requests with approval workflows and balance tracking.</p>
+            </div>
+            <div class="feature-card">
+                <h4><span class="feature-icon">💰</span>Payroll Integration</h4>
+                <p>Seamless connection to payroll systems for accurate salary processing.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">✨</span>Core Capabilities</h2>
+            <ul class="features-list">
+                <li><strong>Credential Management:</strong> Track licenses, certifications, and continuing education requirements.</li>
+                <li><strong>Performance Reviews:</strong> Structured evaluation forms with goal tracking and feedback history.</li>
+                <li><strong>Communication Hub:</strong> Internal messaging and announcements for staff coordination.</li>
+                <li><strong>Document Repository:</strong> Secure storage for contracts, policies, and HR documents.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">🛡️</span>Why Healthcare Providers Trust Us</h2>
+        </div>
+
+        <div class="trust-badges">
+            <div class="trust-badge">
+                <div class="trust-badge-icon">🔒</div>
+                <div class="trust-badge-text">HIPAA Compliant</div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon">🎧</div>
+                <div class="trust-badge-text">24/7 Support</div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon">☁️</div>
+                <div class="trust-badge-text">99.99% Uptime</div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon">💝</div>
+                <div class="trust-badge-text">No Lock-in</div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2>📞 Get In Touch</h2>
+            <p style="text-align: center; font-size: 16px; margin-bottom: 30px; color: rgba(255,255,255,0.9);">
+                Ready to transform your practice? Our team is here to help you every step of the way.
+            </p>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h4><span class="contact-icon">📧</span>Email</h4>
+                    <div class="contact-detail">
+                        <strong>General Inquiries</strong>
+                        info@umamitlabs.com
+                    </div>
+                    <div class="contact-detail">
+                        <strong>Sales & Demos</strong>
+                        sales@umamitlabs.com
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h4><span class="contact-icon">📱</span>Phone</h4>
+                    <div class="contact-detail">
+                        <strong>Main Office</strong>
+                        +91 (xxx) xxx-xxxx
+                    </div>
+                    <div class="contact-detail">
+                        <strong>24/7 Support</strong>
+                        +91 (xxx) xxx-xxxx
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h4><span class="contact-icon">🌐</span>Website</h4>
+                    <div class="contact-detail">
+                        <strong>Visit Us Online</strong>
+                        www.umamitlabs.com
+                    </div>
+                    <div class="contact-detail">
+                        <strong>Book a Demo</strong>
+                        Schedule at calendly.com/umamitlabs
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h4><span class="contact-icon">📍</span>Location</h4>
+                    <div class="contact-detail">
+                        <strong>Head Office</strong>
+                        [Your City, Country]
+                    </div>
+                    <div class="contact-detail">
+                        <strong>Office Hours</strong>
+                        Mon-Fri: 9 AM - 6 PM
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h3>Ready to Get Started?</h3>
+            <p>Schedule a free consultation or download our detailed product catalog</p>
+            <div class="cta-buttons">
+                <span class="cta-button">📅 Book a Demo</span>
+                <span class="cta-button">📥 Download Catalog</span>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <p>
+                <strong>Umami TLabs - Healthcare Technology Solutions</strong><br>
+                Empowering healthcare providers with intelligent, integrated technology solutions.<br>
+                © 2024 Umami TLabs. All rights reserved.
+            </p>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 7</span>
+        </div>
+    </div>
+</body>
+</html>
+

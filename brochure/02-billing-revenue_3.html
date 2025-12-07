@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing & Revenue Cycle Management - Part 3</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .section p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #4caf50;
+            margin: 25px 0;
+        }
+
+        .highlight-box h3 {
+            font-size: 20px;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+        }
+
+        .highlight-box p {
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.7;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e8f5e9 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #4caf50;
+        }
+
+        .feature-card h4 {
+            font-size: 16px;
+            color: #1e3a5f;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-icon {
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="section-label">Billing & Revenue Cycle Management</div>
+
+        <div class="section">
+            <h2><span class="section-icon">💡</span>Key Benefits</h2>
+            <p>
+                Our billing solution integrates seamlessly with your existing practice management software, ensuring a smooth transition without disrupting your daily operations. The system learns from your practice patterns and continuously optimizes claim submission for maximum reimbursement rates.
+            </p>
+            <p>
+                With real-time analytics and detailed reporting, you'll have complete visibility into your practice's financial health, enabling data-driven decisions that improve profitability and reduce administrative burden.
+            </p>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 4</span>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Apps & White-Label Solutions - Part 2</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            padding: 60px 60px 80px 60px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .features-list li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #9c27b0;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #9c27b0;
+            margin: 25px 0;
+        }
+
+        .highlight-box h3 {
+            font-size: 20px;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+        }
+
+        .highlight-box p {
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.7;
+        }
+
+        .timeline {
+            margin: 25px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .timeline-marker {
+            min-width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #9c27b0 0%, #ba68c8 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .timeline-content h4 {
+            font-size: 16px;
+            color: #1e3a5f;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="section-label">Custom Apps & White-Label Solutions</div>
+
+        <div class="section">
+            <h2><span class="section-icon">⚙️</span>Core Capabilities</h2>
+            <ul class="features-list">
+                <li><strong>Complete Branding:</strong> Your logo, colors, and brand identity throughout the entire app experience.</li>
+                <li><strong>Multi-Language Support:</strong> Apps available in English, Hindi, and regional languages for wider reach.</li>
+                <li><strong>Offline Mode:</strong> Core features work without internet, syncing automatically when connected.</li>
+                <li><strong>Biometric Authentication:</strong> Face ID and fingerprint login for enhanced security.</li>
+                <li><strong>Family Accounts:</strong> One account manages health records for entire family members.</li>
+                <li><strong>Analytics Dashboard:</strong> Track app usage, engagement metrics, and patient behavior insights.</li>
+            </ul>
+        </div>
+
+        <div class="highlight-box">
+            <h3>🎯 Case Study: Pediatric Clinic Chain, Delhi NCR</h3>
+            <p>
+                <strong>Challenge:</strong> Needed digital presence to compete with larger hospital chains.<br>
+                <strong>Solution:</strong> Deployed branded iOS & Android app with telemedicine and appointment booking.<br>
+                <strong>Results:</strong> 8,000+ app downloads in 3 months, 40% of appointments now booked via app, 25% increase in patient retention. Parents especially loved the vaccine reminder feature.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">⏱️</span>Implementation Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h4>Week 1: Requirements & Design</h4>
+                        <p>Workshop to define brand colors, logos, feature requirements, and user workflows.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h4>Weeks 2-4: Development</h4>
+                        <p>Engineering team builds your iOS and Android apps with custom branding and features.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h4>Week 5: App Store Launch</h4>
+                        <p>Submission and approval process for Apple App Store and Google Play Store.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h4>Week 6: Patient Onboarding</h4>
+                        <p>Marketing campaign to drive app downloads with in-clinic promotions and SMS campaigns.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Umami TLabs - Healthcare Technology Solutions</span>
+            <span>Page 14</span>
+        </div>
+    </div>
+</body>
+</html>
+

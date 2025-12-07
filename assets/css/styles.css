@@ -1454,6 +1454,16 @@ ul {
         display: block;
     }
 
+    .brochure-link {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+        margin-left: 10px;
+    }
+
+    .brochure-link i {
+        font-size: 0.8rem;
+    }
+
     .use-case-wrapper {
         grid-template-columns: 1fr;
         gap: 40px;

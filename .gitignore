@@ -4,3 +4,7 @@ dist/
 .env
 .vscode/
 .idea/
+
+# Brochure generated files
+brochure/Umami-TLabs-Brochure.pdf
+brochure/package-lock.json

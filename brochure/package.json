@@ -1,0 +1,12 @@
+{
+  "name": "umami-tlabs-brochure",
+  "version": "1.0.0",
+  "description": "PDF generation for Umami TLabs brochure",
+  "scripts": {
+    "generate-pdf": "node generate-pdf.js"
+  },
+  "dependencies": {
+    "puppeteer": "^21.6.1"
+  }
+}
+

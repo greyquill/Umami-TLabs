@@ -198,7 +198,34 @@
 
 
     <!-- Footer / Contact -->
-    <footer id="contact" class="footer">
+    <!-- INTEREST MODAL -->
+    <div class="modal-overlay" id="interest-modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fa-solid fa-paper-plane"></i></div>
+                <h2>Let's Get Started</h2>
+                <p>Interested in <span id="modal-service-name">this service</span>? Leave your details and we'll be in
+                    touch.</p>
+            </div>
+            <form class="modal-form"
+                onsubmit="event.preventDefault(); alert('Thanks! We will contact you shortly.'); document.getElementById('interest-modal').classList.remove('active');">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Work Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Request Info</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container footer-content">
             <div class="footer-cta">
                 <h2>Ready to transform your healthcare management?</h2>

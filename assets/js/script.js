@@ -205,14 +205,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h3>Impact Timeline</h3>
                     ${timelineHtml}
                 </div>
-                <div class="panel-cta">
-                    <a href="services.html?feature=${key}" class="btn btn-primary">Switch to this Service</a>
+                <div class="panel-cta" style="display: flex; gap: 15px; justify-content: center;">
+                    <a href="services.html?feature=${key}" class="btn btn-secondary">More Details</a>
+                    <button class="btn btn-primary trigger-modal" data-service="${data.title}">Switch to this Service</button>
                 </div>
             `;
 
             sidePanel.classList.add('active');
             panelOverlay.classList.add('active');
             document.body.style.overflow = 'hidden';
+
+            // Re-attach modal listeners for the new button
+            attachModalListeners();
         }
 
         function closePanel() {
@@ -230,6 +234,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
         closeBtn.addEventListener('click', closePanel);
         panelOverlay.addEventListener('click', closePanel);
+    }
+
+    // --- Modal Logic ---
+    const modal = document.getElementById('interest-modal');
+    const modalClose = document.querySelector('.modal-close');
+    const modalServiceName = document.getElementById('modal-service-name');
+
+    function openModal(serviceName) {
+        if (modal) {
+            if (modalServiceName) modalServiceName.textContent = serviceName;
+            modal.classList.add('active');
+        }
+    }
+
+    function closeModal() {
+        if (modal) modal.classList.remove('active');
+    }
+
+    function attachModalListeners() {
+        // We attach this dynamically because the button is created via innerHTML
+        const triggerBtns = document.querySelectorAll('.trigger-modal');
+        triggerBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                openModal(btn.getAttribute('data-service'));
+            });
+        });
+    }
+
+    if (modalClose) {
+        modalClose.addEventListener('click', closeModal);
+    }
+
+    // Close modal on outside click
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
     }
 
     // --- Local Video Custom Interaction ---

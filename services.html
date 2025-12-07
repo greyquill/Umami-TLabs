@@ -24,34 +24,8 @@
 
 <body class="services-page">
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="assets/img/logo.png" alt="Umami TLabs Logo" class="logo-img">
-            </a>
-            <div class="nav-links">
-                <a href="index.html#features" class="dropdown-trigger">Services <i
-                        class="fa-solid fa-chevron-down"></i></a>
-                <!-- Dropdown populated by CSS/JS or static HTML in index.html, handled globally via script/css -->
-                <div class="dropdown-menu">
-                    <a href="services.html?feature=billing">Billing & Accounts</a>
-                    <a href="services.html?feature=appointments">Smart Appointments</a>
-                    <a href="services.html?feature=ai">AI Assistance</a>
-                    <a href="services.html?feature=records">Medical Records</a>
-                    <a href="services.html?feature=custom">Custom Apps</a>
-                    <a href="services.html?feature=staff">Staff Management</a>
-                </div>
-
-                <a href="doctors.html">For Doctors</a>
-                <a href="index.html#faq">FAQ</a>
-                <a href="index.html#contact" class="btn btn-primary">Book a Demo</a>
-            </div>
-            <div class="menu-toggle">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </div>
-    </nav>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
 
     <!-- Page Header -->
     <header class="page-header">
@@ -254,7 +228,8 @@
                     <li><strong>Push Notification Server:</strong> Targeted health campaigns (e.g., Flu Shot reminders)
                         sent directly to patient devices.</li>
                     <li><strong>Custom Domain Hosting:</strong> Patient portals hosted at
-                        <code>portal.yourclinic.com</code> with SSL certification.</li>
+                        <code>portal.yourclinic.com</code> with SSL certification.
+                    </li>
                 </ul>
             </section>
 
@@ -311,7 +286,9 @@
         </div>
     </footer>
 
+    <script src="assets/js/header-component.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 
 </html>

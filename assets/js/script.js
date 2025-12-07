@@ -1,4 +1,3 @@
-```javascript
 const initHeaderLogic = () => {
     // Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
@@ -108,7 +107,7 @@ const initHeaderLogic = () => {
                 const target = link.getAttribute('data-target');
                 if (target) {
                     // Update URL history without reload
-                    const newUrl = `${ window.location.pathname }?feature = ${ target } `;
+                    const newUrl = `${window.location.pathname}?feature = ${target} `;
                     window.history.pushState({ path: newUrl }, '', newUrl);
                     switchService(target);
                 }
@@ -201,7 +200,7 @@ const initHeaderLogic = () => {
             timelineHtml += '</div>';
 
             panelContent.innerHTML = `
-    < h2 > ${ data.title }</h2 >
+    < h2 > ${data.title}</h2 >
                 <p>${data.desc}</p>
                 <div class="timeline-section">
                     <h3>Impact Timeline</h3>

@@ -159,7 +159,7 @@ ul {
 
 /* --- DOCTORS PAGE STYLES --- */
 .doc-header {
-    padding: 180px 0 80px;
+    padding: 140px 0 60px;
     text-align: center;
     background: radial-gradient(circle at top center, rgba(56, 189, 248, 0.1), transparent 70%);
 }
@@ -177,9 +177,14 @@ ul {
     margin: 0 auto;
 }
 
+/* Video Section */
+.doc-video {
+    padding: 40px 20px;
+}
+
 /* Comparison Section */
 .doc-comparison {
-    padding: 80px 20px;
+    padding: 60px 20px;
     text-align: center;
 }
 
@@ -187,7 +192,7 @@ ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    margin-top: 60px;
+    margin-top: 40px;
     align-items: stretch;
 }
 
@@ -260,18 +265,30 @@ ul {
     .comparison-grid {
         grid-template-columns: 1fr;
     }
+
+    .trust-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .doc-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .doc-header {
+        padding: 120px 0 40px;
+    }
 }
 
 /* Journey Roadmap */
 .doc-journey {
-    padding: 100px 20px;
+    padding: 60px 20px;
     background: rgba(255, 255, 255, 0.02);
 }
 
 .journey-subtitle {
     text-align: center;
     color: var(--color-text-muted);
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     font-size: 1.2rem;
 }
 
@@ -344,7 +361,7 @@ ul {
 
 /* Doc CTA */
 .doc-cta {
-    padding: 100px 20px;
+    padding: 60px 20px;
     text-align: center;
 }
 
@@ -362,6 +379,60 @@ ul {
     display: flex;
     justify-content: center;
     gap: 20px;
+}
+
+/* Trust Section */
+.doc-trust {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.trust-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.trust-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+.trust-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #38bdf8 0%, #8b5cf6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 32px;
+    color: white;
+}
+
+.trust-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--color-text);
+}
+
+.trust-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
 }
 
 .menu-toggle {

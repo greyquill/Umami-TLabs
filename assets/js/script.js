@@ -120,10 +120,20 @@ const initHeaderLogic = () => {
             // Update TOC
             updateTOC(targetId);
 
-            // Scroll to top of content on mobile or small screens
-            const mainContent = document.getElementById('main-content');
-            if (mainContent && window.innerWidth < 900) {
-                mainContent.scrollIntoView({ behavior: 'smooth' });
+            // Scroll to top of content section for all screen sizes
+            const activeSection = document.getElementById(targetId);
+            if (activeSection) {
+                // Scroll to the section with smooth behavior
+                activeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                // Alternatively, for more reliable scroll to top, use window scroll
+                // with a small delay to ensure content is rendered
+                setTimeout(() => {
+                    const rect = activeSection.getBoundingClientRect();
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const offsetTop = rect.top + scrollTop - 100; // 100px offset for navbar
+                    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                }, 50);
             }
         }
 

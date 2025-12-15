@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages | Umami TLabs Healthcare Web & Practice Packages</title>
+    <meta name="description" content="Website and digital practice packages for doctors, clinics, and hospitals. From basic web presence to complete practice management.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@1,600&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Calendly Widget CSS -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        .packages-page {
+            background: radial-gradient(circle at top, rgba(56, 189, 248, 0.16), transparent 55%), #020617;
+            color: #e2e8f0;
+        }
+
+        .packages-hero {
+            padding: 120px 20px 80px;
+            text-align: center;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .packages-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .packages-hero p {
+            font-size: 1.15rem;
+            color: var(--color-text-muted);
+            max-width: 900px;
+            margin: 0 auto 30px;
+        }
+
+        .packages-hero-meta {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        .pill i {
+            color: var(--color-primary);
+        }
+
+        .packages-section {
+            padding: 80px 20px;
+        }
+
+        .packages-section.alt {
+            background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 60%), #020617;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+            margin-top: 40px;
+        }
+
+        .package-card {
+            position: relative;
+            background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), rgba(15, 23, 42, 0.98));
+            border-radius: 20px;
+            padding: 32px 26px 28px;
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .package-card.highlight {
+            border-color: rgba(56, 189, 248, 0.9);
+            box-shadow: 0 24px 60px rgba(56, 189, 248, 0.35);
+        }
+
+        .package-tag {
+            position: absolute;
+            top: 18px;
+            right: 20px;
+            font-size: 0.7rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            border-radius: 999px;
+            background: rgba(56, 189, 248, 0.12);
+            color: var(--color-primary);
+            border: 1px solid rgba(56, 189, 248, 0.6);
+        }
+
+        .package-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .package-alias {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        .package-price {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-accent);
+        }
+
+        .package-meta {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        .package-list {
+            margin: 8px 0 0;
+            padding-left: 1.2rem;
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+
+        .package-list li {
+            margin-bottom: 4px;
+        }
+
+        .package-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline-light {
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.7);
+            padding: 10px 20px;
+            background: transparent;
+            color: #e2e8f0;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+        }
+
+        .btn-outline-light:hover {
+            border-color: var(--color-primary);
+            color: #f9fafb;
+            background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), rgba(15, 23, 42, 0.95));
+        }
+
+        .btn-soft {
+            border-radius: 999px;
+            border: 1px solid rgba(56, 189, 248, 0.9);
+            padding: 10px 20px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(56, 189, 248, 0.06));
+            color: #e0f2fe;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+        }
+
+        .btn-soft:hover {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.35), rgba(56, 189, 248, 0.12));
+            transform: translateY(-1px);
+        }
+
+        .packages-layout {
+            display: grid;
+            grid-template-columns: 1.6fr 1.2fr;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .packages-side-panel {
+            border-radius: 18px;
+            padding: 28px 24px;
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), rgba(15, 23, 42, 0.98));
+        }
+
+        .packages-side-panel h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .packages-side-panel p {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+        }
+
+        .packages-side-panel ul {
+            margin-top: 12px;
+            padding-left: 1.1rem;
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+        }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 22px;
+            margin-top: 30px;
+        }
+
+        .timeline-card {
+            border-radius: 14px;
+            padding: 22px 20px;
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        .timeline-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-text-muted);
+            margin-bottom: 6px;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .add-ons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 35px;
+        }
+
+        .addon-card {
+            border-radius: 16px;
+            padding: 22px 20px;
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            background: rgba(15, 23, 42, 0.95);
+        }
+
+        .addon-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+
+        .addon-price {
+            font-size: 0.95rem;
+            color: var(--color-accent);
+            margin-bottom: 10px;
+        }
+
+        .addon-card ul {
+            padding-left: 1.1rem;
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .why-card {
+            border-radius: 14px;
+            padding: 20px 18px;
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            background: rgba(15, 23, 42, 0.95);
+            font-size: 0.95rem;
+        }
+
+        .why-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .packages-cta {
+            text-align: center;
+            padding: 70px 20px 40px;
+        }
+
+        .packages-cta p {
+            max-width: 640px;
+            margin: 0 auto 24px;
+            color: var(--color-text-muted);
+        }
+
+        .packages-cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        @media (max-width: 900px) {
+            .packages-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .packages-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="packages-page">
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="Umami TLabs Logo" class="logo-img">
+            </a>
+            <a href="brochure/Umami%20TLabs%20-%20%20Brochure.pdf" target="_blank" class="brochure-link" title="Download Brochure">
+                <i class="fa-solid fa-file-pdf"></i> Download Brochure
+            </a>
+            <div class="nav-links">
+
+                <!-- Dropdown Trigger -->
+                <div class="dropdown-wrapper">
+                    <a href="services.html" class="dropdown-trigger">Services <i
+                            class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="services.html?feature=billing">Billing & Accounts</a>
+                        <a href="services.html?feature=appointments">Smart Appointments</a>
+                        <a href="services.html?feature=ai">AI Assistance</a>
+                        <a href="services.html?feature=records">Medical Records</a>
+                        <a href="services.html?feature=custom">Custom Apps</a>
+                        <a href="services.html?feature=staff">Staff Management</a>
+                    </div>
+                </div>
+
+                <a href="packages.html">Packages</a>
+                <a href="doctors.html">For Doctors</a>
+
+                <!-- Calendly Trigger -->
+                <a href="#"
+                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/greyquill/umami-tlabs'});return false;"
+                    class="btn btn-primary">Book a Demo</a>
+
+                <!-- Member Login Link -->
+                <a href="#" class="nav-login-link"
+                    onclick="document.getElementById('login-modal').classList.add('active'); return false;">
+                    <span class="login-sub">Already a member?</span>
+                    <span class="login-main">Go to your dashboard</span>
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- LOGIN MODAL -->
+    <div class="modal-overlay" id="login-modal">
+        <div class="modal-content login-content">
+            <button class="modal-close" onclick="document.getElementById('login-modal').classList.remove('active')"><i
+                    class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fa-solid fa-right-to-bracket"></i></div>
+                <h2>Member Sign In</h2>
+                <p>Access your secure provider portal.</p>
+            </div>
+            <form class="modal-form" onsubmit="event.preventDefault(); window.location.href='sample-dashboard.html';">
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                <div style="text-align: center; margin-top: 15px; font-size: 0.9rem;">
+                    <a href="#" style="color: #64748b; text-decoration: none;">Forgot Password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="packages-hero">
+        <div class="container">
+            <h1>Healthcare Website & Practice Packages</h1>
+            <p>Choose the right digital foundation for your practice &mdash; from a clean, credible web presence
+                to a fully connected, AI-enabled practice management platform.</p>
+            <div class="packages-hero-meta">
+                <span class="pill"><i class="fa-solid fa-user-doctor"></i> Built for individual doctors, clinics
+                    & hospitals</span>
+                <span class="pill"><i class="fa-solid fa-indian-rupee-sign"></i> Transparent pricing in INR,
+                    scalable as you grow</span>
+                <span class="pill"><i class="fa-solid fa-shield-halved"></i> HIPAA-inspired, privacy-first
+                    architecture</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Overview -->
+    <section class="packages-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pick the Right Starting Point</h2>
+                <p>Four curated packages that map to where your practice is today &mdash; and where you want it to go
+                    in the next 12–24 months.</p>
+            </div>
+
+            <div class="packages-layout">
+                <div>
+                    <div class="packages-grid">
+                        <!-- Basic -->
+                        <article class="package-card">
+                            <div class="package-name">Basic Package</div>
+                            <div class="package-alias">Web Presence Essentials</div>
+                            <div class="package-price">₹35,000 – ₹60,000 (one‑time) · ₹2,500/month</div>
+                            <p class="package-meta">Professional brochure website for doctors who need to be found
+                                online and clearly explain what they do.</p>
+                            <ul class="package-list">
+                                <li>Home, About, Services, Contact, Appointment pages</li>
+                                <li>Clean, mobile‑responsive design with SSL security</li>
+                                <li>Basic SEO and Google Maps integration</li>
+                                <li>Contact &amp; appointment forms with spam protection</li>
+                                <li>Email notifications + Google My Business setup</li>
+                                <li>1 month post‑launch support &amp; launch assistance</li>
+                            </ul>
+                            <div class="package-actions">
+                                <a href="#" class="btn-soft"
+                                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/greyquill/umami-tlabs'});return false;">
+                                    <i class="fa-solid fa-calendar-check"></i> Talk about Basic
+                                </a>
+                                <a href="#add-ons" class="btn-outline-light">
+                                    View add‑ons
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Starter -->
+                        <article class="package-card">
+                            <div class="package-name">Starter Package</div>
+                            <div class="package-alias">Digital Foundation</div>
+                            <div class="package-price">₹75,000 – ₹1,25,000 (one‑time) · ₹5,000/month</div>
+                            <p class="package-meta">For practices that want to actively engage patients with rich
+                                content, reviews, and light automation.</p>
+                            <ul class="package-list">
+                                <li>Everything in Basic plus testimonials and blog/news section</li>
+                                <li>Enhanced SEO, advanced contact forms, social integration</li>
+                                <li>Up to 8 pages including health content and updates</li>
+                                <li>WhatsApp Business integration &amp; Google Analytics</li>
+                                <li>3 months support, monthly security updates</li>
+                                <li>Content updates: 2 changes/month</li>
+                            </ul>
+                            <div class="package-actions">
+                                <a href="#" class="btn-soft"
+                                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/greyquill/umami-tlabs'});return false;">
+                                    <i class="fa-solid fa-calendar-check"></i> Talk about Starter
+                                </a>
+                                <a href="#professional" class="btn-outline-light">Compare with Professional</a>
+                            </div>
+                        </article>
+
+                        <!-- Professional -->
+                        <article class="package-card highlight" id="professional">
+                            <span class="package-tag">Most Popular</span>
+                            <div class="package-name">Professional Package</div>
+                            <div class="package-alias">Practice Connect</div>
+                            <div class="package-price">₹85,000 – ₹1,50,000 (one‑time) · ₹8,000/month</div>
+                            <p class="package-meta">Ideal for high‑throughput clinics that want smart
+                                appointments, patient portals, and light‑weight practice management.</p>
+                            <ul class="package-list">
+                                <li>Smart appointment booking with calendar sync</li>
+                                <li>Patient dashboard to view records and documents</li>
+                                <li>Services gallery, FAQs, health resource library</li>
+                                <li>Digital check‑in, automated SMS/email reminders</li>
+                                <li>Basic billing &amp; invoices + Umami analytics dashboard</li>
+                                <li>3 key workflows: patient journey, records, and billing</li>
+                            </ul>
+                            <div class="package-actions">
+                                <a href="#" class="btn-soft"
+                                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/greyquill/umami-tlabs'});return false;">
+                                    <i class="fa-solid fa-calendar-check"></i> Explore Professional
+                                </a>
+                                <a href="#timeline" class="btn-outline-light">
+                                    See implementation timeline
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Advanced -->
+                        <article class="package-card">
+                            <div class="package-name">Advanced Package</div>
+                            <div class="package-alias">Complete Practice Management</div>
+                            <div class="package-price">₹2,00,000 – ₹3,20,000 (one‑time) · ₹15,000/month</div>
+                            <p class="package-meta">For multi‑doctor clinics and hospitals that need full EHR,
+                                billing, rostering, multi‑location scheduling, and automation.</p>
+                            <ul class="package-list">
+                                <li>Structured EHR with prescriptions, labs, imaging &amp; protocols</li>
+                                <li>Advanced billing, GST reports, claims, and forecasting</li>
+                                <li>Staff management, rosters, and multi‑doctor scheduling</li>
+                                <li>Vendor &amp; contractor management, insurance partners</li>
+                                <li>Automation for engagement, claims, and admin dashboards</li>
+                                <li>Premium integrations + dedicated account manager</li>
+                            </ul>
+                            <div class="package-actions">
+                                <a href="#" class="btn-soft"
+                                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/greyquill/umami-tlabs'});return false;">
+                                    <i class="fa-solid fa-calendar-check"></i> Discuss Advanced
+                                </a>
+                                <a href="#add-ons" class="btn-outline-light">View enterprise add‑ons</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <aside class="packages-side-panel">
+                    <h3>Which package is right for you?</h3>
+                    <p>We typically recommend:</p>
+                    <ul>
+                        <li><strong>Basic</strong> for first‑time digital presence and brochure‑style sites.</li>
+                        <li><strong>Starter</strong> if you want to publish content, reviews, and build trust.</li>
+                        <li><strong>Professional</strong> when appointments and follow‑ups are your bottleneck.</li>
+                        <li><strong>Advanced</strong> for clinics with multiple doctors, departments, and heavy
+                            admin load.</li>
+                    </ul>
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: var(--color-text-muted);">
+                        All pricing is indicative and refined after a discovery call based on your practice size,
+                        complexity, and integration needs.</p>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add-ons & Extensions -->
+    <section class="packages-section alt" id="add-ons">
+        <div class="container">
+            <div class="section-header">
+                <h2>Extend Your Digital Stack</h2>
+                <p>Add optional modules when you're ready &mdash; no need to over‑commit on day one.</p>
+            </div>
+
+            <div class="add-ons-grid">
+                <article class="addon-card">
+                    <h3>Mobile Application Development</h3>
+                    <div class="addon-price">₹3,00,000 – ₹6,00,000 (one‑time)</div>
+                    <ul>
+                        <li>Native iOS &amp; Android apps for your clinic brand</li>
+                        <li>Teleconsultation, prescriptions, and reports on mobile</li>
+                        <li>Push notifications for follow‑ups and campaigns</li>
+                        <li>App Store / Play Store publishing support</li>
+                    </ul>
+                </article>
+
+                <article class="addon-card">
+                    <h3>Custom Integrations</h3>
+                    <div class="addon-price">₹50,000 – ₹2,00,000 per integration</div>
+                    <ul>
+                        <li>Connect lab systems, pharmacy, or legacy software</li>
+                        <li>Custom APIs and third‑party bridges</li>
+                        <li>Secure integration with equipment and diagnostic tools</li>
+                    </ul>
+                </article>
+
+                <article class="addon-card">
+                    <h3>Digital Marketing</h3>
+                    <div class="addon-price">₹25,000 – ₹75,000 / month</div>
+                    <ul>
+                        <li>SEO, Google Ads, and social media campaigns</li>
+                        <li>Reputation management and review strategies</li>
+                        <li>Content production: blogs, visuals, landing pages</li>
+                    </ul>
+                </article>
+
+                <article class="addon-card">
+                    <h3>Training &amp; Onboarding</h3>
+                    <div class="addon-price">₹25,000 – ₹75,000 (one‑time)</div>
+                    <ul>
+                        <li>On‑site or virtual staff training</li>
+                        <li>Detailed SOPs and video tutorials</li>
+                        <li>Change‑management support for smooth adoption</li>
+                    </ul>
+                </article>
+
+                <article class="addon-card">
+                    <h3>Data Migration</h3>
+                    <div class="addon-price">₹50,000 – ₹2,00,000</div>
+                    <ul>
+                        <li>Import of existing patient records and histories</li>
+                        <li>Data cleanup, validation, and reconciliation</li>
+                        <li>Structured migration from legacy EMR/EHR systems</li>
+                    </ul>
+                </article>
+
+                <article class="addon-card">
+                    <h3>Advanced Analytics &amp; Compliance</h3>
+                    <div class="addon-price">From ₹15,000 / month</div>
+                    <ul>
+                        <li>Custom dashboards, cohort analysis, revenue insights</li>
+                        <li>HIPAA / GDPR style compliance audits and documentation</li>
+                        <li>Ongoing monitoring and security recommendations</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline & Next Steps -->
+    <section class="packages-section" id="timeline">
+        <div class="container">
+            <div class="section-header">
+                <h2>Implementation Timelines</h2>
+                <p>From first conversation to go‑live, we keep delivery structured, predictable, and transparent.</p>
+            </div>
+
+            <div class="timeline-grid">
+                <article class="timeline-card">
+                    <div class="timeline-label">4–6 weeks</div>
+                    <div class="timeline-title">Starter Rollout</div>
+                    <p>Design, content, development, testing, deployment, and post‑launch support for
+                        Basic/Starter implementations.</p>
+                </article>
+
+                <article class="timeline-card">
+                    <div class="timeline-label">8–12 weeks</div>
+                    <div class="timeline-title">Professional Launch</div>
+                    <p>Deeper discovery, integrations, workflow design, and staff training for
+                        Professional‑level clinics.</p>
+                </article>
+
+                <article class="timeline-card">
+                    <div class="timeline-label">16–24 weeks</div>
+                    <div class="timeline-title">Enterprise Deployment</div>
+                    <p>Modular rollout of Advanced package with EHR, billing, rostering, and multi‑location
+                        workflows.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Umami TLabs -->
+    <section class="packages-section alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Practices Choose Umami TLabs</h2>
+                <p>Healthcare‑first thinking, product‑grade engineering, and a long‑term partnership mindset.</p>
+            </div>
+
+            <div class="why-grid">
+                <article class="why-card">
+                    <h3>Healthcare‑Specific Expertise</h3>
+                    <p>We understand clinical workflows, compliance, and the realities of OPD/IPD operations &mdash;
+                        not just generic software design.</p>
+                </article>
+
+                <article class="why-card">
+                    <h3>All‑in‑One Platform</h3>
+                    <p>From website to EHR and billing, we reduce vendor sprawl and create a cohesive digital
+                        experience for both staff and patients.</p>
+                </article>
+
+                <article class="why-card">
+                    <h3>Built for Indian Healthcare</h3>
+                    <p>Local payment gateways, regional language support, and India‑specific compliance and
+                        reporting baked in.</p>
+                </article>
+
+                <article class="why-card">
+                    <h3>Scalable &amp; Future‑Ready</h3>
+                    <p>Start small and grow into advanced modules without re‑platforming. Your data and workflows
+                        grow with you.</p>
+                </article>
+
+                <article class="why-card">
+                    <h3>Ongoing Partnership</h3>
+                    <p>We ship updates, review performance, and act as your extended product team &mdash; not a
+                        one‑time vendor.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="packages-cta">
+        <div class="container">
+            <h2>Not sure which package fits your practice?</h2>
+            <p>In a 30‑minute conversation, we map your current reality, your 12–24 month goals, and recommend a
+                pragmatic path &mdash; even if that means starting smaller than you expected.</p>
+            <div class="packages-cta-actions">
+                <a href="#" class="btn btn-primary btn-lg"
+                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/greyquill/umami-tlabs'});return false;">
+                    <i class="fa-solid fa-calendar-days"></i> Schedule a Free Consultation
+                </a>
+                <a href="brochure/Umami%20TLabs%20-%20%20Brochure.pdf" target="_blank" class="btn btn-secondary btn-lg">
+                    <i class="fa-solid fa-file-pdf"></i> Download Brochure
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-cta">
+                <h2>Ready to transform your healthcare management?</h2>
+                <!-- Calendly Trigger -->
+                <a href="#"
+                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/greyquill/umami-tlabs'});return false;"
+                    class="btn btn-primary btn-lg">Contact Us For A Demo</a>
+                <div class="contact-details">
+                    <p><i class="fa-brands fa-whatsapp"></i> +91-9611373526</p>
+                    <p><i class="fa-solid fa-envelope"></i> amarnath@greyquill.io</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-heart-pulse"></i> Umami TLabs
+                </div>
+                <div class="footer-links">
+                    <a href="about.html">About Us</a>
+                    <span class="separator">•</span>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <span class="separator">•</span>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <span class="separator">•</span>
+                    <a href="brochure/Umami%20TLabs%20-%20%20Brochure.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i>
+                        Download Brochure</a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Umami TLabs. All rights reserved. A product by <a href="https://www.greyquill.io"
+                    target="_blank" rel="noopener noreferrer">Greyquill</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</body>
+
+</html>

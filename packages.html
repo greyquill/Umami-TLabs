@@ -258,6 +258,7 @@
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 24px;
             margin-top: 35px;
+            justify-items: center;
         }
 
         .addon-card {
@@ -265,23 +266,28 @@
             padding: 22px 20px;
             border: 1px solid rgba(148, 163, 184, 0.45);
             background: rgba(15, 23, 42, 0.95);
+            max-width: 360px;
+            width: 100%;
         }
 
         .addon-card h3 {
             font-size: 1.15rem;
             margin-bottom: 8px;
+            text-align: center;
         }
 
         .addon-price {
             font-size: 0.95rem;
             color: var(--color-accent);
             margin-bottom: 10px;
+            text-align: center;
         }
 
         .addon-card ul {
             padding-left: 1.1rem;
             font-size: 0.9rem;
             color: var(--color-text-muted);
+            text-align: left;
         }
 
         .why-grid {
@@ -540,21 +546,6 @@
                         </article>
                     </div>
                 </div>
-
-                <aside class="packages-side-panel">
-                    <h3>Which package is right for you?</h3>
-                    <p>We typically recommend:</p>
-                    <ul>
-                        <li><strong>Basic</strong> for first‑time digital presence and brochure‑style sites.</li>
-                        <li><strong>Starter</strong> if you want to publish content, reviews, and build trust.</li>
-                        <li><strong>Professional</strong> when appointments and follow‑ups are your bottleneck.</li>
-                        <li><strong>Advanced</strong> for clinics with multiple doctors, departments, and heavy
-                            admin load.</li>
-                    </ul>
-                    <p style="margin-top: 10px; font-size: 0.9rem; color: var(--color-text-muted);">
-                        All pricing is indicative and refined after a discovery call based on your practice size,
-                        complexity, and integration needs.</p>
-                </aside>
             </div>
         </div>
     </section>
@@ -661,6 +652,26 @@
                     <p>Modular rollout of Advanced package with EHR, billing, rostering, and multi‑location
                         workflows.</p>
                 </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Package Guidance -->
+    <section class="packages-section">
+        <div class="container">
+            <div class="packages-side-panel">
+                <h3>Which package is right for you?</h3>
+                <p>We typically recommend:</p>
+                <ul>
+                    <li><strong>Basic</strong> for first‑time digital presence and brochure‑style sites.</li>
+                    <li><strong>Starter</strong> if you want to publish content, reviews, and build trust.</li>
+                    <li><strong>Professional</strong> when appointments and follow‑ups are your bottleneck.</li>
+                    <li><strong>Advanced</strong> for clinics with multiple doctors, departments, and heavy
+                        admin load.</li>
+                </ul>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: var(--color-text-muted);">
+                    All pricing is indicative and refined after a discovery call based on your practice size,
+                    complexity, and integration needs.</p>
             </div>
         </div>
     </section>

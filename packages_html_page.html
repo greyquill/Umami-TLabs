@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages - Umami TLabs Healthcare Website Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --dark-bg: #0f172a;
+            --light-bg: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #ffffff;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .cta-button {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1e40af 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            opacity: 0.8;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Problem Statement Section */
+        .problem-section {
+            background: var(--light-bg);
+            padding: 4rem 2rem;
+        }
+
+        .problem-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .problem-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .problem-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .problem-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Package Cards */
+        .packages-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .packages-intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .package-card {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .package-card.featured {
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 16px rgba(37, 99, 235, 0.2);
+        }
+
+        .package-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: bold;
+        }
+
+        .package-header h3 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .package-subtitle {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .package-price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .package-maintenance {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .package-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+        }
+
+        .package-features li:last-child {
+            border-bottom: none;
+        }
+
+        .checkmark {
+            color: var(--success-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .package-cta {
+            width: 100%;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .package-cta:hover {
+            background: var(--secondary-color);
+        }
+
+        .package-card.featured .package-cta {
+            background: var(--secondary-color);
+        }
+
+        .package-card.featured .package-cta:hover {
+            background: #1e3a8a;
+        }
+
+        /* Add-ons Section */
+        .addons-section {
+            background: var(--light-bg);
+            padding: 4rem 2rem;
+        }
+
+        .addons-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .addons-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--text-dark);
+        }
+
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .addon-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .addon-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .addon-price {
+            font-weight: bold;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        /* Integrations Section */
+        .integrations-section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .integrations-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .integrations-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .integration-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .integration-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .integration-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .integration-list {
+            list-style: none;
+        }
+
+        .integration-list li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .integration-list li:before {
+            content: "→";
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem 0;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .comparison-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .comparison-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--text-dark);
+        }
+
+        .comparison-table {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            font-weight: bold;
+        }
+
+        tbody tr:hover {
+            background: var(--light-bg);
+        }
+
+        .feature-name {
+            font-weight: 500;
+        }
+
+        .check-yes {
+            color: var(--success-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .check-no {
+            color: var(--text-light);
+            opacity: 0.3;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                font-size: 0.875rem;
+            }
+
+            th, td {
+                padding: 0.5rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">Umami TLabs</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#addons">Add-ons</a></li>
+                    <li><a href="#integrations">Integrations</a></li>
+                    <li><a href="#comparison">Compare</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-button">Book a Demo</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-subtitle">Healthcare Website & Digital Presence</div>
+        <h1>Transform Your Practice<br>With Professional Digital Solutions</h1>
+        <p>Comprehensive website and practice management packages designed specifically for medical practitioners. From online presence to complete digital transformation.</p>
+    </section>
+
+    <!-- Problem Statement -->
+    <section class="problem-section">
+        <div class="problem-content">
+            <h2>The Challenges You Face</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">🔍</div>
+                    <h3>Limited Visibility</h3>
+                    <p>Patients can't find you online or understand your offerings</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🔧</div>
+                    <h3>Fragmented Systems</h3>
+                    <p>Multiple tools that don't talk to each other</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📋</div>
+                    <h3>Administrative Burden</h3>
+                    <p>Hours spent on scheduling, billing, and record-keeping</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">💬</div>
+                    <h3>Patient Engagement</h3>
+                    <p>Difficulty maintaining ongoing relationships with patients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="container" id="packages">
+        <div class="packages-intro">
+            <h2>Choose Your Perfect Package</h2>
+            <p>Scalable solutions that grow with your practice</p>
+        </div>
+
+        <div class="packages-grid">
+            <!-- Basic Package -->
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>Basic</h3>
+                    <p class="package-subtitle">Web Presence Essentials</p>
+                </div>
+                <div class="package-price">₹35,000 - ₹60,000</div>
+                <div class="package-maintenance">+ ₹2,500/month maintenance</div>
+                <ul class="package-features">
+                    <li><span class="checkmark">✓</span> 5-6 page website</li>
+                    <li><span class="checkmark">✓</span> Mobile-responsive design</li>
+                    <li><span class="checkmark">✓</span> Basic SEO setup</li>
+                    <li><span class="checkmark">✓</span> Google Maps integration</li>
+                    <li><span class="checkmark">✓</span> SSL security</li>
+                    <li><span class="checkmark">✓</span> Contact form</li>
+                </ul>
+                <button class="package-cta" onclick="showContact('Basic')">Get Started</button>
+            </div>
+
+            <!-- Starter Package -->
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>Starter</h3>
+                    <p class="package-subtitle">Digital Foundation</p>
+                </div>
+                <div class="package-price">₹75,000 - ₹1,25,000</div>
+                <div class="package-maintenance">+ ₹5,000/month maintenance</div>
+                <ul class="package-features">
+                    <li><span class="checkmark">✓</span> Everything in Basic</li>
+                    <li><span class="checkmark">✓</span> 8 pages with blog</li>
+                    <li><span class="checkmark">✓</span> Patient reviews module</li>
+                    <li><span class="checkmark">✓</span> Enhanced SEO</li>
+                    <li><span class="checkmark">✓</span> WhatsApp integration</li>
+                    <li><span class="checkmark">✓</span> Google Analytics</li>
+                </ul>
+                <button class="package-cta" onclick="showContact('Starter')">Get Started</button>
+            </div>
+
+            <!-- Professional Package -->
+            <div class="package-card featured">
+                <div class="package-badge">POPULAR</div>
+                <div class="package-header">
+                    <h3>Professional</h3>
+                    <p class="package-subtitle">Practice Connect</p>
+                </div>
+                <div class="package-price">₹85,000 - ₹1,50,000</div>
+                <div class="package-maintenance">+ ₹8,000/month maintenance</div>
+                <ul class="package-features">
+                    <li><span class="checkmark">✓</span> Everything in Starter</li>
+                    <li><span class="checkmark">✓</span> Smart appointment booking</li>
+                    <li><span class="checkmark">✓</span> Patient records dashboard</li>
+                    <li><span class="checkmark">✓</span> Automated SMS/email reminders</li>
+                    <li><span class="checkmark">✓</span> Basic billing system</li>
+                    <li><span class="checkmark">✓</span> Payment gateway integration</li>
+                    <li><span class="checkmark">✓</span> Calendar sync</li>
+                </ul>
+                <button class="package-cta" onclick="showContact('Professional')">Get Started</button>
+            </div>
+
+            <!-- Advanced Package -->
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>Advanced</h3>
+                    <p class="package-subtitle">Complete Practice Management</p>
+                </div>
+                <div class="package-price">₹2,00,000 - ₹3,20,000</div>
+                <div class="package-maintenance">+ ₹15,000/month maintenance</div>
+                <ul class="package-features">
+                    <li><span class="checkmark">✓</span> Everything in Professional</li>
+                    <li><span class="checkmark">✓</span> Full EHR system</li>
+                    <li><span class="checkmark">✓</span> Staff management & roster</li>
+                    <li><span class="checkmark">✓</span> Multi-doctor scheduling</li>
+                    <li><span class="checkmark">✓</span> Advanced billing & accounts</li>
+                    <li><span class="checkmark">✓</span> Contractor management</li>
+                    <li><span class="checkmark">✓</span> Video consultation</li>
+                </ul>
+                <button class="package-cta" onclick="showContact('Advanced')">Get Started</button>
+            </div>
+
+            <!-- Enterprise Package -->
+            <div class="package-card">
+                <div class="package-badge">PREMIUM</div>
+                <div class="package-header">
+                    <h3>Enterprise</h3>
+                    <p class="package-subtitle">Healthcare Digital Platform</p>
+                </div>
+                <div class="package-price">₹4,00,000+</div>
+                <div class="package-maintenance">+ ₹25,000/month maintenance</div>
+                <ul class="package-features">
+                    <li><span class="checkmark">✓</span> Everything in Advanced</li>
+                    <li><span class="checkmark">✓</span> Multi-location support</li>
+                    <li><span class="checkmark">✓</span> AI-powered features</li>
+                    <li><span class="checkmark">✓</span> Department dashboards</li>
+                    <li><span class="checkmark">✓</span> HIS/LIS integration</li>
+                    <li><span class="checkmark">✓</span> Mobile apps (iOS & Android)</li>
+                    <li><span class="checkmark">✓</span> 24/7 priority support</li>
+                </ul>
+                <button class="package-cta" onclick="showContact('Enterprise')">Get Started</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add-ons Section -->
+    <section class="addons-section" id="addons">
+        <div class="addons-content">
+            <h2>Enhance Your Package</h2>
+            <div class="addons-grid">
+                <div class="addon-card">
+                    <h3>Mobile Application</h3>
+                    <div class="addon-price">₹3,00,000 - ₹6,00,000</div>
+                    <p>Native iOS & Android apps with all website features, push notifications, and offline access.</p>
+                </div>
+                <div class="addon-card">
+                    <h3>Custom Integration</h3>
+                    <div class="addon-price">₹50,000 - ₹2,00,000</div>
+                    <p>Connect with specialized medical equipment, legacy systems, or custom APIs.</p>
+                </div>
+                <div class="addon-card">
+                    <h3>Digital Marketing</h3>
+                    <div class="addon-price">₹25,000 - ₹75,000/month</div>
+                    <p>Google Ads, social media marketing, SEO optimization, and content creation.</p>
+                </div>
+                <div class="addon-card">
+                    <h3>Training & Onboarding</h3>
+                    <div class="addon-price">₹25,000 - ₹75,000</div>
+                    <p>Comprehensive staff training, video tutorials, and change management support.</p>
+                </div>
+                <div class="addon-card">
+                    <h3>Data Migration</h3>
+                    <div class="addon-price">₹50,000 - ₹2,00,000</div>
+                    <p>Import existing patient records, historical data cleanup, and validation.</p>
+                </div>
+                <div class="addon-card">
+                    <h3>Advanced Analytics</h3>
+                    <div class="addon-price">₹15,000/month</div>
+                    <p>Custom dashboards, predictive analytics, and business intelligence reports.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section class="integrations-section" id="integrations">
+        <div class="integrations-content">
+            <h2>Powerful Integrations</h2>
+            <p style="color: var(--text-light); max-width: 800px; margin: 0 auto 3rem;">Connect with the tools and services your practice already uses</p>
+            
+            <div class="integration-categories">
+                <div class="integration-category">
+                    <h3>💳 Payment Solutions</h3>
+                    <ul class="integration-list">
+                        <li>Razorpay</li>
+                        <li>PayU</li>
+                        <li>CCAvenue</li>
+                        <li>Paytm Business</li>
+                        <li>PhonePe</li>
+                    </ul>
+                </div>
+                <div class="integration-category">
+                    <h3>📱 Communication</h3>
+                    <ul class="integration-list">
+                        <li>WhatsApp Business API</li>
+                        <li>SMS Gateway (Twilio)</li>
+                        <li>Email Automation</li>
+                        <li>Voice Call (IVR)</li>
+                    </ul>
+                </div>
+                <div class="integration-category">
+                    <h3>🎥 Video Consultation</h3>
+                    <ul class="integration-list">
+                        <li>Zoom Healthcare</li>
+                        <li>Google Meet</li>
+                        <li>Microsoft Teams</li>
+                        <li>Doxy.me</li>
+                    </ul>
+                </div>
+                <div class="integration-category">
+                    <h3>📊 Analytics & Tools</h3>
+                    <ul class="integration-list">
+                        <li>Umami Analytics</li>
+                        <li>Google Analytics</li>
+                        <li>Google Calendar</li>
+                        <li>Outlook Sync</li>
+                    </ul>
+                </div>
+                <div class="integration-category">
+                    <h3>🏥 Healthcare Systems</h3>
+                    <ul class="integration-list">
+                        <li>HL7/FHIR Standards</li>
+                        <li>Lab Equipment APIs</li>
+                        <li>ABDM Compliance</li>
+                        <li>E-Prescription</li>
+                    </ul>
+                </div>
+                <div class="integration-category">
+                    <h3>💼 Business Tools</h3>
+                    <ul class="integration-list">
+                        <li>Tally</li>
+                        <li>QuickBooks</li>
+                        <li>Zoho Books</li>
+                        <li>CRM Systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section" id="comparison">
+        <div class="comparison-content">
+            <h2>Compare All Packages</h2>
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Basic</th>
+                            <th>Starter</th>
+                            <th>Professional</th>
+                            <th>Advanced</th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature-name">Professional Website</td>
+                            <td class="check-yes">✓</td>
+                            <td class="check-yes">✓</td>
+                            <td class="check-yes">✓</td>
+                            <td class="check-yes">✓</td>
+                            <td class="check-yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Number of Pages</td>
+                            <td>5-6</td>
+                            
